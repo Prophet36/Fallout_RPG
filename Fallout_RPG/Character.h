@@ -10,7 +10,7 @@ public:
 	Character();
 	~Character();
 
-private:
+protected:
 	const std::string m_name;
 	int m_level;
 	int m_strength;
