@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include <string> // std::string
 #include "Character.h"
 #include "Item.h"
 #include "Consumable.h"
@@ -13,6 +14,7 @@ public:
 	Human();
 	~Human();
 	void showInventory() const;
+	void addItem(std::string item_id);
 protected:
 	Item * inventory[10];
 };

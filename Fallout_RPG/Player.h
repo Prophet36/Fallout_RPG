@@ -9,7 +9,5 @@ public:
 	Player();
 	~Player();
 private:
-	int experience;
-	int protection;
-	int looting;
+	int m_experience;
 };

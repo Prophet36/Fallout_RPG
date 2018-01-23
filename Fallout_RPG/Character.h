@@ -19,10 +19,7 @@ protected:
 	int m_perception;
 	int m_intelligence;
 	int m_luck;
-	int m_health;
-	int m_reduction;
-	int m_evasion;
-	int m_speed;
-	int m_critical;
+	int m_health_max;
+	int m_health_current;
 };
 
