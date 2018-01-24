@@ -1,27 +1,24 @@
 #include "stdafx.h"
 #include <iostream>
+#include <string>
 #include "Armor.h"
 
-Armor::Armor(int type)
+Armor::Armor(std::string name, std::string description, int reduction, int evasion, int protection, int value, double weight)
 {
-	if (type >= ARMOR_COUNT)
-	{
-		std::cout << "ERROR: Incorrect armor!\n";
-	}
-	else
-	{
-		name = armor[type].name;
-		description = armor[type].description;
-		reduction = armor[type].reduction;
-		evasion = armor[type].evasion;
-		protection = armor[type].protection;
-		value = armor[type].value;
-		weight = armor[type].weight;
-	}
+	this->name = name;
+	this->description = description;
+	this->reduction = reduction;
+	this->evasion = evasion;
+	this->protection = protection;
+	this->value = value;
+	this->weight = weight;
 }
 
 void Armor::debug_print() const
 {
+	std::cout << name << ": " << description << " DT: " << reduction << " EV: "
+			  << evasion << " PROT: " << protection << " VAL: " << value
+			  << " WG: " << weight << std::endl;
 }
 
 Armor::~Armor()

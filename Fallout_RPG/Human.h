@@ -14,7 +14,7 @@ public:
 	Human();
 	~Human();
 	void showInventory() const;
-	void addItem(std::string item_id);
+	void addItemPrompt(std::string item_id);
 protected:
 	Item * inventory[10];
 };

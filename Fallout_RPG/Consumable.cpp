@@ -1,30 +1,25 @@
 #include "stdafx.h"
 #include <iostream>
+#include <string>
 #include "Consumable.h"
 
 
-Consumable::Consumable(int type)
+Consumable::Consumable(std::string name, std::string description, int attribute, int magnitude, int duration, int value, double weight)
 {
-	if (type >= CONSUMABLE_COUNT)
-	{
-		std::cout << "ERROR: Incorrect consumable!\n";
-	}
-	else
-	{
-		name = consumable[type].name;
-		description = consumable[type].description;
-		attribute_type = consumable[type].attribute_type;
-		magnitude = consumable[type].magnitude;
-		duration = consumable[type].duration;
-		value = consumable[type].value;
-		weight = consumable[type].weight;
-	}
+	this->name = name;
+	this->description = description;
+	this->attribute = attribute;
+	this->magnitude = magnitude;
+	this->duration = duration;
+	this->value = value;
+	this->weight = weight;
 }
 
 void Consumable::debug_print() const
 {
-	std::cout << name << ": " << description << "\nGives " << magnitude << " " << attribute_type << " for " << duration << " turns.\n"
-			  << "Weights " << weight << " with a value of " << value << ".\n";
+	std::cout << name << ": " << description << " Gives " << magnitude << " "
+			  << attribute << " for " << duration << " turns. VAL: " << value
+			  << " WG: " << weight << std::endl;
 }
 
 Consumable::~Consumable()

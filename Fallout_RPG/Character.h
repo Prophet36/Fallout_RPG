@@ -22,4 +22,3 @@ protected:
 	int m_health_max;
 	int m_health_current;
 };
-

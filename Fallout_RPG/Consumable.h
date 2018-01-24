@@ -3,17 +3,18 @@
 #pragma once
 
 #include "Item.h"
-#include "list_consumables.h"
+
+enum attribute_type {STRENGTH, ENDURANCE, AGILITY, PERCEPTION, INTELLIGENCE, LUCK, HEALTH, RADS };
 
 class Consumable : public Item
 {
 public:
-	Consumable(int type);
+	Consumable(std::string name, std::string description, int attribute, int magnitude, int duration, int value, double weight);
 	~Consumable();
 
 	virtual void debug_print() const override;
 protected:
-	int attribute_type;
+	int attribute;
 	int magnitude;
 	int duration;
 };

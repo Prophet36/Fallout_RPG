@@ -3,12 +3,13 @@
 #include <fstream>
 #include <string>
 #include "Human.h"
-#include "list_item_id.h"
+#include "Inventory.h"
+#include "FItem.h"
 
 Human::Human()
 {
-	inventory[0] = new Consumable(MEDKIT);
-	inventory[1] = new Armor(LEATHER);
+	inventory[0] = nullptr;
+	inventory[1] = nullptr;
 	inventory[2] = nullptr;
 	inventory[3] = nullptr;
 	inventory[4] = nullptr;
@@ -28,22 +29,25 @@ void Human::showInventory() const
 	}
 }
 
-void Human::addItem(std::string item_id)
+void Human::addItemPrompt(std::string item_id)
 {
 	std::string buffer_s;
+	bool item_found = false;
 
 	std::fstream items ("item_id.txt");
 	if(items.is_open())
 	{
-		bool item_found = false;
 
-		while (getline(items, buffer_s))
+		if (int item_type = Inventory::checkItemPrefix(item_id))
 		{
-			if (buffer_s.find(item_id, 0) != std::string::npos)
+			while ((items >> buffer_s))
 			{
-				std::cout << std::endl << buffer_s << std::endl << std::endl;
-				item_found = true;
-				break;
+				if (buffer_s == item_id)
+				{
+					item_found = true;
+					inventory[0] = FItem::createNewItem(items, item_type);
+					break;
+				}
 			}
 		}
 		if (!item_found)

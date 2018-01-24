@@ -1,0 +1,39 @@
+//CONSUMABLE
+
+//Code	Name	Description	Attribute	Magnitude	Duration	Value	Weight
+
+item_stimpak	Stimpak	Healing hypo. Heals up to 10 HP.	HP	10	0	20	0.1
+item_stimpak_super	Super Stimpak	Advanced healing hypo. Heals up to 25 HP.	HP	20	0	50	0.25
+item_medkit	Medkit	Basic medkit. Heals broken limbs and up to 5 HP.	HP	5	0	15	0.5
+item_food	Cooked food	Cooked and edible foodstuff. Heals up to 2 HP.	HP	2	0	3	1.0
+item_food_dirty	Raw food	Raw, unprepared foodstuff. Adds 20 RADS.	RADS	20	0	1	1.0
+item_water	Purified water	Purified water. Heals up to 2 HP.	HP	2	0	5	2.0
+item_water_dirty	Irradiated water	Unpurified, irradiated water. Adds 20 RADS.	RADS	20	0	2	2.0
+item_jet	Jet	Chemical drug. Boosts Agility for 5 turns.	AG	2	5	10	0.1	
+item_psycho	Psycho	Military combat booster. Boosts Perception for 5 turns.	PE	2	5	10	0.1
+item_buffout	Buffout	Muscle enhancing drug. Boosts Strength for 5 turns.	ST	2	5	10	0.1
+item_test_lk	Strength	Gives.	LK	2	3	10	0.1
+
+//Code	Name	Description	Attribute	Magnitude	Duration	Value	Weight
+
+//ARMOR
+
+//Code	Name	Description	Reduction	Evasion	Protection	Value	Weight
+
+armor_plain	Plain clothing	Plain clothes.	0	2	0	2	1.0
+armor_bunker	Bunker outfit	Outfit from fallout bunker.	0	2	20	10	3.0
+armor_leather	Leather armor dada	Sturdy leather armor.	1	1	0	20	5.0
+armor_wasteland	Wasteland armor	Hand made wasteland armor, protects from elements.	2	0	30	30	5.5
+armor_metal	Metal armor	Metal armor, heavy and durable.	5	-3	0	50	10.0
+armor_combat	Combat armor	Military combat armor.	4	-1	20	100	7.5
+armor_alloy	Alloy armor	Advanced military armor made from durable alloys.	6	-2	0	150	8.0
+armor_carbon	Carbon-fiber armor	Advanced special forces armor, very light yet durable.	6	0	0	250	4.0
+armor_power	Powered armor	High-tech powered metal armor.	10	-3	50	500	10.0
+armor_alien	Alien armor	Human adapted Entirian armor.	15	-5	100	1000	18.0
+armor_quicksilver	Quicksilver armor	Advanced Entirian armor, covers whole body.	12	0	100	2000	2.0
+
+//Code	Name	Description	Reduction	Evasion	Protection	Value	Weight
+
+
+
+// WEAPON

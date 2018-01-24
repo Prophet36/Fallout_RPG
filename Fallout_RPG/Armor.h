@@ -3,16 +3,15 @@
 #pragma once
 
 #include "Item.h"
-#include "list_armors.h"
 
 class Armor : public Item
 {
 public:
-	Armor(int type);
+	Armor::Armor(std::string name, std::string description, int reduction, int evasion, int protection, int value, double weight);
 	~Armor();
 
 	virtual void debug_print() const override;
-protected:
+private:
 	int reduction;
 	int evasion;
 	int protection;
