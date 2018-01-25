@@ -2,7 +2,11 @@
 #include <iostream>	// std::cout
 #include "RangedWeapon.h"
 
-RangedWeapon::RangedWeapon(std::string name, std::string description, int ammo_type, int capacity, int damage, std::string roll, int speed, int accuracy, int penetration, int requirement, int value, double weight, std::string tags)
+RangedWeapon::RangedWeapon(std::string name, std::string description,
+						   int ammo_type, int capacity, int damage,
+						   std::string roll, int speed, int accuracy,
+						   int penetration, int requirement, int value,
+						   double weight, std::string tags)
 {
 	this->name = name;
 	this->description = description;

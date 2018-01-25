@@ -1,9 +1,10 @@
 #include "stdafx.h"
-#include <iostream>
-#include <string>
+#include <iostream>	// std::cout
+#include <string>	// std::string
 #include "Armor.h"
 
-Armor::Armor(std::string name, std::string description, int reduction, int evasion, int protection, int value, double weight)
+Armor::Armor(std::string name, std::string description, int reduction,
+			 int evasion, int protection, int value, double weight)
 {
 	this->name = name;
 	this->description = description;

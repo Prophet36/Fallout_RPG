@@ -7,7 +7,8 @@
 class Armor : public Item
 {
 public:
-	Armor(std::string name, std::string description, int reduction, int evasion, int protection, int value, double weight);
+	Armor(std::string name, std::string description, int reduction, int evasion,
+		  int protection, int value, double weight);
 	~Armor();
 
 	virtual void debug_print() const override;

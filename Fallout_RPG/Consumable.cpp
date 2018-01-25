@@ -1,10 +1,11 @@
 #include "stdafx.h"
-#include <iostream>
-#include <string>
+#include <iostream>	// std::cout
+#include <string>	// std::string
 #include "Consumable.h"
 
 
-Consumable::Consumable(std::string name, std::string description, int attribute, int magnitude, int duration, int value, double weight)
+Consumable::Consumable(std::string name, std::string description, int attribute,
+					   int magnitude, int duration, int value, double weight)
 {
 	this->name = name;
 	this->description = description;

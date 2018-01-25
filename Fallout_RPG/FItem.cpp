@@ -1,11 +1,12 @@
 #include "stdafx.h"
-#include <iostream>
-#include <fstream>
-#include <string>
+#include <iostream>	// std::cout
+#include <fstream>	// std::fstream
+#include <string>	// std::string, std::getline
 #include "FItem.h"
 #include "Item.h"
 #include "Consumable.h"
 #include "RangedWeapon.h"
+#include "MeleeWeapon.h"
 #include "Armor.h"
 #include "Inventory.h"
 
@@ -32,8 +33,7 @@ Item * FItem::createNewItem(std::fstream & items, int item_type)
 			{
 				case weapon_type::MELEE:
 				{
-					std::cout << "DEBUG: Creating melee weapon!\n";
-					return createNewRangedWeapon(items, tags);
+					return createNewMeleeWeapon(items, tags);
 					break;
 				}
 				case weapon_type::RANGED:
@@ -43,7 +43,11 @@ Item * FItem::createNewItem(std::fstream & items, int item_type)
 				}
 				default:
 				{
-					std::cout << "ERROR: Unexpected error, incorrect weapon type!\n";
+					std::cout << "ERROR: Unexpected error,"
+								 "incorrect weapon type!\n";
+					return new RangedWeapon("Dummy Gun", "DEBUG: Dummy weapon.",
+											ammo_type::PISTOL_SMALL, 0, 0, "d4",
+											0, 0, 0, 0, 0, 0.0, "dummy");
 					break;
 				}
 			}
@@ -57,6 +61,8 @@ Item * FItem::createNewItem(std::fstream & items, int item_type)
 		default:
 		{
 			std::cout << "ERROR: Unexpected error, incorrect item type!\n";
+			return new Consumable("Dummy Item", "DEBUG: Dummy item.",
+								  attribute_type::HEALTH, 0, 0, 0, 0.0);
 			break;
 		}
 	}
@@ -83,6 +89,29 @@ Item * FItem::createNewConsumable(std::fstream & items)
 						  magnitude, duration, value, weight);
 }
 
+Item * FItem::createNewMeleeWeapon(std::fstream & items, std::string tags)
+{
+	std::string name;
+	std::string description;
+	std::string roll;
+	int damage;
+	int speed;
+	int penetration;
+	int requirement;
+	int value;
+	double weight;
+
+	std::getline(items, name, '\t');
+	std::getline(items, description, '\t');
+	items >> damage;
+	items.get();
+	std::getline(items, roll, '\t');
+	items >> speed >> penetration >> requirement >> value >> weight;
+
+	return new MeleeWeapon(name, description, damage, roll, speed, penetration,
+						   requirement, value, weight, tags);
+}
+
 Item * FItem::createNewRangedWeapon(std::fstream & items, std::string tags)
 {
 	std::string name;
@@ -107,7 +136,9 @@ Item * FItem::createNewRangedWeapon(std::fstream & items, std::string tags)
 	items >> speed >> accuracy >> penetration >> requirement
 		  >> value >> weight;
 
-	return new RangedWeapon(name, description, 5, capacity, damage, roll, speed, accuracy, penetration, requirement, value, weight, tags);
+	return new RangedWeapon(name, description, 5, capacity, damage, roll, speed,
+							accuracy, penetration, requirement, value, weight,
+							tags);
 }
 
 Item * FItem::createNewArmor(std::fstream & items)

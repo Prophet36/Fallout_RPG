@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include <iostream>
-#include <fstream>
-#include <string>
+#include <iostream>	// std::cout
+#include <fstream>	// std::fstream
+#include <string>	// std::string
 #include "Human.h"
 #include "Inventory.h"
 #include "FItem.h"

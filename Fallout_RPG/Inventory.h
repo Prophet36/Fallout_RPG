@@ -1,10 +1,13 @@
+// Static class for inventory management and utility
+
 #pragma once
 
 #include <string>	// std::string
 
 enum item_type { CONSUMABLE = 1, WEAPON, AMMO, ARMOR };
 enum weapon_type { MELEE, RANGED };
-enum ammo_type { PISTOL_SMALL, PISTOL_LARGE, REVOLVER_SMALL, REVOLVER_LARGE, RIFLE_SMALL, RIFLE_LARGE, RIFLE_SNIPER, ENERGY };
+enum ammo_type { PISTOL_SMALL, PISTOL_LARGE, REVOLVER_SMALL, REVOLVER_LARGE,
+				 RIFLE_SMALL, RIFLE_LARGE, RIFLE_SNIPER, ENERGY };
 
 class Inventory
 {

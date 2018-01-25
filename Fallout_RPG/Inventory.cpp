@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "Inventory.h"
 #include <string>	// std::string
+#include "Inventory.h"
 
 Inventory::Inventory()
 {
@@ -23,7 +23,8 @@ int Inventory::checkItemPrefix(std::string item_id)
 
 int Inventory::checkConsumableBonus(std::string bonus)
 {
-	std::string bonuses[] = { "ST", "EN", "AG", "PE", "IN", "LK", "HP", "RADS" };
+	std::string bonuses[] = { "ST", "EN", "AG", "PE", "IN", "LK", "HP",
+							  "RADS" };
 
 	for (int i = 0; i < (sizeof(bonuses) / sizeof(bonuses[0])); i++)
 	{
@@ -32,7 +33,6 @@ int Inventory::checkConsumableBonus(std::string bonus)
 			return i;
 		}
 	}
-
 	return -1;
 }
 
@@ -47,9 +47,7 @@ int Inventory::checkWeaponType(std::string tags)
 			return i;
 		}
 	}
-
 	return -1;
-
 }
 int Inventory::checkAmmoType(std::string ammo_type)
 {

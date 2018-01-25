@@ -1,6 +1,7 @@
 // Character-derived class for player human characters
 
 #pragma once
+
 #include "Human.h"
 
 class Player : public Human

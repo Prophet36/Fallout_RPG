@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include <string> // std::string
+#include <string>	// std::string
 #include "Character.h"
 #include "Item.h"
 #include "Consumable.h"
