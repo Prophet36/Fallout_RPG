@@ -27,13 +27,7 @@
     <ClInclude Include="Consumable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="list_consumables.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Armor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="list_armors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="const.h">
@@ -48,13 +42,16 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="list_item_id.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Inventory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RangedWeapon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -87,6 +84,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Inventory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RangedWeapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

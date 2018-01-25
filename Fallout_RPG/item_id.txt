@@ -1,39 +1,76 @@
-//CONSUMABLE
+// CONSUMABLE
 
-//Code	Name	Description	Attribute	Magnitude	Duration	Value	Weight
+// Code	Name	Description	Attribute	Magnitude	Duration	Value	Weight
 
 item_stimpak	Stimpak	Healing hypo. Heals up to 10 HP.	HP	10	0	20	0.1
-item_stimpak_super	Super Stimpak	Advanced healing hypo. Heals up to 25 HP.	HP	20	0	50	0.25
+item_superstimpak	Super Stimpak	Advanced healing hypo. Heals up to 25 HP.	HP	20	0	50	0.25
 item_medkit	Medkit	Basic medkit. Heals broken limbs and up to 5 HP.	HP	5	0	15	0.5
-item_food	Cooked food	Cooked and edible foodstuff. Heals up to 2 HP.	HP	2	0	3	1.0
-item_food_dirty	Raw food	Raw, unprepared foodstuff. Adds 20 RADS.	RADS	20	0	1	1.0
-item_water	Purified water	Purified water. Heals up to 2 HP.	HP	2	0	5	2.0
-item_water_dirty	Irradiated water	Unpurified, irradiated water. Adds 20 RADS.	RADS	20	0	2	2.0
+item_food	Cooked Food	Cooked and edible foodstuff. Heals up to 2 HP.	HP	2	0	3	1.0
+item_dirtyfood	Raw Food	Raw, unprepared foodstuff. Adds 20 RADS.	RADS	20	0	1	1.0
+item_water	Purified Water	Purified water. Heals up to 2 HP.	HP	2	0	5	2.0
+item_dirtywater	Irradiated Water	Unpurified, irradiated water. Adds 20 RADS.	RADS	20	0	2	2.0
 item_jet	Jet	Chemical drug. Boosts Agility for 5 turns.	AG	2	5	10	0.1	
 item_psycho	Psycho	Military combat booster. Boosts Perception for 5 turns.	PE	2	5	10	0.1
 item_buffout	Buffout	Muscle enhancing drug. Boosts Strength for 5 turns.	ST	2	5	10	0.1
-item_test_lk	Strength	Gives.	LK	2	3	10	0.1
 
-//Code	Name	Description	Attribute	Magnitude	Duration	Value	Weight
+// Code	Name	Description	Attribute	Magnitude	Duration	Value	Weight
 
-//ARMOR
+// WEAPONS
 
-//Code	Name	Description	Reduction	Evasion	Protection	Value	Weight
+// Code	Tags	Name	Description	Ammunition	Capacity	Damage	Roll	Speed	Accuracy	Penetration	Requirement	Value	Weight
+
+weapon_pistol	ranged, gun, short	Pistol	Standard 9mm pistol, light and quick.	9mm	15	4	d4	10	0	0	2	20	1.0
+weapon_militarypistol	ranged, gun, short	Military Pistol	Military issued pistol.	.45 ACP	10	5	d6	9	0	0	3	40	1.0
+weapon_heavypistol	ranged, gun, short	Heavy Pistol	Reliable and powerful pistol.	.45 ACP	5	6	d6	7	0	2	5	50	1.5
+weapon_autopistol	ranged, gun, short, burst	Machine Pistol	Fully automatic pistol. Enables burst-fire.	9mm	15	2	d6	12	0	0	3	50	1.5
+weapon_revolver	ranged, gun, short, revolver	Revolver	Six-shooting revolver.	.357	6	2	2d8	7	-1	0	4	25	1.5
+weapon_heavyrevolver	ranged, gun, short, revolver	Heavy Revolver	Powerful and heavy revolver.	.44	5	5	d10	6	-1	0	6	50	2.0
+weapon_smg	ranged, gun, long, burst	Sub-Machine Gun	Police issued sub-machine gun. Enables burst-fire.	9mm	30	5	d4	8	0	0	4	40	2.5
+weapon_heavysmg	ranged, gun, long	Heavy Sub-Machine Gun	Military issued sub-machine gun.	.45 ACP	20	6	d6	6	1	0	5	60	3.0
+weapon_shotgun	ranged, gun, long	Shotgun	Basic shotgun. High damage potential, but inaccurate.	20ga	5	0	4d4	2	-2	0	5	35	4.0
+weapon_pumpshotgun ranged, gun, long	Pump-Action Shotgun	Military issued shotgun. High damage potential.	20ga	5	2	4d4	3	-1	0	6	50	4.0,
+weapon_combatshotgun	ranged, gun, long	Combat Shotgun	Automatic military combat shotgun. High damage potential.	12ga	8	6	2d6	4	-1	0	7	80	4.5
+weapon_huntingrifle	ranged, gun, long	Hunting Rifle	Scoped rifle used for hunting.	.308	2	6	d4	4	2	0	5	50	4.5
+weapon_rifle	ranged, gun, long	Bolt-action rifle	Military issued bolt action rifle.	.308	5	6	d6	1	0	0	5	60	4.5
+weapon_carbine	ranged, gun, long	Military Carbine	Military issued carbine, equipped with reflex sight.	5.56mm	20	6	2d4	4	1	0	5	100	4.0
+weapon_assaultrifle	ranged, gun, long, burst	Assault Rifle	Fully automatic assault rifle. Enables burst-fire.	5.56mm	30	4	2d6	5	0	0	6	120	4.5
+weapon_battlerifle	ranged, gun, long	Battle Rifle	High-powered battle rifle.	.308	20	8	d10	3	0	3	6	120	5.0
+weapon_sniperrifle	ranged, gun, long	Sniper Rifle	High-powered sniper rifle. Very accurate.	.308	5	10	d10	-2	3	3	7	150	6.0
+weapon_antimaterielrifle	ranged, gun, long	Anti-Materiel Rifle	Military issue anit-materiel sniper rifle.	.50 BMG	5	10	2d6	-5	1	10	8	300	7.0
+weapon_laserpistol	ranged, energy, short, laser	Laser Pistol	DESC	nErgyCore	10	3	d3	15	15	20	20	15	1.2
+weapon_plasmapistol	ranged, energy, short, plasma
+weapon_magpistol	ranged, energy, short, mag
+weapon_laserrifle	ranged, energy, long, laser
+weapon_plasmarifle	ranged, energy, long, plasma
+weapon_magrifle	melee, long, mag
+weapon_laserscatter	ranged, energy, long, laser
+weapon_autolaser	ranged, energy, long, laser, burst
+weapon_plasmacarbine	ranged, energy, long, plasma
+weapon_plasmacannon	ranged, energy, long, plasma
+weapon_assaultmag	ranged, energy, long, mag, burst
+weapon_plasmalauncher	ranged, energy, long, plasma
+weapon_gaussrifle	ranged, energy, long, mag
+weapon_focuslaser	ranged, energy, long, laser
+weapon_plasmadesintegrator	ranged, energy, long, plasma
+
+// Code	Tags	Name	Description	Ammunition	Capacity	Damage	Roll	Speed	Accuracy	Penetration	Requirement	Value	Weight
+
+// ARMOR
+
+// Code	Name	Description	Reduction	Evasion	Protection	Value	Weight
 
 armor_plain	Plain clothing	Plain clothes.	0	2	0	2	1.0
 armor_bunker	Bunker outfit	Outfit from fallout bunker.	0	2	20	10	3.0
-armor_leather	Leather armor dada	Sturdy leather armor.	1	1	0	20	5.0
+armor_leather	Leather armor	Sturdy leather armor.	1	1	0	20	5.0
 armor_wasteland	Wasteland armor	Hand made wasteland armor, protects from elements.	2	0	30	30	5.5
 armor_metal	Metal armor	Metal armor, heavy and durable.	5	-3	0	50	10.0
 armor_combat	Combat armor	Military combat armor.	4	-1	20	100	7.5
 armor_alloy	Alloy armor	Advanced military armor made from durable alloys.	6	-2	0	150	8.0
 armor_carbon	Carbon-fiber armor	Advanced special forces armor, very light yet durable.	6	0	0	250	4.0
 armor_power	Powered armor	High-tech powered metal armor.	10	-3	50	500	10.0
-armor_alien	Alien armor	Human adapted Entirian armor.	15	-5	100	1000	18.0
-armor_quicksilver	Quicksilver armor	Advanced Entirian armor, covers whole body.	12	0	100	2000	2.0
+armor_alien	Alien armor	Human adapted Ch'Korolon armor.	15	-5	100	1000	18.0
+armor_quicksilver	Quicksilver armor	Advanced Ch'Korolon armor, covers whole body.	12	0	100	2000	2.0
 
-//Code	Name	Description	Reduction	Evasion	Protection	Value	Weight
+// Code	Name	Description	Reduction	Evasion	Protection	Value	Weight
 
-
-
-// WEAPON
+// SKILLS: 1. MELEE (AG) 2. GUNS (PE) 3. ENERGY (PE) 4. HEALING (IN) 5. REPAIR (IN) 6. HIDE (AG) 7. HACK (IN) 8. SURVIVAL (EN)

@@ -36,6 +36,25 @@ int Inventory::checkConsumableBonus(std::string bonus)
 	return -1;
 }
 
+int Inventory::checkWeaponType(std::string tags)
+{
+	std::string types[] = { "melee", "ranged" };
+
+	for (int i = 0; i < (sizeof(types) / sizeof(types[0])); i++)
+	{
+		if (tags.find(types[i], 0) != std::string::npos)
+		{
+			return i;
+		}
+	}
+
+	return -1;
+
+}
+int Inventory::checkAmmoType(std::string ammo_type)
+{
+	return 0;
+}
 
 Inventory::~Inventory()
 {
