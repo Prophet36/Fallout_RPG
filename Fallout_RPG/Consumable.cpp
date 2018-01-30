@@ -1,26 +1,20 @@
 #include "stdafx.h"
-#include <iostream>	// std::cout
-#include <string>	// std::string
 #include "Consumable.h"
-
+#include <iostream> // std::cout, std::endl
+#include <string>   // std::string
 
 Consumable::Consumable(std::string name, std::string description, int attribute,
-					   int magnitude, int duration, int value, double weight)
+                       int magnitude, int duration, int value, double weight) :
+    Item(name, description, value, weight), m_attribute(attribute),
+    m_magnitude(magnitude), m_duration(duration)
 {
-	this->name = name;
-	this->description = description;
-	this->attribute = attribute;
-	this->magnitude = magnitude;
-	this->duration = duration;
-	this->value = value;
-	this->weight = weight;
 }
 
-void Consumable::debug_print() const
+void Consumable::debugPrint() const
 {
-	std::cout << name << ": " << description << " Gives " << magnitude << " "
-			  << attribute << " for " << duration << " turns. VAL: " << value
-			  << " WG: " << weight << std::endl;
+    std::cout << m_name << ": " << m_description << " Gives " << m_magnitude
+              << " " << m_attribute << " for " << m_duration << " turns. VAL: "
+              << m_value << " WG: " << m_weight << std::endl;
 }
 
 Consumable::~Consumable()

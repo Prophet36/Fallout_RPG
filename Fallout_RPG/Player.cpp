@@ -5,7 +5,6 @@ Player::Player()
 {
 }
 
-
 Player::~Player()
 {
 }

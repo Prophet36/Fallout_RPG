@@ -2,20 +2,26 @@
 
 #pragma once
 
-#include <string>	// std::string
-#include "Character.h"
-#include "Item.h"
-#include "Consumable.h"
 #include "Armor.h"
+#include "Character.h"
+#include "Consumable.h"
+#include "Inventory.h"
+#include "Item.h"
+#include <string>   // std::string
+#include <vector>   // std::vector
 
 class Human : public Character
 {
 public:
-	Human();
-	~Human();
-	void showInventory() const;
-	void addItemPrompt(std::string item_id);
-protected:
-	Item * inventory[10];
-};
+    Human(int max_space = 10);
+    ~Human();
 
+    void showInventory() const;
+    void addItemPrompt(std::string item_id);
+    void deleteItemPrompt();
+    bool checkInventorySpace(bool adding_item = true) const;
+
+protected:
+    std::vector<Item *> inventory;
+    int m_max_space;
+};

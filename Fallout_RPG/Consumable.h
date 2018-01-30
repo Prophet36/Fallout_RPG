@@ -4,19 +4,21 @@
 
 #include "Item.h"
 
-enum attribute_type { STRENGTH, ENDURANCE, AGILITY, PERCEPTION, INTELLIGENCE,
-					  LUCK, HEALTH, RADS };
-
 class Consumable : public Item
 {
 public:
-	Consumable(std::string name, std::string description, int attribute,
-			   int magnitude, int duration, int value, double weight);
-	~Consumable();
+    enum { STRENGTH, ENDURANCE, AGILITY, PERCEPTION, INTELLIGENCE, LUCK, HEALTH,
+           RADS };
 
-	virtual void debug_print() const override;
-protected:
-	int attribute;
-	int magnitude;
-	int duration;
+public:
+    Consumable(std::string name, std::string description, int attribute,
+               int magnitude, int duration, int value, double weight);
+    ~Consumable();
+
+    virtual void debugPrint() const override;
+
+private:
+    int m_attribute;
+    int m_magnitude;
+    int m_duration;
 };

@@ -2,23 +2,23 @@
 
 #pragma once
 
-#include <string>	// std::string
+#include <string>   // std::string
 
 class Character
 {
 public:
-	Character();
-	~Character();
+    Character();
+    ~Character();
 
 protected:
-	const std::string m_name;
-	int m_level;
-	int m_strength;
-	int m_agility;
-	int m_vitality;
-	int m_perception;
-	int m_intelligence;
-	int m_luck;
-	int m_health_max;
-	int m_health_current;
+    const std::string m_name;
+    int m_level;
+    int m_strength;
+    int m_agility;
+    int m_vitality;
+    int m_perception;
+    int m_intelligence;
+    int m_luck;
+    int m_health_max;
+    int m_health_current;
 };

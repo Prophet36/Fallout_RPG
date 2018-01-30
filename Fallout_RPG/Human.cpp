@@ -1,65 +1,68 @@
 #include "stdafx.h"
-#include <iostream>	// std::cout
-#include <fstream>	// std::fstream
-#include <string>	// std::string
-#include "Human.h"
-#include "Inventory.h"
+#include "File.h"
 #include "FItem.h"
+#include "Human.h"
+#include "Input.h"
+#include "Inventory.h"
+#include <iostream> // std::cout
+#include <string>   // std::string
 
-Human::Human()
+Human::Human(int max_space) :
+    m_max_space(max_space)
 {
-	inventory[0] = nullptr;
-	inventory[1] = nullptr;
-	inventory[2] = nullptr;
-	inventory[3] = nullptr;
-	inventory[4] = nullptr;
-	inventory[5] = nullptr;
-	inventory[6] = nullptr;
-	inventory[7] = nullptr;
-	inventory[8] = nullptr;
-	inventory[9] = nullptr;
 }
 
 void Human::showInventory() const
 {
-	for (int i = 0; i < 10; i++)
-	{
-		if(inventory[i] != nullptr)
-		inventory[i]->debug_print();
-	}
+    for (int i = 0; i < inventory.size(); i++)
+    {
+        std::cout << i + 1 << ": ";
+        inventory[i]->debugPrint();
+    }
 }
 
 void Human::addItemPrompt(std::string item_id)
 {
-	std::string buffer_s;
-	bool item_found = false;
+    if(!checkInventorySpace())
+        deleteItemPrompt();
 
-	std::fstream items ("item_id.txt");
-	if(items.is_open())
-	{
+    if (int item_position = File::findItem(item_id))
+    {
+        inventory.push_back(FItem::createNewItem(item_id, item_position));
+    }
+}
 
-		if (int item_type = Inventory::checkItemPrefix(item_id))
-		{
-			while ((items >> buffer_s))
-			{
-				if (buffer_s == item_id)
-				{
-					item_found = true;
-					inventory[0] = FItem::createNewItem(items, item_type);
-					break;
-				}
-			}
-		}
-		if (!item_found)
-		{
-			std::cout << "ERROR: Incorrect item!\n";
-		}
-	}
-	else
-	{
-		std::cout << "ERROR: Can't open file!\n";
-	}
-	items.close();
+void Human::deleteItemPrompt()
+{
+    if (inventory.size() != 0)
+    {
+        std::cout << "Which item would you like to delete?\n";
+        showInventory();
+
+        int choice = Input::switchPrompt(1, int(inventory.size()));
+        delete inventory[choice - 1];
+        inventory.erase(inventory.begin() + choice - 1);
+    }
+    else
+    {
+        std::cout << "Your inventory is empty!\n";
+    }
+}
+
+bool Human::checkInventorySpace(bool adding_item) const
+{
+    if (inventory.size() >= m_max_space)
+    {
+        if (adding_item)
+        {
+            std::cout << "You have full inventory!\n";
+        }
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 
 Human::~Human()

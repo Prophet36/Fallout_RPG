@@ -3,19 +3,20 @@
 #pragma once
 
 #include "Item.h"
-#include <string>	// std::string
-#include <fstream>	// std::fstream
+#include <string>   // std::string
 
 class FItem
 {
 public:
-	static Item * createNewItem(std::fstream & items, int item_type);
-private:
-	static Item * createNewConsumable(std::fstream & items);
-	static Item * createNewMeleeWeapon(std::fstream & items, std::string tags);
-	static Item * createNewRangedWeapon(std::fstream & items, std::string tags);
-	static Item * createNewArmor(std::fstream & items);
+    static Item * createNewItem(std::string item_id, int item_position);
 
-	FItem();
-	~FItem();
+private:
+    FItem();
+    ~FItem();
+
+    static Item * createNewConsumable(int item_position);
+    static Item * createNewWeapon(int item_position);
+    static Item * createNewMeleeWeapon(int item_position);
+    static Item * createNewRangedWeapon(int item_position);
+    static Item * createNewArmor(int item_position);
 };

@@ -1,8 +1,13 @@
 #include "stdafx.h"
-#include <iostream>	// std::cout
 #include "Weapon.h"
+#include <iostream>	// std::cout
 
-Weapon::Weapon()
+Weapon::Weapon(std::string name, std::string description, int damage,
+               std::string roll, int speed, int penetration, int requirement,
+               int value, double weight, std::string tags) :
+    Item(name, description, value, weight), m_damage(damage), m_roll(roll),
+    m_speed(speed), m_penetration(penetration), m_requirement(requirement),
+    m_tags(tags)
 {
 }
 

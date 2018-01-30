@@ -1,32 +1,25 @@
 #include "stdafx.h"
-#include <iostream>	// std::cout
 #include "MeleeWeapon.h"
+#include <iostream> // std::cout, std::endl
 
 MeleeWeapon::MeleeWeapon(std::string name, std::string description, int damage,
-						 std::string roll, int speed, int penetration,
-						 int requirement,int value, double weight,
-						 std::string tags)
+                         std::string roll, int speed, int penetration,
+                         int requirement, int value, double weight,
+                         std::string tags) :
+    Weapon(name, description, damage, roll, speed, penetration, requirement,
+           value, weight, tags)
 {
-	this->name = name;
-	this->description = description;
-	this->damage = damage;
-	this->roll = roll;
-	this->speed = speed;
-	this->penetration = penetration;
-	this->requirement = requirement;
-	this->value = value;
-	this->weight = weight;
-	this->tags = tags;
 }
 
 MeleeWeapon::~MeleeWeapon()
 {
 }
 
-void MeleeWeapon::debug_print() const
+void MeleeWeapon::debugPrint() const
 {
-	std::cout << name << ": " << description << " DMG: " << damage << " + "
-			  << roll << "\nSPD: " << speed << " PEN: " << penetration<< " ST: "
-			  << requirement << " VAL: " << value << " WG: " << weight
-			  << "\nTAGS: " << tags << std::endl;
+    std::cout << m_name << ": " << m_description << " DMG: " << m_damage
+              << " + " << m_roll << "\nSPD: " << m_speed << " PEN: "
+              << m_penetration << " ST: " << m_requirement << " VAL: "
+              << m_value << " WG: " << m_weight << "\nTAGS: " << m_tags
+              << std::endl;
 }

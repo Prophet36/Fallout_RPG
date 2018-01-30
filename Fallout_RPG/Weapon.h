@@ -2,21 +2,24 @@
 
 #pragma once
 
-#include <string>	// std::string
+#include <string>   // std::string
 #include "Item.h"
 
 class Weapon : public Item
 {
 public:
-	Weapon();
-	~Weapon();
+    Weapon(std::string name, std::string description, int damage,
+           std::string roll, int speed, int penetration, int requirement,
+           int value, double weight, std::string tags);
+    ~Weapon();
 
-	virtual void debug_print() const = 0;
+    virtual void debugPrint() const = 0;
+
 protected:
-	std::string roll;
-	std::string tags;
-	int damage;
-	int speed;
-	int penetration;
-	int requirement;
+    std::string m_roll;
+    std::string m_tags;
+    int m_damage;
+    int m_speed;
+    int m_penetration;
+    int m_requirement;
 };

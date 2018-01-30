@@ -1,38 +1,28 @@
 #include "stdafx.h"
-#include <iostream>	// std::cout
 #include "RangedWeapon.h"
+#include <iostream>	// std::cout, std::endl
 
 RangedWeapon::RangedWeapon(std::string name, std::string description,
-						   int ammo_type, int capacity, int damage,
-						   std::string roll, int speed, int accuracy,
-						   int penetration, int requirement, int value,
-						   double weight, std::string tags)
+                           int ammo_type, int capacity, int damage,
+                           std::string roll, int speed, int accuracy,
+                           int penetration, int requirement, int value,
+                           double weight, std::string tags) :
+    Weapon(name, description, damage, roll, speed, penetration, requirement,
+           value, weight, tags), m_ammo_type(ammo_type), m_capacity(capacity),
+    m_accuracy(accuracy)
 {
-	this->name = name;
-	this->description = description;
-	this->ammo_type = ammo_type;
-	this->capacity = capacity;
-	this->damage = damage;
-	this->roll = roll;
-	this->speed = speed;
-	this->accuracy = accuracy;
-	this->penetration = penetration;
-	this->requirement = requirement;
-	this->value = value;
-	this->weight = weight;
-	this->tags = tags;
 }
 
 RangedWeapon::~RangedWeapon()
 {
 }
 
-void RangedWeapon::debug_print() const
+void RangedWeapon::debugPrint() const
 {
-	std::cout << name << ": " << description << " Has " << capacity
-			  << " " << ammo_type << " rounds.\nDMG: " << damage
-			  << " + " << roll << " SPD: " << speed << " ACC: "
-			  << accuracy << " PEN: " << penetration << " ST: "
-			  << requirement << " VAL: " << value << " WG: " << weight
-			  << "\nTAGS: " << tags << std::endl;
+    std::cout << m_name << ": " << m_description << " Has " << m_capacity << " "
+              << m_ammo_type << " rounds.\nDMG: " << m_damage << " + " << m_roll
+              << " SPD: " << m_speed << " ACC: " << m_accuracy << " PEN: "
+              << m_penetration << " ST: " << m_requirement << " VAL: "
+              << m_value << " WG: " << m_weight << "\nTAGS: " << m_tags
+              << std::endl;
 }

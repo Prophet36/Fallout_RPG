@@ -2,18 +2,19 @@
 
 #pragma once
 
-#include <string>	// std::string
+#include <string>   // std::string
 
 class Item
 {
 public:
-	Item();
-	~Item();
+    Item(std::string name, std::string description, int value, double weight);
+    ~Item();
 
-	virtual void debug_print() const = 0;
+    virtual void debugPrint() const = 0;
+
 protected:
-	std::string name;
-	std::string description;
-	int value;
-	double weight;
+    std::string m_name;
+    std::string m_description;
+    int m_value;
+    double m_weight;
 };

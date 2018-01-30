@@ -1,97 +1,213 @@
-// CONSUMABLE
+// CONSUMABLES
 
-// Code	Name	Description	Attribute	Magnitude	Duration	Value	Weight
+code:        item_stimpak
+name:        Stimpak
+description: Healing hypo. Heals up to 10 HP.
+attribute:   HP
+magnitude:   10
+duration:    0
+value:       20
+weight:      0.1
 
-item_stimpak	Stimpak	Healing hypo. Heals up to 10 HP.	HP	10	0	20	0.1
-item_superstimpak	Super Stimpak	Advanced healing hypo. Heals up to 25 HP.	HP	20	0	50	0.25
-item_medkit	Medkit	Basic medkit. Heals broken limbs and up to 5 HP.	HP	5	0	15	0.5
-item_food	Cooked Food	Cooked and edible foodstuff. Heals up to 2 HP.	HP	2	0	3	1.0
-item_dirtyfood	Raw Food	Raw, unprepared foodstuff. Adds 20 RADS.	RADS	20	0	1	1.0
-item_water	Purified Water	Purified water. Heals up to 2 HP.	HP	2	0	5	2.0
-item_dirtywater	Irradiated Water	Unpurified, irradiated water. Adds 20 RADS.	RADS	20	0	2	2.0
-item_jet	Jet	Chemical drug. Boosts Agility for 5 turns.	AG	2	5	10	0.1	
-item_psycho	Psycho	Military combat booster. Boosts Perception for 5 turns.	PE	2	5	10	0.1
-item_buffout	Buffout	Muscle enhancing drug. Boosts Strength for 5 turns.	ST	2	5	10	0.1
+code:        item_superstimpak
+name:        Super Stimpak
+description: Advanced healing hypo. Heals up to 25 HP.
+attribute:   HP
+magnitude:   25
+duration:    0
+value:       50
+weight:      0.25
 
-// Code	Name	Description	Attribute	Magnitude	Duration	Value	Weight
+code:        item_medkit
+name:        Medkit
+description: Basic medkit. Heals broken limbs and up to 5 HP.
+attribute:   HP
+magnitude:   5
+duration:    0
+value:       15
+weight:      0.5
+
+code:        item_food
+name:        Cooked Food
+description: Cooked and edible foodstuff. Heals up to 2 HP.
+attribute:   HP
+magnitude:   2
+duration:    0
+value:       3
+weight:      1.0
+
+code:        item_dirtyfood
+name:        Raw Food
+description: Raw, unprepared foodstuff. Adds 20 RADS.
+attribute:   RADS
+magnitude:   20
+duration:    0
+value:       1
+weight:      1.0
+
+code:        item_water
+name:        Purified Water
+description: Purified water. Heals up to 2 HP.
+attribute:   HP
+magnitude:   2
+duration:    0
+value:       5
+weight:      2.0
+
+code:        item_dirtywater
+name:        Irradiated Water
+description: Unpurified, irradiated water. Adds 20 RADS.
+attribute:   RADS
+magnitude:   20
+duration:    0
+value:       2
+weight:      2.0
+
+code:        item_jet
+name:        Jet
+description: Chemical drug. Boosts Agility for 5 turns.
+attribute:   AG
+magnitude:   2
+duration:    5
+value:       20
+weight:      0.1
+
+code:        item_psycho
+name:        Psycho
+description: Military combat booster. Boosts Perception for 5 turns.
+attribute:   PE
+magnitude:   2
+duration:    5
+value:       20
+weight:      0.1
+
+code:        item_buffout
+name:        Buffout
+description: Muscle enhancing drug. Boosts Strength for 5 turns.
+attribute:   ST
+magnitude:   2
+duration:    5
+value:       20
+weight:      0.1
 
 // RANGED WEAPONS
 
-// Code	Tags	Name	Description	Ammunition	Capacity	Damage	Roll	Speed	Accuracy	Penetration	Requirement	Value	Weight
+code:        weapon_pistol
+tags:        ranged, gun, short
+name:        Pistol
+description: Standard 9mm pistol, light and quick.
+ammunition:  9mm
+capacity:    15
+damage:      4
+roll:        d4
+speed:       10
+accuracy:    0
+penetration: 0
+requirement: 2
+value:       20
+weight:      1.0
 
-weapon_pistol	ranged, gun, short	Pistol	Standard 9mm pistol, light and quick.	9mm	15	4	d4	10	0	0	2	20	1.0
-weapon_militarypistol	ranged, gun, short	Military Pistol	Military issued pistol.	.45 ACP	10	5	d6	9	0	0	3	40	1.0
-weapon_heavypistol	ranged, gun, short	Heavy Pistol	Reliable and powerful pistol.	.45 ACP	5	6	d6	7	0	2	5	50	1.5
-weapon_autopistol	ranged, gun, short, burst	Machine Pistol	Fully automatic pistol. Enables burst-fire.	9mm	15	2	d6	12	0	0	3	50	1.5
-weapon_revolver	ranged, gun, short, revolver	Revolver	Six-shooting revolver.	.357	6	2	2d8	7	-1	0	4	25	1.5
-weapon_heavyrevolver	ranged, gun, short, revolver	Heavy Revolver	Powerful and heavy revolver.	.44	5	5	d10	6	-1	0	6	50	2.0
-weapon_smg	ranged, gun, long, burst	Sub-Machine Gun	Police issued sub-machine gun. Enables burst-fire.	9mm	30	5	d4	8	0	0	4	40	2.5
-weapon_heavysmg	ranged, gun, long	Heavy Sub-Machine Gun	Military issued sub-machine gun.	.45 ACP	20	6	d6	6	1	0	5	60	3.0
-weapon_shotgun	ranged, gun, long	Shotgun	Basic shotgun. High damage potential, but inaccurate.	20ga	5	0	4d4	2	-2	0	5	35	4.0
-weapon_pumpshotgun ranged, gun, long	Pump-Action Shotgun	Military issued shotgun. High damage potential.	20ga	5	2	4d4	3	-1	0	6	50	4.0,
-weapon_combatshotgun	ranged, gun, long	Combat Shotgun	Automatic military combat shotgun. High damage potential.	12ga	8	6	2d6	4	-1	0	7	80	4.5
-weapon_huntingrifle	ranged, gun, long	Hunting Rifle	Scoped rifle used for hunting.	.308	2	6	d4	4	2	0	5	50	4.5
-weapon_rifle	ranged, gun, long	Bolt-action rifle	Military issued bolt action rifle.	.308	5	6	d6	1	0	0	5	60	4.5
-weapon_carbine	ranged, gun, long	Military Carbine	Military issued carbine, equipped with reflex sight.	5.56mm	20	6	2d4	4	1	0	5	100	4.0
-weapon_assaultrifle	ranged, gun, long, burst	Assault Rifle	Fully automatic assault rifle. Enables burst-fire.	5.56mm	30	4	2d6	5	0	0	6	120	4.5
-weapon_battlerifle	ranged, gun, long	Battle Rifle	High-powered battle rifle.	.308	20	8	d10	3	0	3	6	120	5.0
-weapon_sniperrifle	ranged, gun, long	Sniper Rifle	High-powered sniper rifle. Very accurate.	.308	5	10	d10	-2	3	3	7	150	6.0
-weapon_antimaterielrifle	ranged, gun, long	Anti-Materiel Rifle	Military issue anti-materiel sniper rifle.	.50 BMG	5	10	2d6	-5	1	10	8	300	7.0
-weapon_laserpistol	ranged, energy, short, laser	Laser Pistol	Standard laser pistol.	EC	50	2	d6	14	1	0	1	25	0.5
-weapon_plasmapistol	ranged, energy, short, plasma	Plasma Pistol	Standard military plasma pistol.	EC	25	3	d6	10	0	1	2	30	1.0
-weapon_magpistol	ranged, energy, short, mag	Mag Pistol	Pistol shooting metal pellets with extreme speed.	EC	10	2	2d4	9	0	2	2	40	1.0
-weapon_laserrifle	ranged, energy, long, laser	Laser Rifle	Military issued laser rifle.	EC	50	6	d6	8	1	0	3	65	1.5
-weapon_plasmarifle	ranged, energy, long, plasma	Plasma Rifle	Military issued plasma rifle.	EC	25	8	d6	7	0	1	3	70	2.0
-weapon_magrifle	ranged, long, mag	Mag Rifle	Combat magnetic rifle.	EC	20	4	d10	6	0	3	3	90	2.0
-weapon_laserscatter	ranged, energy, long, laser	Scatter Laser	Energy weapon projecting multiple laser beams.	EC	10	2	4d4	5	0	0	4	100	2.5
-weapon_autolaser	ranged, energy, long, laser, burst	Assault Laser	Automatic laser rifle. Enables burst-fire.	EC	60	6	d10	6	1	0	4	115	2.5
-weapon_plasmacarbine	ranged, energy, long, plasma	Plasma Carbine	Military issued combat plasma carbine.	EC	20	4	2d6	4	0	1	4	125	2.5
-weapon_plasmacannon	ranged, energy, long, plasma	Plasma Cannon	Portable plasma cannon. High damage potential.	EC	5	4	4d4	3	0	4	5	150	3.5
-weapon_assaultmag	ranged, energy, long, mag, burst	Assault Mag	Automatic combat mag rifle. Enables burst-fire.	EC	15	2	2d6	6	0	3	4	180	3.0
-weapon_plasmalauncher	ranged, energy, long, plasma	Plasma Launcher	Portable plasma launcher used by Powered Infantry.	EC	5	2	2d10	2	0	4	6	200	5.0
-weapon_gaussrifle	ranged, energy, long, mag	Gauss Rifle	Magnetic-based energy-kinetic weapon.	EC	5	10	d10	3	1	5	5	250	4.0
-weapon_focuslaser	ranged, energy, long, laser	Focus Laser	Sniper-equivalent laser rifle.	EC	5	8	2d6	1	3	0	5	260	4.0
-weapon_plasmadisintegrator	ranged, energy, long, plasma	Plasma Disintegrator	High-tech plasma weapon. High damage potential.	EC	5	0	4d6	-2	-1	10	5	350	5.0
-
-// Code	Tags	Name	Description	Ammunition	Capacity	Damage	Roll	Speed	Accuracy	Penetration	Requirement	Value	Weight
+weapon_militarypistol   ranged, gun, short  Military Pistol Military issued pistol. .45 ACP 10  5   d6  9   0   0   3   40  1.0
+weapon_heavypistol  ranged, gun, short  Heavy Pistol    Reliable and powerful pistol.   .45 ACP 5   6   d6  7   0   2   5   50  1.5
+weapon_autopistol   ranged, gun, short, burst   Machine Pistol  Fully automatic pistol. Enables burst-fire. 9mm 15  2   d6  12  0   0   3   50  1.5
+weapon_revolver ranged, gun, short, revolver    Revolver    Six-shooting revolver.  .357    6   2   2d8 7   -1  0   4   25  1.5
+weapon_heavyrevolver    ranged, gun, short, revolver    Heavy Revolver  Powerful and heavy revolver.    .44 5   5   d10 6   -1  0   6   50  2.0
+weapon_smg  ranged, gun, long, burst    Sub-Machine Gun Police issued sub-machine gun. Enables burst-fire.  9mm 30  5   d4  8   0   0   4   40  2.5
+weapon_heavysmg ranged, gun, long   Heavy Sub-Machine Gun   Military issued sub-machine gun.    .45 ACP 20  6   d6  6   1   0   5   60  3.0
+weapon_shotgun  ranged, gun, long   Shotgun Basic shotgun. High damage potential, but inaccurate.   20ga    5   0   4d4 2   -2  0   5   35  4.0
+weapon_pumpshotgun ranged, gun, long    Pump-Action Shotgun Military issued shotgun. High damage potential. 20ga    5   2   4d4 3   -1  0   6   50  4.0,
+weapon_combatshotgun    ranged, gun, long   Combat Shotgun  Automatic military combat shotgun. High damage potential.   12ga    8   6   2d6 4   -1  0   7   80  4.5
+weapon_huntingrifle ranged, gun, long   Hunting Rifle   Scoped rifle used for hunting.  .308    2   6   d4  4   2   0   5   50  4.5
+weapon_rifle    ranged, gun, long   Bolt-action rifle   Military issued bolt action rifle.  .308    5   6   d6  1   0   0   5   60  4.5
+weapon_carbine  ranged, gun, long   Military Carbine    Military issued carbine, equipped with reflex sight.    5.56mm  20  6   2d4 4   1   0   5   100 4.0
+weapon_assaultrifle ranged, gun, long, burst    Assault Rifle   Fully automatic assault rifle. Enables burst-fire.  5.56mm  30  4   2d6 5   0   0   6   120 4.5
+weapon_battlerifle  ranged, gun, long   Battle Rifle    High-powered battle rifle.  .308    20  8   d10 3   0   3   6   120 5.0
+weapon_sniperrifle  ranged, gun, long   Sniper Rifle    High-powered sniper rifle. Very accurate.   .308    5   10  d10 -2  3   3   7   150 6.0
+weapon_antimaterielrifle    ranged, gun, long   Anti-Materiel Rifle Military issue anti-materiel sniper rifle.  .50 BMG 5   10  2d6 -5  1   10  8   300 7.0
+weapon_laserpistol  ranged, energy, short, laser    Laser Pistol    Standard laser pistol.  EC  50  2   d6  14  1   0   1   25  0.5
+weapon_plasmapistol ranged, energy, short, plasma   Plasma Pistol   Standard military plasma pistol.    EC  25  3   d6  10  0   1   2   30  1.0
+weapon_magpistol    ranged, energy, short, mag  Mag Pistol  Pistol shooting metal pellets with extreme speed.   EC  10  2   2d4 9   0   2   2   40  1.0
+weapon_laserrifle   ranged, energy, long, laser Laser Rifle Military issued laser rifle.    EC  50  6   d6  8   1   0   3   65  1.5
+weapon_plasmarifle  ranged, energy, long, plasma    Plasma Rifle    Military issued plasma rifle.   EC  25  8   d6  7   0   1   3   70  2.0
+weapon_magrifle ranged, long, mag   Mag Rifle   Combat magnetic rifle.  EC  20  4   d10 6   0   3   3   90  2.0
+weapon_laserscatter ranged, energy, long, laser Scatter Laser   Energy weapon projecting multiple laser beams.  EC  10  2   4d4 5   0   0   4   100 2.5
+weapon_autolaser    ranged, energy, long, laser, burst  Assault Laser   Automatic laser rifle. Enables burst-fire.  EC  60  6   d10 6   1   0   4   115 2.5
+weapon_plasmacarbine    ranged, energy, long, plasma    Plasma Carbine  Military issued combat plasma carbine.  EC  20  4   2d6 4   0   1   4   125 2.5
+weapon_plasmacannon ranged, energy, long, plasma    Plasma Cannon   Portable plasma cannon. High damage potential.  EC  5   4   4d4 3   0   4   5   150 3.5
+weapon_assaultmag   ranged, energy, long, mag, burst    Assault Mag Automatic combat mag rifle. Enables burst-fire. EC  15  2   2d6 6   0   3   4   180 3.0
+weapon_plasmalauncher   ranged, energy, long, plasma    Plasma Launcher Portable plasma launcher used by Powered Infantry.  EC  5   2   2d10    2   0   4   6   200 5.0
+weapon_gaussrifle   ranged, energy, long, mag   Gauss Rifle Magnetic-based energy-kinetic weapon.   EC  5   10  d10 3   1   5   5   250 4.0
+weapon_focuslaser   ranged, energy, long, laser Focus Laser Sniper-equivalent laser rifle.  EC  5   8   2d6 1   3   0   5   260 4.0
+weapon_plasmadisintegrator  ranged, energy, long, plasma    Plasma Disintegrator    High-tech plasma weapon. High damage potential. EC  5   0   4d6 -2  -1  10  5   350 5.0
 
 // MELEE WEAPONS
 
-// Code	Tags	Name	Description	Damage	Roll	Speed	Penetration	Requirement	Value	Weight
+code:        weapon_fists
+tags:        melee, blunt
+name:        Unarmed
+description: Your fists.
+damage:      0
+roll:        d4
+speed:       6
+penetration: 0
+requirement: 1
+value:       0
+weight:      0.0
 
-weapon_fists	melee, blunt	Unarmed	Your fists.	0	d4	6	0	1	0	0.0
-weapon_knife	melee, blade	Knife	Sharp knife. Very fast.	0	d4	14	0	1	5	0.2
-weapon_combatknife	melee, blade	Combat Knife	Military issue combat knife.	1	d4	13	0	1	10	0.2
-weapon_brassknuckles	melee, blunt	Brass Knuckles	Metal shaped to fit around the knuckles.	0	d4	10	1	2	10	0.1
-weapon_club	melee, blunt	Club	Basic wooden club. Good at bashing heads.	0	d6	8	1	3	5	1.5
-weapon_baton	melee, blunt	Police Baton	Police baton used to deal with riots.	3	d4	9	1	3	15	1.0
-weapon_spear	melee, blade	Spear	Spear with very sharp point.	0	2d4	6	1	4	30	2.0
-weapon_sledgehammer	melee, blunt	Sledgehammer	Construction worker's tool.	4	d6	6	2	5	50	3.0
-weapon_heavysledge	melee, blunt	Heavy Sledgehammer	Very heavy sledgehammer.	2	2d6	4	2	6	80	8.0
-weapon_machete	melee, blade	Machete	Sharp machete. High damage potential.	2	d10	7	0	4	80	1.5
-weapon_axe	melee, blade	Fire Axe	Firefighter's sturdy axe.	6	d6	5	0	5	100	2.5
-weapon_protonaxe	melee, blade	Proton Axe	Combat axe used by Powered Infantry.	4	d10	6	0	6	120	4.0
-weapon_maul	melee, blunt	Combat Maul	Extremely heavy and damaging maul.	2	4d4	3	3	8	150	8.5
-weapon_kineticmaul	melee, blunt	Kinetic Maul	High-tech combat maul with kinetic storage device.	2	2d10	0	5	8	250	10.0
+code:        weapon_knife
+tags:        melee, sharp
+name:        Knife
+description: Sharp knife. Very fast.
+damage:      0
+roll:        d4
+speed:       14
+penetration: 0
+requirement: 1
+value:       5
+weight:      0.2
 
-// Code	Tags	Name	Description	Damage	Roll	Speed	Penetration	Requirement	Value	Weight
+weapon_fists    melee, blunt    Unarmed Your fists. 0   d4  6   0   1   0   0.0
+weapon_knife    melee, blade    Knife   Sharp knife. Very fast. 0   d4  14  0   1   5   0.2
+weapon_combatknife  melee, blade    Combat Knife    Military issue combat knife.    1   d4  13  0   1   10  0.2
+weapon_brassknuckles    melee, blunt    Brass Knuckles  Metal shaped to fit around the knuckles.    0   d4  10  1   2   10  0.1
+weapon_club melee, blunt    Club    Basic wooden club. Good at bashing heads.   0   d6  8   1   3   5   1.5
+weapon_baton    melee, blunt    Police Baton    Police baton used to deal with riots.   3   d4  9   1   3   15  1.0
+weapon_spear    melee, blade    Spear   Spear with a very sharp point.  0   2d4 6   1   4   30  2.0
+weapon_sledgehammer melee, blunt    Sledgehammer    Construction worker's tool. 4   d6  6   2   5   50  3.0
+weapon_heavysledge  melee, blunt    Heavy Sledgehammer  Very heavy sledgehammer.    2   2d6 4   2   6   80  8.0
+weapon_machete  melee, blade    Machete Sharp machete. High damage potential.   2   d10 7   0   4   80  1.5
+weapon_axe  melee, blade    Fire Axe    Firefighter's sturdy axe.   6   d6  5   0   5   100 2.5
+weapon_protonaxe    melee, blade    Proton Axe  Combat axe used by Powered Infantry.    4   d10 6   0   6   120 4.0
+weapon_maul melee, blunt    Combat Maul Extremely heavy and damaging maul.  2   4d4 3   3   8   150 8.5
+weapon_kineticmaul  melee, blunt    Kinetic Maul    High-tech combat maul with kinetic storage device.  2   2d10    0   5   8   250 10.0
 
-// ARMOR
+// ARMORS
 
-// Code	Name	Description	Reduction	Evasion	Protection	Value	Weight
+code:        armor_plain
+name:        Plain Clothing
+description: Plain clothes. Unremarkable.
+reduction:   0
+evasion:     2
+protection:  0
+value:       2
+weight:      1.0
 
-armor_plain	Plain Clothing	Plain clothes.	0	2	0	2	1.0
-armor_bunker	Bunker Outfit	Outfit from fallout bunker.	0	2	20	10	3.0
-armor_leather	Leather Armor	Sturdy leather armor.	1	1	0	20	5.0
-armor_wasteland	Wasteland Armor	Hand made wasteland armor, protects from elements.	2	0	30	30	5.5
-armor_metal	Metal armor	Metal armor, heavy and durable.	5	-3	0	50	10.0
-armor_combat	Combat Armor	Military combat armor.	4	-1	20	100	7.5
-armor_alloy	Alloy Armor	Advanced military armor made from durable alloys.	6	-2	0	150	8.0
-armor_carbon	Carbon-Fiber Armor	Advanced special forces armor, very light yet durable.	6	0	0	250	4.0
-armor_power	Powered Armor	High-tech powered metal armor.	10	-3	50	500	10.0
-armor_alien	Alien Armor	Human adapted Entirian armor.	15	-5	100	1000	18.0
-armor_quicksilver	Quicksilver Armor	Advanced Entirian armor, covers whole body.	12	0	100	2000	2.0
+code:        
+name:        
+description: 
+reduction:   
+evasion:     
+protection:  
+value:       
+weight:      
 
-// Code	Name	Description	Reduction	Evasion	Protection	Value	Weight
-
-// SKILLS: 1. MELEE (AG) 2. GUNS (PE) 3. ENERGY (PE) 4. HEALING (IN) 5. REPAIR (IN) 6. HIDE (AG) 7. HACK (IN) 8. SURVIVAL (EN)
+armor_bunker    Bunker Outfit   Outfit from fallout bunker. 0   2   20  10  3.0
+armor_leather   Leather Armor   Sturdy leather armor.   1   1   0   20  5.0
+armor_wasteland Wasteland Armor Hand made wasteland armor, protects from elements.  2   0   30  30  5.5
+armor_metal Metal armor Metal armor, heavy and durable. 5   -3  0   50  10.0
+armor_combat    Combat Armor    Military combat armor.  4   -1  20  100 7.5
+armor_alloy Alloy Armor Advanced military armor made from durable alloys.   6   -2  0   150 8.0
+armor_carbon    Carbon-Fiber Armor  Advanced special forces armor, very light yet durable.  6   0   0   250 4.0
+armor_power Powered Armor   High-tech powered metal armor.  10  -3  50  500 10.0
+armor_alien Alien Armor Human adapted Entirian armor.   15  -5  100 1000    18.0
+armor_quicksilver   Quicksilver Armor   Advanced Entirian armor, covers whole body. 12  0   100 2000    2.0

@@ -7,8 +7,9 @@
 class Player : public Human
 {
 public:
-	Player();
-	~Player();
+    Player();
+    ~Player();
+
 private:
-	int m_experience;
+    int m_experience;
 };
