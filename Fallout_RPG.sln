@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fallout_RPG", "Fallout_RPG\Fallout_RPG.vcxproj", "{5A13F881-4DFD-4EBB-83D1-A2CC04040B95}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{969E372A-079D-442D-8210-FDBC7FA34B9B}"
+	ProjectSection(SolutionItems) = preProject
+		Fallout_RPG\item_id.txt = Fallout_RPG\item_id.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

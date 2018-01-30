@@ -113,7 +113,7 @@ Item * FItem::createNewRangedWeapon(int item_position)
     std::string tags = File::getString(w_file);
     std::string name = File::getString(w_file);
     std::string description = File::getString(w_file);
-    std::string ammo_type = File::getString(w_file);
+    int ammo_type = Inventory::checkAmmoType(File::getString(w_file));
     int capacity = File::getInt(w_file);
     int damage = File::getInt(w_file);
     std::string roll = File::getString(w_file);
@@ -126,10 +126,9 @@ Item * FItem::createNewRangedWeapon(int item_position)
 
     File::closeFile(w_file);
 
-    return new RangedWeapon(name, description,
-                            Inventory::checkAmmoType(ammo_type), capacity,
-                            damage, roll, speed, accuracy, penetration,
-                            requirement, value, weight, tags);
+    return new RangedWeapon(name, description, ammo_type, capacity, damage,
+                            roll, speed, accuracy, penetration, requirement,
+                            value, weight, tags);
 }
 
 Item * FItem::createNewArmor(int item_position)
