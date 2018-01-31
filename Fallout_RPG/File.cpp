@@ -1,93 +1,101 @@
 #include "stdafx.h"
 #include "File.h"
 #include "Inventory.h"
-#include <iostream> // std::cout
+#include <iostream> // std::cout, std::cerr
 #include <fstream>  // std::fstream
 #include <string>   // std::string, std::getline
+#include <vector>   // std::vector
+
+File * File::m_instance = nullptr;
 
 File::File()
 {
+    m_working_file.open(ITEMS);
+    std::cout << "DEBUG: ----- File opened! -----\n";
 }
 
-int File::findItem(std::string item_id)
+File * File::open()
 {
-    std::string buffer_s;
+    if (!m_instance)
+        m_instance = new File();
+    return m_instance;
+}
 
-    std::fstream file_items(ITEMS);
-    if (file_items.is_open())
+bool File::findItem(std::string item_id)
+{
+    std::string buffer;
+
+    if (m_working_file.is_open())
     {
         if (Inventory::checkItemPrefix(item_id) != -1)
         {
-            while ((file_items >> buffer_s))
+            while ((m_working_file >> buffer))
             {
-                if (buffer_s == item_id)
-                {
-                    int temp = (int)file_items.tellg();
-                    file_items.close();
-                    return temp;
-                }
+                if (buffer == item_id)
+                    return true;
             }
         }
-        std::cout << "ERROR: Incorrect item!\n";
+        std::cerr << "ERROR: Incorrect item!\n";
     }
     else
     {
-        std::cout << "ERROR: Can't open file!\n";
+        std::cerr << "ERROR: Can't open file!\n";
     }
-    file_items.close();
-    return 0;
+    return false;
 }
 
-std::fstream File::openFileAt(int position, std::string file_type)
-{
-    std::fstream working_file(file_type);
-    working_file.seekg(position);
-    return working_file;
-}
+//std::fstream File::openFileAt(int position, std::string file_type)
+//{
+//    std::fstream working_file(file_type);
+//    working_file.seekg(position);
+//    return working_file;
+//}
 
-void File::setReadPosition(std::fstream & working_file)
+void File::setReadPosition()
 {
-    while (working_file.get() != ' ')
+    while (m_working_file.get() != ' ')
         continue;
-    while (working_file.get() == ' ')
+    while (m_working_file.get() == ' ')
         continue;
 
-    working_file.seekg((int)working_file.tellg() - 1);
+    m_working_file.seekg((int)m_working_file.tellg() - 1);
 }
 
-std::string File::getString(std::fstream & working_file)
+std::string File::getString()
 {
-    setReadPosition(working_file);
+    setReadPosition();
     std::string temp;
-    std::getline(working_file, temp);
+    std::getline(m_working_file, temp);
     return temp;
 }
 
-int File::getInt(std::fstream & working_file)
+int File::getInt()
 {
-    setReadPosition(working_file);
+    setReadPosition();
     int temp;
-    working_file >> temp;
+    m_working_file >> temp;
     return temp;
 }
 
-double File::getDouble(std::fstream & working_file)
+double File::getDouble()
 {
-    setReadPosition(working_file);
+    setReadPosition();
     double temp;
-    working_file >> temp;
+    m_working_file >> temp;
     return temp;
 }
 
-void File::closeFile(std::fstream & working_file)
+void File::closeFile()
 {
-    if (working_file.is_open())
+    if (m_working_file.is_open())
     {
-        std::cout << "DEBUG: ----- File was opened, closing it now! -----\n";
-        working_file.close();
+        m_working_file.close();
+        delete m_instance;
+        m_instance = nullptr;
     }
 }
 
 File::~File()
 {
+    std::cout << "DEBUG: ----- File closed! -----\n";
 }

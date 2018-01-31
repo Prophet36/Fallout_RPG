@@ -8,16 +8,16 @@
 class FItem
 {
 public:
-    static Item * createNewItem(std::string item_id, int item_position);
+    static Item * createNewItem(std::string item_id);
 
 private:
     FItem();
     ~FItem();
 
-    static Item * createNewConsumable(int item_position);
-    static Item * createNewWeapon(int item_position);
-    static Item * createNewMeleeWeapon(int item_position);
-    static Item * createNewRangedWeapon(int item_position);
-    static Item * createNewAmmo(int item_position);
-    static Item * createNewArmor(int item_position);
+    static Item * createNewConsumable();
+    static Item * createNewWeapon();
+    static Item * createNewMeleeWeapon(std::string tags);
+    static Item * createNewRangedWeapon(std::string tags);
+    static Item * createNewAmmo();
+    static Item * createNewArmor();
 };

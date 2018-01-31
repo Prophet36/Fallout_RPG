@@ -17,25 +17,25 @@ FItem::FItem()
 {
 }
 
-Item * FItem::createNewItem(std::string item_id, int item_position)
+Item * FItem::createNewItem(std::string item_id)
 {
     switch (Inventory::checkItemPrefix(item_id))
     {
         case Inventory::CONSUMABLE:
         {
-            return createNewConsumable(item_position);
+            return createNewConsumable();
         }
         case Inventory::WEAPON:
         {
-            return createNewWeapon(item_position);
+            return createNewWeapon();
         }
         case Inventory::AMMO:
         {
-            return createNewAmmo(item_position);
+            return createNewAmmo();
         }
         case Inventory::ARMOR:
         {
-            return createNewArmor(item_position);
+            return createNewArmor();
         }
         default:
         {
@@ -46,39 +46,32 @@ Item * FItem::createNewItem(std::string item_id, int item_position)
 }
 
 
-Item * FItem::createNewConsumable(int item_position)
+Item * FItem::createNewConsumable()
 {
-    std::fstream w_file = File::openFileAt(item_position, ITEMS);
-
-    std::string name = File::getString(w_file);
-    std::string description = File::getString(w_file);
-    int attribute = Inventory::checkConsumableBonus(File::getString(w_file));
-    int magnitude = File::getInt(w_file);
-    int duration = File::getInt(w_file);
-    int value = File::getInt(w_file);
-    double weight = File::getDouble(w_file);
-
-    File::closeFile(w_file);
+    std::string name = File::open()->getString();
+    std::string description = File::open()->getString();
+    int attribute = Inventory::checkConsumableBonus(File::open()->getString());
+    int magnitude = File::open()->getInt();
+    int duration = File::open()->getInt();
+    int value = File::open()->getInt();
+    double weight = File::open()->getDouble();
 
     return new Consumable(name, description, attribute, magnitude, duration,
                           value, weight);
 }
 
-Item * FItem::createNewWeapon(int item_position)
+Item * FItem::createNewWeapon()
 {
-    std::fstream w_file = File::openFileAt(item_position, ITEMS);
-
-    int type = Inventory::checkWeaponType(File::getString(w_file));
-    File::closeFile(w_file);
-    switch (type)
+    std::string tags = File::open()->getString();
+    switch (Inventory::checkWeaponType(tags))
     {
         case Inventory::MELEE:
         {
-            return createNewMeleeWeapon(item_position);
+            return createNewMeleeWeapon(tags);
         }
         case Inventory::RANGED:
         {
-            return createNewRangedWeapon(item_position);
+            return createNewRangedWeapon(tags);
         }
         default:
         {
@@ -88,82 +81,66 @@ Item * FItem::createNewWeapon(int item_position)
     }
 }
 
-Item * FItem::createNewMeleeWeapon(int item_position)
+Item * FItem::createNewMeleeWeapon(std::string tags)
 {
-    std::fstream w_file = File::openFileAt(item_position, ITEMS);
-
-    std::string tags = File::getString(w_file);
-    std::string name = File::getString(w_file);
-    std::string description = File::getString(w_file);
-    int damage = File::getInt(w_file);
-    std::string roll = File::getString(w_file);
-    int speed = File::getInt(w_file);
-    int penetration = File::getInt(w_file);
-    int requirement = File::getInt(w_file);
-    int value = File::getInt(w_file);
-    double weight = File::getDouble(w_file);
-
-    File::closeFile(w_file);
+    std::string name = File::open()->getString();
+    std::string description = File::open()->getString();
+    int damage = File::open()->getInt();
+    std::string roll = File::open()->getString();
+    int speed = File::open()->getInt();
+    int penetration = File::open()->getInt();
+    int requirement = File::open()->getInt();
+    int value = File::open()->getInt();
+    double weight = File::open()->getDouble();
 
     return new MeleeWeapon(name, description, damage, roll, speed, penetration,
                            requirement, value, weight, tags);
 }
 
-Item * FItem::createNewRangedWeapon(int item_position)
+Item * FItem::createNewRangedWeapon(std::string tags)
 {
-    std::fstream w_file = File::openFileAt(item_position, ITEMS);
-
-    std::string tags = File::getString(w_file);
-    std::string name = File::getString(w_file);
-    std::string description = File::getString(w_file);
-    int ammo_type = Inventory::checkAmmoType(File::getString(w_file));
-    int capacity = File::getInt(w_file);
-    int damage = File::getInt(w_file);
-    std::string roll = File::getString(w_file);
-    int speed = File::getInt(w_file);
-    int accuracy = File::getInt(w_file);
-    int penetration = File::getInt(w_file);
-    int requirement = File::getInt(w_file);
-    int value = File::getInt(w_file);
-    double weight = File::getDouble(w_file);
-
-    File::closeFile(w_file);
+    std::string name = File::open()->getString();
+    std::string description = File::open()->getString();
+    int ammo_type = Inventory::checkAmmoType(File::open()->getString());
+    int capacity = File::open()->getInt();
+    int damage = File::open()->getInt();
+    std::string roll = File::open()->getString();
+    int speed = File::open()->getInt();
+    int accuracy = File::open()->getInt();
+    int penetration = File::open()->getInt();
+    int requirement = File::open()->getInt();
+    int value = File::open()->getInt();
+    double weight = File::open()->getDouble();
 
     return new RangedWeapon(name, description, ammo_type, capacity, damage,
                             roll, speed, accuracy, penetration, requirement,
                             value, weight, tags);
 }
 
-Item * FItem::createNewAmmo(int item_position)
+Item * FItem::createNewAmmo()
 {
-    std::fstream w_file = File::openFileAt(item_position, ITEMS);
-
-    std::string name = File::getString(w_file);
-    std::string description = File::getString(w_file);
-    int stack = File::getInt(w_file);
+    std::string name = File::open()->getString();
+    std::string description = File::open()->getString();
+    int stack = File::open()->getInt();
 
     std::cout << "How many ammunition you want to add? ";
     int current_count = Input::getInt();
 
-    int value = File::getInt(w_file);
-    double weight = File::getDouble(w_file);
+    int value = File::open()->getInt();
+    double weight = File::open()->getDouble();
 
     return new Ammo(name, description, stack, current_count, value, weight);
 }
 
-Item * FItem::createNewArmor(int item_position)
+Item * FItem::createNewArmor()
 {
-    std::fstream w_file = File::openFileAt(item_position, ITEMS);
-
-    std::string name = File::getString(w_file);
-    std::string description = File::getString(w_file);
-    int reduction = File::getInt(w_file);
-    int evasion = File::getInt(w_file);
-    int protection = File::getInt(w_file);
-    int value = File::getInt(w_file);
-    double weight = File::getDouble(w_file);
-
-    File::closeFile(w_file);
+    std::string name = File::open()->getString();
+    std::string description = File::open()->getString();
+    int reduction = File::open()->getInt();
+    int evasion = File::open()->getInt();
+    int protection = File::open()->getInt();
+    int value = File::open()->getInt();
+    double weight = File::open()->getDouble();
 
     return new Armor(name, description, reduction, evasion, protection,
                      value, weight);

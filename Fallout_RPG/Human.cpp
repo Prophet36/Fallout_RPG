@@ -23,12 +23,13 @@ void Human::showInventory() const
 
 void Human::addItemPrompt(std::string item_id)
 {
-    if(!checkInventorySpace())
-        deleteItemPrompt();
-
-    if (int item_position = File::findItem(item_id))
+    if (checkInventorySpace())
     {
-        inventory.push_back(FItem::createNewItem(item_id, item_position));
+        if (File::open()->findItem(item_id))
+        {
+            inventory.push_back(FItem::createNewItem(item_id));
+        }
+        File::open()->closeFile();
     }
 }
 
@@ -67,4 +68,9 @@ bool Human::checkInventorySpace(bool adding_item) const
 
 Human::~Human()
 {
+    while (!inventory.empty())
+    {
+        delete inventory.back();
+        inventory.pop_back();
+    }
 }
