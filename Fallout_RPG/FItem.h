@@ -18,5 +18,6 @@ private:
     static Item * createNewWeapon(int item_position);
     static Item * createNewMeleeWeapon(int item_position);
     static Item * createNewRangedWeapon(int item_position);
+    static Item * createNewAmmo(int item_position);
     static Item * createNewArmor(int item_position);
 };

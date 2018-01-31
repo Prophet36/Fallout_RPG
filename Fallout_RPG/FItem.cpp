@@ -1,8 +1,10 @@
 #include "stdafx.h"
+#include "Ammo.h"
 #include "Armor.h"
 #include "Consumable.h"
 #include "File.h"
 #include "FItem.h"
+#include "Input.h"
 #include "Inventory.h"
 #include "Item.h"
 #include "MeleeWeapon.h"
@@ -22,17 +24,18 @@ Item * FItem::createNewItem(std::string item_id, int item_position)
         case Inventory::CONSUMABLE:
         {
             return createNewConsumable(item_position);
-            break;
         }
         case Inventory::WEAPON:
         {
             return createNewWeapon(item_position);
-            break;
+        }
+        case Inventory::AMMO:
+        {
+            return createNewAmmo(item_position);
         }
         case Inventory::ARMOR:
         {
             return createNewArmor(item_position);
-            break;
         }
         default:
         {
@@ -129,6 +132,23 @@ Item * FItem::createNewRangedWeapon(int item_position)
     return new RangedWeapon(name, description, ammo_type, capacity, damage,
                             roll, speed, accuracy, penetration, requirement,
                             value, weight, tags);
+}
+
+Item * FItem::createNewAmmo(int item_position)
+{
+    std::fstream w_file = File::openFileAt(item_position, ITEMS);
+
+    std::string name = File::getString(w_file);
+    std::string description = File::getString(w_file);
+    int stack = File::getInt(w_file);
+
+    std::cout << "How many ammunition you want to add? ";
+    int current_count = Input::getInt();
+
+    int value = File::getInt(w_file);
+    double weight = File::getDouble(w_file);
+
+    return new Ammo(name, description, stack, current_count, value, weight);
 }
 
 Item * FItem::createNewArmor(int item_position)

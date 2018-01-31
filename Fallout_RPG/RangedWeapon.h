@@ -18,6 +18,7 @@ public:
 
 private:
     int m_capacity;
+    int m_current_ammo;
     int m_ammo_type;
     int m_accuracy;
 };

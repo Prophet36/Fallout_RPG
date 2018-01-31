@@ -90,505 +90,6 @@ duration:    5
 value:       20
 weight:      0.1
 
-// RANGED WEAPONS - GUNS
-
-code:        weapon_pistol
-tags:        ranged, gun, short
-name:        Pistol
-description: Standard 9mm pistol, light and quick.
-ammunition:  9mm
-capacity:    15
-damage:      4
-roll:        d4
-speed:       10
-accuracy:    0
-penetration: 0
-requirement: 2
-value:       20
-weight:      1.0
-
-code:        weapon_militarypistol
-tags:        ranged, gun, short
-name:        Military Pistol
-description: Military issued pistol.
-ammunition:  .45 ACP
-capacity:    10
-damage:      5
-roll:        d6
-speed:       9
-accuracy:    0
-penetration: 0
-requirement: 3
-value:       40
-weight:      1.0
-
-code:        weapon_heavypistol
-tags:        ranged, gun, short
-name:        Heavy Pistol
-description: Reliable and powerful pistol.
-ammunition:  .45 ACP
-capacity:    5
-damage:      6
-roll:        d6
-speed:       7
-accuracy:    0
-penetration: 2
-requirement: 5
-value:       50
-weight:      1.5
-
-code:        weapon_autopistol
-tags:        ranged, gun, short, burst
-name:        Machine Pistol
-description: Fully automatic pistol. Enables burst-fire.
-ammunition:  9mm
-capacity:    15
-damage:      2
-roll:        d6
-speed:       12
-accuracy:    0
-penetration: 0
-requirement: 3
-value:       50
-weight:      1.5
-
-code:        weapon_revolver
-tags:        ranged, gun, short, revolver
-name:        Revolver
-description: Six-shooter revolver.
-ammunition:  .357
-capacity:    6
-damage:      2
-roll:        2d8
-speed:       7
-accuracy:    -1
-penetration: 0
-requirement: 4
-value:       30
-weight:      1.5
-
-code:        weapon_heavyrevolver
-tags:        ranged, gun, short, revolver
-name:        Heavy Revolver
-description: Powerful heavy-caliber revolver.
-ammunition:  .44
-capacity:    5
-damage:      5
-roll:        d10
-speed:       6
-accuracy:    -1
-penetration: 0
-requirement: 6
-value:       50
-weight:      2.0
-
-code:        weapon_smg
-tags:        ranged, gun, long, burst
-name:        Sub-Machine Gun
-description: Police issued sub-machine gun. Enables burst-fire.
-ammunition:  9mm
-capacity:    30
-damage:      5
-roll:        d4
-speed:       8
-accuracy:    0
-penetration: 0
-requirement: 4
-value:       40
-weight:      2.5
-
-code:        weapon_heavysmg
-tags:        ranged, gun, long
-name:        Heavy Sub-Machine Gun
-description: Military issued sub-machine gun.
-ammunition:  .45 ACP
-capacity:    20
-damage:      6
-roll:        d6
-speed:       6
-accuracy:    1
-penetration: 0
-requirement: 5
-value:       60
-weight:      3.0
-
-code:        weapon_shotgun
-tags:        ranged, gun, long
-name:        Shotgun
-description: Basic shotgun. High damage potential, but inaccurate.
-ammunition:  20ga
-capacity:    5
-damage:      0
-roll:        4d4
-speed:       2
-accuracy:    -2
-penetration: 0
-requirement: 5
-value:       35
-weight:      4.0
-
-code:        weapon_pumpshotgun
-tags:        ranged, gun, long
-name:        Pump-Action Shotgun
-description: Military issued shotgun. High damage potential.
-ammunition:  20ga
-capacity:    5
-damage:      2
-roll:        4d4
-speed:       3
-accuracy:    -1
-penetration: 0
-requirement: 6
-value:       50
-weight:      4.0
-
-code:        weapon_combatshotgun
-tags:        ranged, gun, long
-name:        Combat Shotgun
-description: Automatic military combat shotgun. High damage potential.
-ammunition:  12ga
-capacity:    10
-damage:      6
-roll:        2d6
-speed:       4
-accuracy:    -1
-penetration: 0
-requirement: 7
-value:       80
-weight:      4.5
-
-code:        weapon_rifle
-tags:        ranged, gun, long
-name:        Bolt-Action Rifle
-description: Sturdy bolt-action rifle.
-ammunition:  .308
-capacity:    5
-damage:      6
-roll:        d6
-speed:       1
-accuracy:    0
-penetration: 0
-requirement: 5
-value:       60
-weight:      4.5
-
-code:        weapon_huntingrifle
-tags:        ranged, gun, long
-name:        Hunting Rifle
-description: Scoped rifle used for hunting.
-ammunition:  .308
-capacity:    2
-damage:      6
-roll:        d4
-speed:       4
-accuracy:    2
-penetration: 0
-requirement: 5
-value:       50
-weight:      4.5
-
-code:        weapon_carbine
-tags:        ranged, gun, long
-name:        Military Carbine
-description: Military issued carbine, equipped with reflex sight.
-ammunition:  5.56mm
-capacity:    20
-damage:      6
-roll:        2d4
-speed:       4
-accuracy:    1
-penetration: 0
-requirement: 5
-value:       100
-weight:      4.0
-
-code:        weapon_assaultrifle
-tags:        ranged, gun, long, burst
-name:        Assault Rifle
-description: Fully automatic assault rifle. Enables burst-fire.
-ammunition:  5.56mm
-capacity:    30
-damage:      4
-roll:        2d6
-speed:       5
-accuracy:    0
-penetration: 0
-requirement: 6
-value:       120
-weight:      4.5
-
-code:        weapon_battlerifle
-tags:        ranged, gun, long
-name:        Battle Rifle
-description: High-powered battle rifle.
-ammunition:  .308
-capacity:    20
-damage:      8
-roll:        d10
-speed:       3
-accuracy:    0
-penetration: 3
-requirement: 6
-value:       120
-weight:      5.0
-
-code:        weapon_sniperrifle
-tags:        ranged, gun, long
-name:        Sniper Rifle
-description: High-powered sniper rifle. Very accurate.
-ammunition:  .308
-capacity:    5
-damage:      10
-roll:        d10
-speed:       -2
-accuracy:    3
-penetration: 3
-requirement: 7
-value:       150
-weight:      6.0
-
-code:        weapon_heavysniper
-tags:        ranged, gun, long
-name:        Anti-Materiel Rifle
-description: Military issued anti-materiel sniper rifle.
-ammunition:  .50 BMG
-capacity:    5
-damage:      10
-roll:        2d6
-speed:       -5
-accuracy:    1
-penetration: 10
-requirement: 8
-value:       300
-weight:      7.0
-
-// RANGED WEAPONS - ENERGY
-
-code:        weapon_laserpistol
-tags:        ranged, energy, short, laser
-name:        Laser Pistol
-description: Standard laser pistol.
-ammunition:  EC
-capacity:    50
-damage:      2
-roll:        d6
-speed:       14
-accuracy:    1
-penetration: 0
-requirement: 1
-value:       25
-weight:      0.5
-
-code:        weapon_plasmapistol
-tags:        ranged, energy, short, plasma
-name:        Plasma Pistol
-description: Standard military plasma pistol.
-ammunition:  EC
-capacity:    25
-damage:      3
-roll:        d6
-speed:       10
-accuracy:    0
-penetration: 1
-requirement: 2
-value:       30
-weight:      1.0
-
-code:        weapon_magpistol
-tags:        ranged, energy, short, mag
-name:        Mag Pistol
-description: Standard mag pistol. Extreme muzzle velocity.
-ammunition:  EC
-capacity:    10
-damage:      2
-roll:        2d4
-speed:       9
-accuracy:    0
-penetration: 2
-requirement: 2
-value:       40
-weight:      1.0
-
-code:        weapon_laserrifle
-tags:        ranged, energy, long, laser
-name:        Laser Rifle
-description: Military issued laser rifle.
-ammunition:  EC
-capacity:    50
-damage:      6
-roll:        d6
-speed:       8
-accuracy:    1
-penetration: 0
-requirement: 3
-value:       65
-weight:      1.5
-
-code:        weapon_plasmarifle
-tags:        ranged, energy, long, plasma
-name:        Plasma Rifle
-description: Military issued plasma rifle.
-ammunition:  EC
-capacity:    25
-damage:      9
-roll:        d6
-speed:       7
-accuracy:    0
-penetration: 1
-requirement: 3
-value:       70
-weight:      2.0
-
-code:        weapon_magrifle
-tags:        ranged, energy, long, mag
-name:        Mag Rifle
-description: Combat mag rifle. Extreme muzzle velocity.
-ammunition:  EC
-capacity:    20
-damage:      4
-roll:        d10
-speed:       6
-accuracy:    0
-penetration: 3
-requirement: 3
-value:       90
-weight:      2.0
-
-code:        weapon_laserscatter
-tags:        ranged, energy, long, laser
-name:        Scatter Laser
-description: Energy weapon projecting multiple laser beams.
-ammunition:  EC
-capacity:    10
-damage:      2
-roll:        4d4
-speed:       5
-accuracy:    0
-penetration: 0
-requirement: 4
-value:       100
-weight:      2.5
-
-code:        weapon_autolaser
-tags:        ranged, energy, long, laser, burst
-name:        Assault Laser
-description: Automatic laser rifle. Enables burst-fire.
-ammunition:  EC
-capacity:    60
-damage:      6
-roll:        d10
-speed:       6
-accuracy:    1
-penetration: 0
-requirement: 4
-value:       115
-weight:      2.5
-
-code:        weapon_plasmacarbine
-tags:        ranged, energy, long, plasma
-name:        Plasma Carbine
-description: Military issued combat plasma carbine.
-ammunition:  EC
-capacity:    20
-damage:      4
-roll:        2d6
-speed:       4
-accuracy:    0
-penetration: 1
-requirement: 4
-value:       125
-weight:      2.5
-
-code:        weapon_plasmacannon
-tags:        ranged, energy, long, plasma
-name:        Plasma Cannon
-description: Portable plasma cannon. High damage potential.
-ammunition:  EC
-capacity:    5
-damage:      4
-roll:        4d4
-speed:       3
-accuracy:    -1
-penetration: 4
-requirement: 5
-value:       180
-weight:      3.0
-
-code:        weapon_assaultmag
-tags:        ranged, energy, long, mag, burst
-name:        Assault Mag
-description: Automatic combat mag rifle. Enables burst-fire.
-ammunition:  EC
-capacity:    15
-damage:      2
-roll:        2d6
-speed:       6
-accuracy:    0
-penetration: 3
-requirement: 4
-value:       180
-weight:      3.0
-
-code:        weapon_plasmalauncher
-tags:        ranged, energy, long, plasma
-name:        Plasma Launcher
-description: Portable plasma launcher used by Powered Infantry.
-ammunition:  EC
-capacity:    5
-damage:      2
-roll:        2d10
-speed:       2
-accuracy:    0
-penetration: 4
-requirement: 6
-value:       200
-weight:      5.0
-
-code:        weapon_focuslaser
-tags:        ranged, energy, long, laser
-name:        Focus Laser
-description: Laser rifle emitting highly-focused beam.
-ammunition:  EC
-capacity:    5
-damage:      8
-roll:        2d6
-speed:       1
-accuracy:    3
-penetration: 0
-requirement: 5
-value:       225
-weight:      4.0
-
-code:        weapon_gaussrifle
-tags:        ranged, energy, long, mag
-name:        Gauss Rifle
-description: Magnetic-based energy-kinetic rifle.
-ammunition:  EC
-capacity:    5
-damage:      8
-roll:        2d6
-speed:       3
-accuracy:    1
-penetration: 10
-requirement: 5
-value:       250
-weight:      4.0
-
-code:        weapon_plasmadisintegrator
-tags:        ranged, energy, long, plasma
-name:        Plasma Disintegrator
-description: High-tech plasma weapon. High damage potential.
-ammunition:  EC
-capacity:    5
-damage:      0
-roll:        4d6
-speed:       -2
-accuracy:    -1
-penetration: 10
-requirement: 5
-value:       300
-weight:      5.0
-
 // MELEE WEAPONS
 
 code:        weapon_fists
@@ -679,10 +180,10 @@ code:        weapon_sledgehammer
 tags:        melee, blunt
 name:        Sledgehammer
 description: Construction worker's tool.
-damage:      4
+damage:      2
 roll:        d6
 speed:       6
-penetration: 2
+penetration: 1
 requirement: 5
 value:       50
 weight:      3.0
@@ -692,9 +193,9 @@ tags:        melee, blunt
 name:        Heavy Sledgehammer.
 description: Very heavy and sturdy sledgehammer.
 damage:      2
-roll:        2d6
+roll:        2d4
 speed:       4
-penetration: 2
+penetration: 1
 requirement: 6
 value:       80
 weight:      8.0
@@ -715,8 +216,8 @@ code:        weapon_axe
 tags:        melee, sharp
 name:        Fire Axe
 description: Firefighter's sturdy axe.
-damage:      6
-roll:        d6
+damage:      7
+roll:        d4
 speed:       5
 penetration: 0
 requirement: 5
@@ -727,8 +228,8 @@ code:        weapon_protonaxe
 tags:        melee, sharp
 name:        Proton Axe
 description: Combat axe used by Powered Infantry.
-damage:      4
-roll:        d10
+damage:      6
+roll:        2d4
 speed:       6
 penetration: 0
 requirement: 6
@@ -751,13 +252,584 @@ code:        weapon_kineticmaul
 tags:        melee, blunt
 name:        Kinetic Maul
 description: High-tech combat maul with kinetic storage device.
-damage:      2
+damage:      0
 roll:        2d10
 speed:       0
-penetration: 8
+penetration: 6
 requirement: 8
 value:       250
 weight:      10.0
+
+// RANGED WEAPONS - GUNS
+
+code:        weapon_pistol
+tags:        ranged, gun, short
+name:        Pistol
+description: Standard 9mm pistol, light and quick.
+ammunition:  9mm
+capacity:    15
+damage:      4
+roll:        d4
+speed:       10
+accuracy:    0
+penetration: 0
+requirement: 2
+value:       20
+weight:      1.0
+
+code:        weapon_militarypistol
+tags:        ranged, gun, short
+name:        Military Pistol
+description: Military issued pistol.
+ammunition:  .45 ACP
+capacity:    10
+damage:      4
+roll:        d6
+speed:       9
+accuracy:    0
+penetration: 0
+requirement: 3
+value:       40
+weight:      1.0
+
+code:        weapon_heavypistol
+tags:        ranged, gun, short
+name:        Heavy Pistol
+description: Reliable and powerful pistol.
+ammunition:  .45 ACP
+capacity:    5
+damage:      6
+roll:        d6
+speed:       7
+accuracy:    0
+penetration: 0
+requirement: 5
+value:       50
+weight:      1.5
+
+code:        weapon_autopistol
+tags:        ranged, gun, short, burst
+name:        Machine Pistol
+description: Fully automatic pistol. Enables burst-fire.
+ammunition:  9mm
+capacity:    15
+damage:      2
+roll:        d6
+speed:       12
+accuracy:    0
+penetration: 0
+requirement: 3
+value:       50
+weight:      1.5
+
+code:        weapon_revolver
+tags:        ranged, gun, short, revolver
+name:        Revolver
+description: Six-shooter revolver.
+ammunition:  .357
+capacity:    6
+damage:      4
+roll:        2d4
+speed:       7
+accuracy:    -1
+penetration: 0
+requirement: 4
+value:       30
+weight:      1.5
+
+code:        weapon_heavyrevolver
+tags:        ranged, gun, short, revolver
+name:        Heavy Revolver
+description: Powerful heavy-caliber revolver.
+ammunition:  .44
+capacity:    5
+damage:      5
+roll:        d10
+speed:       6
+accuracy:    -1
+penetration: 0
+requirement: 6
+value:       50
+weight:      2.0
+
+code:        weapon_smg
+tags:        ranged, gun, long, burst
+name:        Sub-Machine Gun
+description: Police issued sub-machine gun. Enables burst-fire.
+ammunition:  9mm
+capacity:    30
+damage:      5
+roll:        d4
+speed:       8
+accuracy:    0
+penetration: 0
+requirement: 4
+value:       40
+weight:      2.5
+
+code:        weapon_heavysmg
+tags:        ranged, gun, long
+name:        Heavy Sub-Machine Gun
+description: Military issued sub-machine gun with reflex sight.
+ammunition:  .45 ACP
+capacity:    20
+damage:      6
+roll:        d6
+speed:       6
+accuracy:    1
+penetration: 0
+requirement: 5
+value:       60
+weight:      3.0
+
+code:        weapon_shotgun
+tags:        ranged, gun, long
+name:        Shotgun
+description: Basic shotgun. High damage potential, but inaccurate.
+ammunition:  20ga
+capacity:    5
+damage:      0
+roll:        4d4
+speed:       2
+accuracy:    -2
+penetration: 0
+requirement: 5
+value:       35
+weight:      4.0
+
+code:        weapon_pumpshotgun
+tags:        ranged, gun, long
+name:        Pump-Action Shotgun
+description: Military issued shotgun. High damage potential.
+ammunition:  20ga
+capacity:    5
+damage:      0
+roll:        4d4
+speed:       3
+accuracy:    -1
+penetration: 0
+requirement: 6
+value:       50
+weight:      4.0
+
+code:        weapon_combatshotgun
+tags:        ranged, gun, long
+name:        Combat Shotgun
+description: Automatic military combat shotgun. High damage potential.
+ammunition:  12ga
+capacity:    10
+damage:      4
+roll:        2d6
+speed:       5
+accuracy:    -1
+penetration: 0
+requirement: 6
+value:       80
+weight:      4.5
+
+code:        weapon_rifle
+tags:        ranged, gun, long
+name:        Bolt-Action Rifle
+description: Sturdy bolt-action rifle.
+ammunition:  .308
+capacity:    5
+damage:      8
+roll:        d6
+speed:       1
+accuracy:    0
+penetration: 0
+requirement: 5
+value:       60
+weight:      4.5
+
+code:        weapon_huntingrifle
+tags:        ranged, gun, long
+name:        Hunting Rifle
+description: Scoped rifle used for hunting.
+ammunition:  .308
+capacity:    2
+damage:      8
+roll:        d4
+speed:       4
+accuracy:    2
+penetration: 0
+requirement: 5
+value:       50
+weight:      4.5
+
+code:        weapon_carbine
+tags:        ranged, gun, long
+name:        Military Carbine
+description: Military issued carbine, equipped with reflex sight.
+ammunition:  5.56mm
+capacity:    20
+damage:      7
+roll:        2d4
+speed:       4
+accuracy:    1
+penetration: 0
+requirement: 5
+value:       100
+weight:      4.0
+
+code:        weapon_assaultrifle
+tags:        ranged, gun, long, burst
+name:        Assault Rifle
+description: Fully automatic assault rifle. Enables burst-fire.
+ammunition:  5.56mm
+capacity:    30
+damage:      4
+roll:        2d4
+speed:       5
+accuracy:    0
+penetration: 0
+requirement: 6
+value:       120
+weight:      4.5
+
+code:        weapon_battlerifle
+tags:        ranged, gun, long
+name:        Battle Rifle
+description: High-powered battle rifle.
+ammunition:  .308
+capacity:    20
+damage:      6
+roll:        d10
+speed:       3
+accuracy:    0
+penetration: 1
+requirement: 6
+value:       120
+weight:      5.0
+
+code:        weapon_sniperrifle
+tags:        ranged, gun, long
+name:        Sniper Rifle
+description: High-powered sniper rifle. Very accurate.
+ammunition:  .308
+capacity:    5
+damage:      7
+roll:        d10
+speed:       -2
+accuracy:    3
+penetration: 2
+requirement: 7
+value:       150
+weight:      6.0
+
+code:        weapon_heavysniper
+tags:        ranged, gun, long
+name:        Anti-Materiel Rifle
+description: Military issued anti-materiel sniper rifle.
+ammunition:  .50 BMG
+capacity:    5
+damage:      8
+roll:        2d6
+speed:       -5
+accuracy:    1
+penetration: 5
+requirement: 8
+value:       300
+weight:      7.0
+
+// RANGED WEAPONS - ENERGY
+
+code:        weapon_laserpistol
+tags:        ranged, energy, short, laser
+name:        Laser Pistol
+description: Standard laser pistol.
+ammunition:  EC
+capacity:    50
+damage:      2
+roll:        d6
+speed:       14
+accuracy:    1
+penetration: 0
+requirement: 1
+value:       25
+weight:      0.5
+
+code:        weapon_plasmapistol
+tags:        ranged, energy, short, plasma
+name:        Plasma Pistol
+description: Standard military plasma pistol.
+ammunition:  EC
+capacity:    25
+damage:      3
+roll:        d6
+speed:       10
+accuracy:    0
+penetration: 0
+requirement: 2
+value:       30
+weight:      1.0
+
+code:        weapon_magpistol
+tags:        ranged, energy, short, mag
+name:        Mag Pistol
+description: Standard mag pistol. Extreme muzzle velocity.
+ammunition:  EC
+capacity:    10
+damage:      2
+roll:        2d4
+speed:       9
+accuracy:    0
+penetration: 1
+requirement: 2
+value:       40
+weight:      1.0
+
+code:        weapon_laserrifle
+tags:        ranged, energy, long, laser
+name:        Laser Rifle
+description: Military issued laser rifle.
+ammunition:  EC
+capacity:    50
+damage:      6
+roll:        d6
+speed:       8
+accuracy:    1
+penetration: 0
+requirement: 3
+value:       65
+weight:      1.5
+
+code:        weapon_plasmarifle
+tags:        ranged, energy, long, plasma
+name:        Plasma Rifle
+description: Military issued plasma rifle.
+ammunition:  EC
+capacity:    25
+damage:      7
+roll:        d6
+speed:       7
+accuracy:    0
+penetration: 0
+requirement: 3
+value:       70
+weight:      2.0
+
+code:        weapon_magrifle
+tags:        ranged, energy, long, mag
+name:        Mag Rifle
+description: Combat mag rifle. Extreme muzzle velocity.
+ammunition:  EC
+capacity:    20
+damage:      4
+roll:        d10
+speed:       6
+accuracy:    0
+penetration: 1
+requirement: 3
+value:       90
+weight:      2.0
+
+code:        weapon_laserscatter
+tags:        ranged, energy, long, laser
+name:        Scatter Laser
+description: Energy weapon projecting multiple laser beams.
+ammunition:  EC
+capacity:    10
+damage:      0
+roll:        4d4
+speed:       5
+accuracy:    0
+penetration: 0
+requirement: 4
+value:       100
+weight:      2.5
+
+code:        weapon_autolaser
+tags:        ranged, energy, long, laser, burst
+name:        Assault Laser
+description: Automatic laser rifle. Enables burst-fire.
+ammunition:  EC
+capacity:    60
+damage:      4
+roll:        d6
+speed:       6
+accuracy:    1
+penetration: 0
+requirement: 4
+value:       115
+weight:      2.5
+
+code:        weapon_plasmacarbine
+tags:        ranged, energy, long, plasma
+name:        Plasma Carbine
+description: Military issued combat plasma carbine.
+ammunition:  EC
+capacity:    20
+damage:      4
+roll:        2d6
+speed:       4
+accuracy:    0
+penetration: 0
+requirement: 4
+value:       125
+weight:      2.5
+
+code:        weapon_plasmacannon
+tags:        ranged, energy, long, plasma
+name:        Plasma Cannon
+description: Portable plasma cannon. High damage potential.
+ammunition:  EC
+capacity:    5
+damage:      2
+roll:        4d4
+speed:       3
+accuracy:    -1
+penetration: 0
+requirement: 5
+value:       180
+weight:      3.0
+
+code:        weapon_assaultmag
+tags:        ranged, energy, long, mag, burst
+name:        Assault Mag
+description: Automatic combat mag rifle. Enables burst-fire.
+ammunition:  EC
+capacity:    15
+damage:      2
+roll:        2d6
+speed:       6
+accuracy:    0
+penetration: 1
+requirement: 4
+value:       180
+weight:      3.0
+
+code:        weapon_plasmalauncher
+tags:        ranged, energy, long, plasma
+name:        Plasma Launcher
+description: Portable plasma launcher used by Powered Infantry.
+ammunition:  EC
+capacity:    5
+damage:      2
+roll:        2d10
+speed:       2
+accuracy:    -1
+penetration: 0
+requirement: 6
+value:       200
+weight:      5.0
+
+code:        weapon_focuslaser
+tags:        ranged, energy, long, laser
+name:        Focus Laser
+description: Laser rifle emitting highly-focused beam.
+ammunition:  EC
+capacity:    5
+damage:      6
+roll:        2d6
+speed:       1
+accuracy:    3
+penetration: 0
+requirement: 5
+value:       225
+weight:      4.0
+
+code:        weapon_gaussrifle
+tags:        ranged, energy, long, mag
+name:        Gauss Rifle
+description: Magnetic-based energy-kinetic rifle.
+ammunition:  EC
+capacity:    5
+damage:      8
+roll:        2d6
+speed:       3
+accuracy:    1
+penetration: 5
+requirement: 5
+value:       250
+weight:      4.0
+
+code:        weapon_plasmadisintegrator
+tags:        ranged, energy, long, plasma
+name:        Plasma Disintegrator
+description: High-tech plasma weapon. High damage potential.
+ammunition:  EC
+capacity:    5
+damage:      0
+roll:        4d6
+speed:       -2
+accuracy:    -1
+penetration: 5
+requirement: 5
+value:       300
+weight:      5.0
+
+// AMMO
+
+code:        ammo_9mm
+name:        9mm Rounds
+description: Standard caliber pistol ammunition.
+stack:       30
+value:       8
+weight:      0.01
+
+code:        ammo_45acp
+name:        .45 ACP Rounds
+description: Larger caliber pistol ammunition.
+stack:       15
+value:       6
+weight:      0.02
+
+code:        ammo_357
+name:        .357 Magnum Rounds
+description: High-packed revolver ammunition.
+stack:       6
+value:       4
+weight:      0.02
+
+code:        ammo_44
+name:        .44 Magnum Rounds
+description: Powerful revolver ammunition.
+stack:       5
+value:       4
+weight:      0.03
+
+code:        ammo_20ga
+name:        20 Gauge Rounds
+description: Standard shotgun ammunition.
+stack:       10
+value:       8
+weight:      0.04
+
+code:        ammo_12ga
+name:        12 Gauge Rounds
+description: Larger shotgun ammunition.
+stack:       10
+value:       10
+weight:      0.05
+
+code:        ammo_556
+name:        5.56mm Rounds
+description: Military issued rifle ammunition.
+stack:       30
+value:       12
+weight:      0.02
+
+code:        ammo_308
+name:        .308 Rounds
+description: High-caliber military ammunition.
+stack:       20
+value:       10
+weight:      0.03
+
+code:        ammo_50BMG
+name:        .50 BMG Rounds
+description: High-caliber sniper rifle ammunition.
+stack:       5
+value:       10
+weight:      0.1
+
+code:        ammo_ec
+name:        Energy Charge Pack
+description: High-tech ammunition for energy weapons.
+stack:       30
+value:       10
+weight:      0.01
 
 // ARMORS
 
@@ -801,7 +873,7 @@ code:        armor_metal
 name:        Metal Armor
 description: Metal armor, heavy and durable.
 reduction:   5
-evasion:     -3
+evasion:     -2
 protection:  0
 value:       50
 weight:      10.0
@@ -819,7 +891,7 @@ code:        armor_alloy
 name:        Alloy Armor
 description: Advanced military armor made from durable alloys.
 reduction:   6
-evasion:     -2
+evasion:     -1
 protection:  0
 value:       150
 weight:      8.0
@@ -833,11 +905,20 @@ protection:  0
 value:       250
 weight:      4.0
 
+code:        armor_desert
+name:        Desert Ranger Armor
+description: Sturdy armor worn by Desert Rangers.
+reduction:   4
+evasion:     2
+protection:  0
+value:       3.5
+weight:      300
+
 code:        armor_power
 name:        Powered Armor
 description: High-tech powered metal armor.
-reduction:   10
-evasion:     -5
+reduction:   9
+evasion:     -3
 protection:  100
 value:       1000
 weight:      10.0
@@ -845,8 +926,8 @@ weight:      10.0
 code:        armor_endgameheavy
 name:        End Game Armor
 description: Usable end game adapted armor.
-reduction:   15
-evasion:     -5
+reduction:   12
+evasion:     -3
 protection:  100
 value:       1000
 weight:      18.0
@@ -854,7 +935,7 @@ weight:      18.0
 code:        armor_endgamelight
 name:        End Game Outfit
 description: Advanced End Game armor, covers whole body.
-reduction:   12
+reduction:   10
 evasion:     0
 protection:  100
 value:       2000

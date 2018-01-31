@@ -11,6 +11,7 @@ RangedWeapon::RangedWeapon(std::string name, std::string description,
            value, weight, tags), m_ammo_type(ammo_type), m_capacity(capacity),
     m_accuracy(accuracy)
 {
+    m_current_ammo = m_capacity;
 }
 
 RangedWeapon::~RangedWeapon()
@@ -19,10 +20,10 @@ RangedWeapon::~RangedWeapon()
 
 void RangedWeapon::debugPrint() const
 {
-    std::cout << m_name << ": " << m_description << " Has " << m_capacity << " "
-              << m_ammo_type << " rounds.\nDMG: " << m_damage << " + " << m_roll
-              << " SPD: " << m_speed << " ACC: " << m_accuracy << " PEN: "
-              << m_penetration << " ST: " << m_requirement << " VAL: "
-              << m_value << " WG: " << m_weight << "\nTAGS: " << m_tags
-              << std::endl;
+    std::cout << m_name << ": " << m_description << " Has " << m_current_ammo
+              << " / " << m_capacity << " " << m_ammo_type << " rounds.\nDMG: "
+              << m_damage << " + " << m_roll << " SPD: " << m_speed << " ACC: "
+              << m_accuracy << " PEN: " << m_penetration << " ST: "
+              << m_requirement << " VAL: " << m_value << " WG: " << m_weight
+              << "\nTAGS: " << m_tags << std::endl;
 }
