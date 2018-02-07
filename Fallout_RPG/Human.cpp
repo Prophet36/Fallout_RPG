@@ -108,19 +108,27 @@ bool Human::checkInventoryEncumbrance() const
 
 void Human::sortInventory(Item * new_item)
 {
-    bool is_found = false;
-
     for (int i = 0; i < inventory.size(); i++)
     {
         if (inventory.at(i)->getTags() == new_item->getTags())
         {
-            inventory.at(i)->setCount(inventory.at(i)->getCount() +
-                                      new_item->getCount());
-            is_found = true;
-            delete new_item;
-            break;
+            int temp = inventory.at(i)->getStack() -
+                       inventory.at(i)->getCount();
+            if (temp >= new_item->getCount())
+            {
+                inventory.at(i)->setCount(inventory.at(i)->getCount() +
+                                          new_item->getCount());
+                delete new_item;
+                new_item = nullptr;
+                break;
+            }
+            else
+            {
+                inventory.at(i)->setCount(inventory.at(i)->getStack());
+                new_item->setCount(new_item->getCount() - temp);
+            }
         }
     }
-    if (!is_found)
+    if (new_item)
         inventory.push_back(new_item);
 }

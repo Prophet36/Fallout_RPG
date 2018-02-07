@@ -16,6 +16,7 @@ public:
     virtual void debugPrint() const = 0;
     virtual void setCount(int count) = 0;
     virtual int getCount() const = 0;
+    virtual int getStack() const = 0;
     virtual std::string getTags() const = 0;
 
 protected:

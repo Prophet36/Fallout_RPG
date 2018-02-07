@@ -4,10 +4,10 @@
 #include <string>   // std::string
 
 Consumable::Consumable(std::string name, std::string description, int attribute,
-                       int magnitude, int duration, int count, int value,
-                       double weight, std::string tags) :
+                       int magnitude, int duration, int count, int stack,
+                       int value, double weight, std::string tags) :
     Item(name, description, value, weight, tags), m_attribute(attribute),
-    m_magnitude(magnitude), m_duration(duration), m_count(count)
+    m_magnitude(magnitude), m_duration(duration), m_count(count), m_stack(stack)
 {
 }
 
@@ -19,8 +19,9 @@ void Consumable::debugPrint() const
 {
     std::cout << m_name << ": " << m_description << " Gives " << m_magnitude
               << " " << m_attribute << " for " << m_duration
-              << " turns. You have " << m_count << " in this slot. VAL: "
-              << m_value << " WG: " << m_weight << std::endl;
+              << " turns. You have " << m_count << " / " << m_stack
+              << " in this slot. VAL: " << m_value << " WG: " << m_weight
+              << std::endl;
 }
 
 void Consumable::setCount(int count)
@@ -31,6 +32,11 @@ void Consumable::setCount(int count)
 int Consumable::getCount() const
 {
     return m_count;
+}
+
+int Consumable::getStack() const
+{
+    return m_stack;
 }
 
 std::string Consumable::getTags() const

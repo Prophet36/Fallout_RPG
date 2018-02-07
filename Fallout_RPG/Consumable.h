@@ -12,13 +12,14 @@ public:
 
 public:
     Consumable(std::string name, std::string description, int attribute,
-               int magnitude, int duration, int count, int value, double weight,
-               std::string tags);
+               int magnitude, int duration, int count, int stack, int value,
+               double weight, std::string tags);
     ~Consumable();
 
     virtual void debugPrint() const override;
     virtual void setCount(int count) override;
     virtual int getCount() const override;
+    virtual int getStack() const override;
     virtual std::string getTags() const override;
 
 private:
@@ -26,4 +27,5 @@ private:
     int m_magnitude;
     int m_duration;
     int m_count;
+    int m_stack;
 };

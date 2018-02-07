@@ -7,6 +7,7 @@ description: Healing hypo. Heals up to 10 HP.
 attribute:   HP
 magnitude:   10
 duration:    0
+stack        5
 value:       20
 weight:      0.1
 
@@ -17,6 +18,7 @@ description: Advanced healing hypo. Heals up to 25 HP.
 attribute:   HP
 magnitude:   25
 duration:    0
+stack        2
 value:       50
 weight:      0.25
 
@@ -27,6 +29,7 @@ description: Basic medkit. Heals broken limbs and up to 5 HP.
 attribute:   HP
 magnitude:   5
 duration:    0
+stack        2
 value:       15
 weight:      0.5
 
@@ -37,8 +40,9 @@ description: Cooked and edible foodstuff. Heals up to 2 HP.
 attribute:   HP
 magnitude:   2
 duration:    0
+stack        10
 value:       3
-weight:      1.0
+weight:      0.5
 
 code:        item_dirtyfood
 tags:        item, rads, food
@@ -47,8 +51,9 @@ description: Raw, unprepared foodstuff. Adds 20 RADS.
 attribute:   RADS
 magnitude:   20
 duration:    0
+stack        10
 value:       1
-weight:      1.0
+weight:      0.5
 
 code:        item_water
 tags:        item, healing, water
@@ -57,8 +62,9 @@ description: Purified water. Heals up to 2 HP.
 attribute:   HP
 magnitude:   2
 duration:    0
+stack        10
 value:       5
-weight:      2.0
+weight:      0.5
 
 code:        item_dirtywater
 tags:        item, rads, water
@@ -67,8 +73,9 @@ description: Unpurified, irradiated water. Adds 20 RADS.
 attribute:   RADS
 magnitude:   20
 duration:    0
+stack        10
 value:       2
-weight:      2.0
+weight:      0.5
 
 code:        item_jet
 tags:        item, buff, jet
@@ -77,6 +84,7 @@ description: Chemical drug. Boosts Agility for 5 turns.
 attribute:   AG
 magnitude:   2
 duration:    5
+stack        5
 value:       20
 weight:      0.1
 
@@ -87,6 +95,7 @@ description: Military combat booster. Boosts Perception for 5 turns.
 attribute:   PE
 magnitude:   2
 duration:    5
+stack        5
 value:       20
 weight:      0.1
 
@@ -97,6 +106,7 @@ description: Muscle enhancing drug. Boosts Strength for 5 turns.
 attribute:   ST
 magnitude:   2
 duration:    5
+stack        5
 value:       20
 weight:      0.1
 
@@ -775,6 +785,7 @@ code:        ammo_9mm
 tags:        ammo, 9mm
 name:        9mm Rounds
 description: Standard caliber pistol ammunition.
+stack        30
 value:       1
 weight:      0.01
 
@@ -782,6 +793,7 @@ code:        ammo_45acp
 tags:        ammo, .45 ACP
 name:        .45 ACP Rounds
 description: Larger caliber pistol ammunition.
+stack        20
 value:       1
 weight:      0.02
 
@@ -789,6 +801,7 @@ code:        ammo_357
 tags:        ammo, .357
 name:        .357 Magnum Rounds
 description: High-packed revolver ammunition.
+stack        30
 value:       2
 weight:      0.02
 
@@ -796,6 +809,7 @@ code:        ammo_44
 tags:        ammo, .44
 name:        .44 Magnum Rounds
 description: Powerful revolver ammunition.
+stack        20
 value:       3
 weight:      0.03
 
@@ -803,6 +817,7 @@ code:        ammo_20ga
 tags:        ammo, 20ga
 name:        20 Gauge Rounds
 description: Standard shotgun ammunition.
+stack        10
 value:       3
 weight:      0.04
 
@@ -810,6 +825,7 @@ code:        ammo_12ga
 tags:        ammo, 12ga
 name:        12 Gauge Rounds
 description: Larger shotgun ammunition.
+stack        10
 value:       4
 weight:      0.05
 
@@ -817,6 +833,7 @@ code:        ammo_556
 tags:        ammo, 5.56mm
 name:        5.56mm Rounds
 description: Military issued rifle ammunition.
+stack        30
 value:       1
 weight:      0.02
 
@@ -824,6 +841,7 @@ code:        ammo_308
 tags:        ammo, .308
 name:        .308 Rounds
 description: High-caliber military ammunition.
+stack        20
 value:       3
 weight:      0.03
 
@@ -831,6 +849,7 @@ code:        ammo_50bmg
 tags:        ammo, .50 BMG
 name:        .50 BMG Rounds
 description: High-caliber sniper rifle ammunition.
+stack        10
 value:       5
 weight:      0.1
 
@@ -838,6 +857,7 @@ code:        ammo_ec
 tags:        ammo, EC
 name:        Energy Cell
 description: Universal ammunition for energy weapons.
+stack        50
 value:       1
 weight:      0.01
 

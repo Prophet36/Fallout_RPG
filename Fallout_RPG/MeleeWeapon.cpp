@@ -33,6 +33,11 @@ int MeleeWeapon::getCount() const
     return 1;
 }
 
+int MeleeWeapon::getStack() const
+{
+    return 1;
+}
+
 std::string MeleeWeapon::getTags() const
 {
     return m_tags;

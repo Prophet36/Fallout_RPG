@@ -31,6 +31,11 @@ int Armor::getCount() const
     return 1;
 }
 
+int Armor::getStack() const
+{
+    return 1;
+}
+
 std::string Armor::getTags() const
 {
     return m_tags;

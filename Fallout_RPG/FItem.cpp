@@ -9,7 +9,6 @@
 #include "Item.h"
 #include "MeleeWeapon.h"
 #include "RangedWeapon.h"
-#include <fstream>  // std::fstream
 #include <iostream> // std::cout, std::cerr
 #include <string>   // std::string
 
@@ -44,7 +43,7 @@ Item * FItem::createNewItem(std::string item_id)
         default:
         {
             std::cerr << "ERROR: Incorrect item type!\n";
-            return new Consumable("Dummy Item", "Dummy item.", 0, 0, 0, 1, 0,
+            return new Consumable("Dummy Item", "Dummy item.", 0, 0, 0, 1, 1, 0,
                                   0.0, "item");
         }
     }
@@ -60,14 +59,15 @@ Item * FItem::createNewConsumable()
     int attribute = Inventory::checkConsumableBonus(working_file->getString());
     int magnitude = working_file->getInt();
     int duration = working_file->getInt();
+    int stack = working_file->getInt();
     int value = working_file->getInt();
     double weight = working_file->getDouble();
 
     std::cout << "How many do you want to add? ";
-    int count = Input::getPosInt();
+    int count = Input::switchPrompt(1, stack);
 
     return new Consumable(name, description, attribute, magnitude, duration,
-                          count, value, weight, tags);
+                          count, stack, value, weight, tags);
 }
 
 Item * FItem::createNewWeapon()
@@ -135,14 +135,14 @@ Item * FItem::createNewAmmo()
     std::string tags = working_file->getString();
     std::string name = working_file->getString();
     std::string description = working_file->getString();
+    int stack = working_file->getInt();
     int value = working_file->getInt();
     double weight = working_file->getDouble();
 
     std::cout << "How many do you want to add? ";
-    int count = Input::getPosInt();
+    int count = Input::switchPrompt(1, stack);
 
-    return new Ammo(name, description, count, value, weight,
-                    tags);
+    return new Ammo(name, description, count, stack, value, weight, tags);
 }
 
 Item * FItem::createNewArmor()

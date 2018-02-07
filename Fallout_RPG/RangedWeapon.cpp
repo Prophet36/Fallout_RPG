@@ -37,6 +37,11 @@ int RangedWeapon::getCount() const
     return 1;
 }
 
+int RangedWeapon::getStack() const
+{
+    return 1;
+}
+
 std::string RangedWeapon::getTags() const
 {
     return m_tags;
