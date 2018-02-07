@@ -8,11 +8,13 @@ class Input
 {
 public:
     static void clearBuffer();
-    static int getInt();
-    static std::string getString();
+    static void keyContinue(bool prompt = false);
+    static char getChar();
     static char yesNoPrompt();
+    static int getInt();
+    static int getPosInt();
     static int switchPrompt(int low, int high);
-    static void keyContinue(bool prompt = true);
+    static std::string getString();
 
 private:
     Input();

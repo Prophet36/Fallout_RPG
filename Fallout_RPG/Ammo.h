@@ -9,14 +9,16 @@ class Ammo :
     public Item
 {
 public:
-    Ammo(std::string name, std::string description, int stack,
-         int current_count, int value, double weight);
+    Ammo(std::string name, std::string description, int count, int value,
+         double weight, std::string tags);
     ~Ammo();
 
     virtual void debugPrint() const override;
+    virtual void setCount(int count) override;
+    virtual int getCount() const override;
+    virtual std::string getTags() const override;
 
 private:
-    int m_stack;
-    int m_current_count;
+    int m_count;
 };
 

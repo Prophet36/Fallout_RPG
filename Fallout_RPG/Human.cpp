@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "Ammo.h"
 #include "File.h"
 #include "FItem.h"
 #include "Human.h"
@@ -12,6 +13,15 @@ Human::Human(int max_space) :
 {
 }
 
+Human::~Human()
+{
+    while (!inventory.empty())
+    {
+        delete inventory.back();
+        inventory.pop_back();
+    }
+}
+
 void Human::showInventory() const
 {
     for (int i = 0; i < inventory.size(); i++)
@@ -23,54 +33,94 @@ void Human::showInventory() const
 
 void Human::addItemPrompt(std::string item_id)
 {
-    if (checkInventorySpace())
+    if (File::open(ITEMS)->findItem(item_id))
     {
-        if (File::open()->findItem(item_id))
+        Item * new_item = FItem::createNewItem(item_id);
+
+        switch (Inventory::checkItemPrefix(item_id))
         {
-            inventory.push_back(FItem::createNewItem(item_id));
+            case Inventory::CONSUMABLE:
+            case Inventory::AMMO:
+            {
+                sortInventory(new_item);
+                break;
+            }
+            default:
+            {
+                inventory.push_back(new_item);
+                break;
+            }
         }
-        File::open()->closeFile();
+        while(checkInventoryEncumbrance())
+        {
+            Input::keyContinue();
+            deleteItemPrompt();
+        }
     }
+    File::open(ITEMS)->closeFile();
 }
 
 void Human::deleteItemPrompt()
 {
     if (inventory.size() != 0)
     {
-        std::cout << "Which item would you like to delete?\n";
+        std::cout << "Which item would you like to delete?";
+        Input::keyContinue();
         showInventory();
+        std::cout << "Enter your choice: (0 to cancel): ";
 
-        int choice = Input::switchPrompt(1, int(inventory.size()));
-        delete inventory[choice - 1];
-        inventory.erase(inventory.begin() + choice - 1);
+        if(int choice = Input::switchPrompt(0, int(inventory.size())))
+        { 
+            delete inventory[choice - 1];
+            inventory.erase(inventory.begin() + choice - 1);
+        }
     }
     else
     {
-        std::cout << "Your inventory is empty!\n";
+        std::cout << "Your inventory is empty!";
+        Input::keyContinue();
     }
 }
 
-bool Human::checkInventorySpace(bool adding_item) const
+bool Human::checkInventorySpace() const
 {
-    if (inventory.size() >= m_max_space)
+    if (inventory.size() == m_max_space)
     {
-        if (adding_item)
-        {
-            std::cout << "You have full inventory!\n";
-        }
-        return false;
+        std::cout << "Warning: Your inventory is currently full!\n"
+                     "Do you still want to add another item? (y/n): ";
+        if (Input::yesNoPrompt() == 'y')
+            return true;
+        else
+            return false;
     }
-    else
+    return true;
+}
+
+bool Human::checkInventoryEncumbrance() const
+{
+    if (inventory.size() > m_max_space)
     {
+        std::cout << "You are over encumbered!";
         return true;
     }
+    return false;
 }
 
-Human::~Human()
+void Human::sortInventory(Item * new_item)
 {
-    while (!inventory.empty())
+    bool is_found = false;
+
+    for (int i = 0; i < inventory.size(); i++)
     {
-        delete inventory.back();
-        inventory.pop_back();
+        if (inventory.at(i)->getTags() == new_item->getTags())
+        {
+            inventory.at(i)->setCount(inventory.at(i)->getCount() +
+                                      new_item->getCount());
+            is_found = true;
+            delete new_item;
+            break;
+        }
     }
+    if (!is_found)
+        inventory.push_back(new_item);
 }

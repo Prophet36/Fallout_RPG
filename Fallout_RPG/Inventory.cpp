@@ -6,6 +6,10 @@ Inventory::Inventory()
 {
 }
 
+Inventory::~Inventory()
+{
+}
+
 int Inventory::checkItemPrefix(std::string item_id)
 {
     std::string prefixes[] = { "item_", "weapon_", "ammo_", "armor_" };
@@ -49,21 +53,17 @@ int Inventory::checkWeaponType(std::string tags)
     }
     return -1;
 }
-int Inventory::checkAmmoType(std::string ammo_type)
+int Inventory::checkAmmoType(std::string tags)
 {
-    std::string types[] = { "9mm", ".45 ACP", ".357", ".44", "20ga", "12ga",
-                            "5.56mm", ".308", ".50 BMG", "EC" };
+    std::string types[] = { "9mm", "45 ACP", ".357", ".44", "20ga", "12ga",
+                            "5.56mm", ".308", "50 BMG", "EC" };
 
     for (int i = 0; i < (sizeof(types) / sizeof(types[0])); i++)
     {
-        if (ammo_type.find(types[i], 0) != std::string::npos)
+        if (tags.find(types[i], 0) != std::string::npos)
         {
             return i;
         }
     }
     return -1;
-}
-
-Inventory::~Inventory()
-{
 }

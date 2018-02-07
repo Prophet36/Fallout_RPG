@@ -23,3 +23,17 @@ void MeleeWeapon::debugPrint() const
               << m_value << " WG: " << m_weight << "\nTAGS: " << m_tags
               << std::endl;
 }
+
+void MeleeWeapon::setCount(int count)
+{
+}
+
+int MeleeWeapon::getCount() const
+{
+    return 1;
+}
+
+std::string MeleeWeapon::getTags() const
+{
+    return m_tags;
+}

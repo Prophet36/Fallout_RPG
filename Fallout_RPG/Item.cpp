@@ -3,9 +3,10 @@
 #include <iostream> // std::cout
 #include <string>   // std::string
 
-Item::Item(std::string name, std::string description, int value,
-           double weight) :
-    m_name(name), m_description(description), m_value(value), m_weight(weight)
+Item::Item(std::string name, std::string description, int value, double weight,
+           std::string tags) :
+    m_name(name), m_description(description), m_value(value),
+    m_weight(weight), m_tags(tags)
 {
     std::cout << "\nDEBUG: ----- Item " << m_name << " created! -----\n";
 }

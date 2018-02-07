@@ -4,19 +4,36 @@
 #include <string>   // std::string
 
 Consumable::Consumable(std::string name, std::string description, int attribute,
-                       int magnitude, int duration, int value, double weight) :
-    Item(name, description, value, weight), m_attribute(attribute),
-    m_magnitude(magnitude), m_duration(duration)
+                       int magnitude, int duration, int count, int value,
+                       double weight, std::string tags) :
+    Item(name, description, value, weight, tags), m_attribute(attribute),
+    m_magnitude(magnitude), m_duration(duration), m_count(count)
+{
+}
+
+Consumable::~Consumable()
 {
 }
 
 void Consumable::debugPrint() const
 {
     std::cout << m_name << ": " << m_description << " Gives " << m_magnitude
-              << " " << m_attribute << " for " << m_duration << " turns. VAL: "
+              << " " << m_attribute << " for " << m_duration
+              << " turns. You have " << m_count << " in this slot. VAL: "
               << m_value << " WG: " << m_weight << std::endl;
 }
 
-Consumable::~Consumable()
+void Consumable::setCount(int count)
 {
+    m_count = count;
+}
+
+int Consumable::getCount() const
+{
+    return m_count;
+}
+
+std::string Consumable::getTags() const
+{
+    return m_tags;
 }

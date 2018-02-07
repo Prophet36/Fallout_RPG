@@ -1,6 +1,7 @@
 // CONSUMABLES
 
 code:        item_stimpak
+tags:        item, healing, stimpak
 name:        Stimpak
 description: Healing hypo. Heals up to 10 HP.
 attribute:   HP
@@ -10,6 +11,7 @@ value:       20
 weight:      0.1
 
 code:        item_superstimpak
+tags:        item, healing, superstimpak
 name:        Super Stimpak
 description: Advanced healing hypo. Heals up to 25 HP.
 attribute:   HP
@@ -19,6 +21,7 @@ value:       50
 weight:      0.25
 
 code:        item_medkit
+tags:        item, healing, limbs, medkit
 name:        Medkit
 description: Basic medkit. Heals broken limbs and up to 5 HP.
 attribute:   HP
@@ -28,6 +31,7 @@ value:       15
 weight:      0.5
 
 code:        item_food
+tags:        item, healing, food
 name:        Cooked Food
 description: Cooked and edible foodstuff. Heals up to 2 HP.
 attribute:   HP
@@ -37,6 +41,7 @@ value:       3
 weight:      1.0
 
 code:        item_dirtyfood
+tags:        item, rads, food
 name:        Raw Food
 description: Raw, unprepared foodstuff. Adds 20 RADS.
 attribute:   RADS
@@ -46,6 +51,7 @@ value:       1
 weight:      1.0
 
 code:        item_water
+tags:        item, healing, water
 name:        Purified Water
 description: Purified water. Heals up to 2 HP.
 attribute:   HP
@@ -55,6 +61,7 @@ value:       5
 weight:      2.0
 
 code:        item_dirtywater
+tags:        item, rads, water
 name:        Irradiated Water
 description: Unpurified, irradiated water. Adds 20 RADS.
 attribute:   RADS
@@ -64,6 +71,7 @@ value:       2
 weight:      2.0
 
 code:        item_jet
+tags:        item, buff, jet
 name:        Jet
 description: Chemical drug. Boosts Agility for 5 turns.
 attribute:   AG
@@ -73,6 +81,7 @@ value:       20
 weight:      0.1
 
 code:        item_psycho
+tags:        item, buff, psycho
 name:        Psycho
 description: Military combat booster. Boosts Perception for 5 turns.
 attribute:   PE
@@ -82,6 +91,7 @@ value:       20
 weight:      0.1
 
 code:        item_buffout
+tags:        item, buff, buffout
 name:        Buffout
 description: Muscle enhancing drug. Boosts Strength for 5 turns.
 attribute:   ST
@@ -762,78 +772,79 @@ weight:      5.0
 // AMMO
 
 code:        ammo_9mm
+tags:        ammo, 9mm
 name:        9mm Rounds
 description: Standard caliber pistol ammunition.
-stack:       30
-value:       8
+value:       1
 weight:      0.01
 
 code:        ammo_45acp
+tags:        ammo, .45 ACP
 name:        .45 ACP Rounds
 description: Larger caliber pistol ammunition.
-stack:       15
-value:       6
+value:       1
 weight:      0.02
 
 code:        ammo_357
+tags:        ammo, .357
 name:        .357 Magnum Rounds
 description: High-packed revolver ammunition.
-stack:       6
-value:       4
+value:       2
 weight:      0.02
 
 code:        ammo_44
+tags:        ammo, .44
 name:        .44 Magnum Rounds
 description: Powerful revolver ammunition.
-stack:       5
-value:       4
+value:       3
 weight:      0.03
 
 code:        ammo_20ga
+tags:        ammo, 20ga
 name:        20 Gauge Rounds
 description: Standard shotgun ammunition.
-stack:       10
-value:       8
+value:       3
 weight:      0.04
 
 code:        ammo_12ga
+tags:        ammo, 12ga
 name:        12 Gauge Rounds
 description: Larger shotgun ammunition.
-stack:       10
-value:       10
+value:       4
 weight:      0.05
 
 code:        ammo_556
+tags:        ammo, 5.56mm
 name:        5.56mm Rounds
 description: Military issued rifle ammunition.
-stack:       30
-value:       12
+value:       1
 weight:      0.02
 
 code:        ammo_308
+tags:        ammo, .308
 name:        .308 Rounds
 description: High-caliber military ammunition.
-stack:       20
-value:       10
+value:       3
 weight:      0.03
 
-code:        ammo_50BMG
+code:        ammo_50bmg
+tags:        ammo, .50 BMG
 name:        .50 BMG Rounds
 description: High-caliber sniper rifle ammunition.
-stack:       5
-value:       10
+value:       5
 weight:      0.1
 
 code:        ammo_ec
-name:        Energy Charge Pack
-description: High-tech ammunition for energy weapons.
-stack:       30
-value:       10
+tags:        ammo, EC
+name:        Energy Cell
+description: Universal ammunition for energy weapons.
+value:       1
 weight:      0.01
 
 // ARMORS
 
 code:        armor_plain
+tags:        armor
 name:        Plain Clothing
 description: Plain clothes. Unremarkable.
 reduction:   0
@@ -843,6 +854,7 @@ value:       2
 weight:      1.0
 
 code:        armor_bunker
+tags:        armor
 name:        Bunker Outfit
 description: Outfit from fallout bunker.
 reduction:   0
@@ -852,6 +864,7 @@ value:       10
 weight:      3.0
 
 code:        armor_leather
+tags:        armor
 name:        Leather Armor
 description: Sturdy leather armor.
 reduction:   1
@@ -861,6 +874,7 @@ value:       20
 weight:      5.0
 
 code:        armor_wasteland
+tags:        armor
 name:        Wasteland Armor
 description: Hand made wasteland armor, protects from elements.
 reduction:   2
@@ -870,6 +884,7 @@ value:       30
 weight:      5.5
 
 code:        armor_metal
+tags:        armor
 name:        Metal Armor
 description: Metal armor, heavy and durable.
 reduction:   5
@@ -879,6 +894,7 @@ value:       50
 weight:      10.0
 
 code:        armor_combat
+tags:        armor
 name:        Combat Armor
 description: Military combat armor.
 reduction:   4
@@ -888,6 +904,7 @@ value:       100
 weight:      7.5
 
 code:        armor_alloy
+tags:        armor
 name:        Alloy Armor
 description: Advanced military armor made from durable alloys.
 reduction:   6
@@ -897,6 +914,7 @@ value:       150
 weight:      8.0
 
 code:        armor_carbon
+tags:        armor
 name:        Carbon-Fiber Armor
 description: Advanced special forces armor. Very light, yet durable.
 reduction:   6
@@ -906,6 +924,7 @@ value:       250
 weight:      4.0
 
 code:        armor_desert
+tags:        armor
 name:        Desert Ranger Armor
 description: Sturdy armor worn by Desert Rangers.
 reduction:   4
@@ -915,6 +934,7 @@ value:       3.5
 weight:      300
 
 code:        armor_power
+tags:        armor
 name:        Powered Armor
 description: High-tech powered metal armor.
 reduction:   9
@@ -924,6 +944,7 @@ value:       1000
 weight:      10.0
 
 code:        armor_endgameheavy
+tags:        armor
 name:        End Game Armor
 description: Usable end game adapted armor.
 reduction:   12
@@ -933,6 +954,7 @@ value:       1000
 weight:      18.0
 
 code:        armor_endgamelight
+tags:        armor
 name:        End Game Outfit
 description: Advanced End Game armor, covers whole body.
 reduction:   10

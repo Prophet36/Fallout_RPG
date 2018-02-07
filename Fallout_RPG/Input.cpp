@@ -3,11 +3,52 @@
 #include <iostream> // std::cout, std::cin
 #include <string>   // std::string
 
+Input::Input()
+{
+}
+
+Input::~Input()
+{
+}
+
 void Input::clearBuffer()
 {
     std::cin.clear();
     while (std::cin.get() != '\n')
         continue;
+}
+
+void Input::keyContinue(bool prompt)
+{
+    if (prompt == true)
+        std::cout << "\nPress ENTER to continue...";
+    std::cin.get();
+}
+
+char Input::getChar()
+{
+    char temp;
+    while (!(std::cin >> temp))
+    {
+        clearBuffer();
+        std::cout << "Enter correct character: ";
+    }
+    clearBuffer();
+    return temp;
+}
+
+char Input::yesNoPrompt()
+{
+    char choice;
+    while (!(std::cin >> choice) ||
+        choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
+    {
+        clearBuffer();
+        std::cout << "Enter correct answer (y/n): ";
+    }
+    clearBuffer();
+
+    return tolower(choice);
 }
 
 int Input::getInt()
@@ -22,29 +63,16 @@ int Input::getInt()
     return temp;
 }
 
-std::string Input::getString()
-{
-    std::string temp;
-    while (!(std::cin >> temp))
+int Input::getPosInt()
+{   
+    int temp;
+    while (!(std::cin >> temp) || temp < 1)
     {
         clearBuffer();
-        std::cout << "Enter correct string: ";
+        std::cout << "Enter correct positive integer value: ";
     }
     clearBuffer();
     return temp;
-}
-
-char Input::yesNoPrompt()
-{
-    char choice;
-    while (!(std::cin >> choice) || choice != 'y' && choice != 'n')
-    {
-        clearBuffer();
-        std::cout << "Enter correct value (y/n): ";
-    }
-    clearBuffer();
-
-    return choice;
 }
 
 int Input::switchPrompt(int low, int high)
@@ -60,17 +88,14 @@ int Input::switchPrompt(int low, int high)
     return choice;
 }
 
-void Input::keyContinue(bool prompt)
+std::string Input::getString()
 {
-    if (prompt == true)
-        std::cout << "\nPress ENTER to continue...";
-    std::cin.get();
-}
-
-Input::Input()
-{
-}
-
-Input::~Input()
-{
+    std::string temp;
+    while (!(std::cin >> temp))
+    {
+        clearBuffer();
+        std::cout << "Enter correct string: ";
+    }
+    clearBuffer();
+    return temp;
 }

@@ -17,7 +17,7 @@ public:
     static int checkItemPrefix(std::string item_id);
     static int checkConsumableBonus(std::string bonus);
     static int checkWeaponType(std::string tags);
-    static int checkAmmoType(std::string ammo_type);
+    static int checkAmmoType(std::string tags);
 
 private:
     Inventory();

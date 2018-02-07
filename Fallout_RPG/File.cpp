@@ -4,20 +4,24 @@
 #include <iostream> // std::cout, std::cerr
 #include <fstream>  // std::fstream
 #include <string>   // std::string, std::getline
-#include <vector>   // std::vector
 
 File * File::m_instance = nullptr;
 
-File::File()
+File::File(std::string file_type)
 {
     m_working_file.open(ITEMS);
     std::cout << "DEBUG: ----- File opened! -----\n";
 }
 
-File * File::open()
+File::~File()
+{
+    std::cout << "DEBUG: ----- File closed! -----\n";
+}
+
+File * File::open(std::string file_type)
 {
     if (!m_instance)
-        m_instance = new File();
+        m_instance = new File(file_type);
     return m_instance;
 }
 
@@ -43,13 +47,6 @@ bool File::findItem(std::string item_id)
     }
     return false;
 }
-
-//std::fstream File::openFileAt(int position, std::string file_type)
-//{
-//    std::fstream working_file(file_type);
-//    working_file.seekg(position);
-//    return working_file;
-//}
 
 void File::setReadPosition()
 {
@@ -93,9 +90,4 @@ void File::closeFile()
         delete m_instance;
         m_instance = nullptr;
     }
-}
-
-File::~File()
-{
-    std::cout << "DEBUG: ----- File closed! -----\n";
 }

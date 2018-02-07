@@ -10,16 +10,20 @@
 #include <string>   // std::string
 #include <vector>   // std::vector
 
+#define INVENTORY_SIZE 3
+
 class Human : public Character
 {
 public:
-    Human(int max_space = 10);
+    Human(int max_space = INVENTORY_SIZE);
     ~Human();
 
     void showInventory() const;
     void addItemPrompt(std::string item_id);
     void deleteItemPrompt();
-    bool checkInventorySpace(bool adding_item = true) const;
+    bool checkInventorySpace() const;
+    bool checkInventoryEncumbrance() const;
+    void sortInventory(Item * new_item);
 
 protected:
     std::vector<Item *> inventory;

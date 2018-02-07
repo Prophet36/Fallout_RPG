@@ -4,9 +4,14 @@
 #include <string>   // std::string
 
 Armor::Armor(std::string name, std::string description, int reduction,
-             int evasion, int protection, int value, double weight) :
-    Item(name, description, value, weight), m_reduction(reduction),
+             int evasion, int protection, int value, double weight,
+             std::string tags) :
+    Item(name, description, value, weight, tags), m_reduction(reduction),
     m_evasion(evasion), m_protection(protection)
+{
+}
+
+Armor::~Armor()
 {
 }
 
@@ -17,6 +22,16 @@ void Armor::debugPrint() const
               << " WG: " << m_weight << std::endl;
 }
 
-Armor::~Armor()
+void Armor::setCount(int count)
 {
+}
+
+int Armor::getCount() const
+{
+    return 1;
+}
+
+std::string Armor::getTags() const
+{
+    return m_tags;
 }
