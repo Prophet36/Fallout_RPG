@@ -17,23 +17,9 @@ Armor::~Armor()
 
 void Armor::debugPrint() const
 {
-    std::cout << m_name << ": " << m_description << " DT: " << m_reduction << " EV: "
+    std::cout << m_name << ": " << m_description << "\nDT: " << m_reduction << " EV: "
               << m_evasion << " PROT: " << m_protection << " VAL: " << m_value
-              << " WG: " << m_weight << std::endl;
-}
-
-void Armor::setCount(int count)
-{
-}
-
-int Armor::getCount() const
-{
-    return 1;
-}
-
-int Armor::getStack() const
-{
-    return 1;
+              << " WG: " << m_weight << "\nTAGS: " << m_tags << std::endl;
 }
 
 std::string Armor::getTags() const

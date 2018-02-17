@@ -1,10 +1,10 @@
 #include "stdafx.h"
-#include "Ammo.h"
 #include "File.h"
 #include "FItem.h"
 #include "Human.h"
 #include "Input.h"
 #include "Inventory.h"
+#include "IStackable.h"
 #include <iostream> // std::cout
 #include <string>   // std::string
 
@@ -35,19 +35,19 @@ void Human::addItemPrompt(std::string item_id)
 {
     if (File::open(ITEMS)->findItem(item_id))
     {
-        Item * new_item = FItem::createNewItem(item_id);
+        Item * created_item = FItem::createNewItem(item_id);
 
         switch (Inventory::checkItemPrefix(item_id))
         {
             case Inventory::CONSUMABLE:
             case Inventory::AMMO:
             {
-                sortInventory(new_item);
+                sortInventory(created_item);
                 break;
             }
             default:
             {
-                inventory.push_back(new_item);
+                inventory.push_back(created_item);
                 break;
             }
         }
@@ -106,29 +106,27 @@ bool Human::checkInventoryEncumbrance() const
     return false;
 }
 
-void Human::sortInventory(Item * new_item)
+void Human::sortInventory(Item * created_item)
 {
     for (int i = 0; i < inventory.size(); i++)
     {
-        if (inventory.at(i)->getTags() == new_item->getTags())
+        if (inventory[i]->getTags() == created_item->getTags())
         {
-            int temp = inventory.at(i)->getStack() -
-                       inventory.at(i)->getCount();
-            if (temp >= new_item->getCount())
+            IStackable * inv_item = dynamic_cast<IStackable *>(inventory[i]);
+            IStackable * add_item = dynamic_cast<IStackable *>(created_item);
+            if (inv_item && add_item)
             {
-                inventory.at(i)->setCount(inventory.at(i)->getCount() +
-                                          new_item->getCount());
-                delete new_item;
-                new_item = nullptr;
-                break;
-            }
-            else
-            {
-                inventory.at(i)->setCount(inventory.at(i)->getStack());
-                new_item->setCount(new_item->getCount() - temp);
+                add_item->setCount(inv_item->setCount(inv_item->getCount() +
+                                                      add_item->getCount()));
+                if (add_item->getCount() == 0)
+                {
+                    delete created_item;
+                    created_item = nullptr;
+                    break;
+                }
             }
         }
     }
-    if (new_item)
-        inventory.push_back(new_item);
+    if (created_item)
+        inventory.push_back(created_item);
 }

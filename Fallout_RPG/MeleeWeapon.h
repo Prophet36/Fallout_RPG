@@ -14,8 +14,5 @@ public:
     ~MeleeWeapon();
 
     virtual void debugPrint() const override;
-    virtual void setCount(int count) override;
-    virtual int getCount() const override;
-    virtual int getStack() const override;
     virtual std::string getTags() const override;
 };

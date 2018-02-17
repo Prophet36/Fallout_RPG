@@ -20,29 +20,16 @@ RangedWeapon::~RangedWeapon()
 
 void RangedWeapon::debugPrint() const
 {
-    std::cout << m_name << ": " << m_description << " Has " << m_current_ammo
+    std::cout << m_name << ": " << m_description << "\nHas " << m_current_ammo
               << " / " << m_capacity << " " << m_ammo_type << " rounds.\nDMG: "
               << m_damage << " + " << m_roll << " SPD: " << m_speed << " ACC: "
               << m_accuracy << " PEN: " << m_penetration << " ST: "
-              << m_requirement << " VAL: " << m_value << " WG: " << m_weight
+              << m_requirement << "\nVAL: " << m_value << " WG: " << m_weight
               << "\nTAGS: " << m_tags << std::endl;
-}
-
-void RangedWeapon::setCount(int count)
-{
-}
-
-int RangedWeapon::getCount() const
-{
-    return 1;
-}
-
-int RangedWeapon::getStack() const
-{
-    return 1;
 }
 
 std::string RangedWeapon::getTags() const
 {
+    std::cout << m_tags;
     return m_tags;
 }

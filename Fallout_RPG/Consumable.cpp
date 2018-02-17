@@ -6,8 +6,8 @@
 Consumable::Consumable(std::string name, std::string description, int attribute,
                        int magnitude, int duration, int count, int stack,
                        int value, double weight, std::string tags) :
-    Item(name, description, value, weight, tags), m_attribute(attribute),
-    m_magnitude(magnitude), m_duration(duration), m_count(count), m_stack(stack)
+    Item(name, description, value, weight, tags), IStackable(count, stack),
+    m_attribute(attribute), m_magnitude(magnitude), m_duration(duration)
 {
 }
 
@@ -17,26 +17,27 @@ Consumable::~Consumable()
 
 void Consumable::debugPrint() const
 {
-    std::cout << m_name << ": " << m_description << " Gives " << m_magnitude
+    std::cout << m_name << ": " << m_description << "\nGives " << m_magnitude
               << " " << m_attribute << " for " << m_duration
               << " turns. You have " << m_count << " / " << m_stack
-              << " in this slot. VAL: " << m_value << " WG: " << m_weight
-              << std::endl;
+              << " in this slot.\nVAL: " << m_value * m_count << " WG: "
+              << m_weight * m_count << "\nTAGS: " << m_tags << std::endl;
 }
 
-void Consumable::setCount(int count)
+int Consumable::setCount(int count)
 {
+    if (count > m_stack)
+    {
+        m_count = m_stack;
+        return count - m_stack;
+    }
     m_count = count;
+    return 0;
 }
 
 int Consumable::getCount() const
 {
     return m_count;
-}
-
-int Consumable::getStack() const
-{
-    return m_stack;
 }
 
 std::string Consumable::getTags() const

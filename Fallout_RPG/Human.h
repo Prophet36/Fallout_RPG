@@ -23,7 +23,7 @@ public:
     void deleteItemPrompt();
     bool checkInventorySpace() const;
     bool checkInventoryEncumbrance() const;
-    void sortInventory(Item * new_item);
+    void sortInventory(Item * created_item);
 
 protected:
     std::vector<Item *> inventory;

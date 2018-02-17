@@ -93,6 +93,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>MyForm.cpp</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -151,6 +152,7 @@
     <ClInclude Include="FItem.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="IStackable.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="MeleeWeapon.h" />
     <ClInclude Include="Player.h" />
@@ -170,6 +172,7 @@
     <ClCompile Include="FItem.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="IStackable.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="MeleeWeapon.cpp" />
     <ClCompile Include="Player.cpp" />
