@@ -4,7 +4,7 @@ code:        item_stimpak
 tags:        item, healing, stimpak
 name:        Stimpak
 description: Healing hypo. Heals up to 10 HP.
-attribute:   HP
+attribute:   HEALTH
 magnitude:   10
 duration:    0
 stack        5
@@ -15,7 +15,7 @@ code:        item_superstimpak
 tags:        item, healing, superstimpak
 name:        Super Stimpak
 description: Advanced healing hypo. Heals up to 25 HP.
-attribute:   HP
+attribute:   HEALTH
 magnitude:   25
 duration:    0
 stack        2
@@ -26,7 +26,7 @@ code:        item_medkit
 tags:        item, healing, limbs, medkit
 name:        Medkit
 description: Basic medkit. Heals broken limbs and up to 5 HP.
-attribute:   HP
+attribute:   HEALTH
 magnitude:   5
 duration:    0
 stack        2
@@ -37,7 +37,7 @@ code:        item_food
 tags:        item, healing, food
 name:        Cooked Food
 description: Cooked and edible foodstuff. Heals up to 2 HP.
-attribute:   HP
+attribute:   HEALTH
 magnitude:   2
 duration:    0
 stack        10
@@ -59,7 +59,7 @@ code:        item_water
 tags:        item, healing, water
 name:        Purified Water
 description: Purified water. Heals up to 2 HP.
-attribute:   HP
+attribute:   HEALTH
 magnitude:   2
 duration:    0
 stack        10
@@ -81,7 +81,7 @@ code:        item_jet
 tags:        item, buff, jet
 name:        Jet
 description: Chemical drug. Boosts Agility for 5 turns.
-attribute:   AG
+attribute:   AGILITY
 magnitude:   2
 duration:    5
 stack        5
@@ -92,7 +92,7 @@ code:        item_psycho
 tags:        item, buff, psycho
 name:        Psycho
 description: Military combat booster. Boosts Perception for 5 turns.
-attribute:   PE
+attribute:   PERCEPTION
 magnitude:   2
 duration:    5
 stack        5
@@ -103,7 +103,7 @@ code:        item_buffout
 tags:        item, buff, buffout
 name:        Buffout
 description: Muscle enhancing drug. Boosts Strength for 5 turns.
-attribute:   ST
+attribute:   STRENGTH
 magnitude:   2
 duration:    5
 stack        5

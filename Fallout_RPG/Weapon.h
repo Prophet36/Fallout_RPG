@@ -13,8 +13,10 @@ public:
            int value, double weight, std::string tags);
     ~Weapon();
 
+    /**
+     * Prints the parameters of the object for debug purposes.
+     */
     virtual void debugPrint() const = 0;
-    virtual std::string getTags() const = 0;
     int getMinDamage() const;
     int getMaxDamage() const;
 

@@ -20,24 +20,3 @@ void Ammo::debugPrint() const
               << m_value * m_count << " WG: " << m_weight * m_count
               << "\nTAGS: " << m_tags << std::endl;
 }
-
-int Ammo::setCount(int count)
-{
-    if (count > m_stack)
-    {
-        m_count = m_stack;
-        return count - m_stack;
-    }
-    m_count = count;
-    return 0;
-}
-
-int Ammo::getCount() const
-{
-    return m_count;
-}
-
-std::string Ammo::getTags() const
-{
-    return m_tags;
-}

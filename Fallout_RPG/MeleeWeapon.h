@@ -13,6 +13,8 @@ public:
                 int value, double weight, std::string tags);
     ~MeleeWeapon();
 
+    /**
+     * Prints the parameters of the object for debug purposes.
+     */
     virtual void debugPrint() const override;
-    virtual std::string getTags() const override;
 };

@@ -11,7 +11,7 @@
  * Its method consist of printing those statistics.
  *
  * @author  Mateusz Warchol
- * @version 1.0, 02/10/18
+ * @version 1.01, 22/02/18
  * @see     Item
  */
 class Armor : public Item
@@ -45,13 +45,6 @@ public:
     virtual void debugPrint() const override;
 
     /**
-     * Returns the object's tags field.
-     *
-     * @return  string containing tags associated with the object
-     */
-    virtual std::string getTags() const override;
-
-    /**
      * Returns the armor's protection value.
      *
      * @return  damage reduction provided by this armor
@@ -71,7 +64,7 @@ private:
     int m_evasion;
 
     /**
-     * Radiation protection, absorbs specified percent of rads.
+     * Radiation protection. Absorbs specified percent of rads.
      */
     int m_protection;
 };

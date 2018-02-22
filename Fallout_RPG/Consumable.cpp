@@ -23,24 +23,3 @@ void Consumable::debugPrint() const
               << " in this slot.\nVAL: " << m_value * m_count << " WG: "
               << m_weight * m_count << "\nTAGS: " << m_tags << std::endl;
 }
-
-int Consumable::setCount(int count)
-{
-    if (count > m_stack)
-    {
-        m_count = m_stack;
-        return count - m_stack;
-    }
-    m_count = count;
-    return 0;
-}
-
-int Consumable::getCount() const
-{
-    return m_count;
-}
-
-std::string Consumable::getTags() const
-{
-    return m_tags;
-}

@@ -1,4 +1,17 @@
 #pragma once
+
+/**
+ * This interface type class is for objects that can be stacked in one inventory
+ * slot, example being ammunition.
+ *
+ * This interface's members and methods consist of manipulating current
+ * and maximum counts of the object's stack in one inventory slot.
+ *
+ * @author  Mateusz Warchol
+ * @version 1.01, 22/02/18
+ * @see     Ammo
+ * @see     Consumable
+ */
 class IStackable
 {
 public:
@@ -20,18 +33,17 @@ public:
      * returns 0.
      *
      * @param count value to set the current count to
-     * @return      amount over the maximum possible count if setting count
-     *              to a higher value than maximum possible count in one
-     *              inventory slot, otherwise 0
+     * @return      amount over the maximum possible count in one stack,
+     *              if setting count to a value over stack maximum, otherwise 0
      */
-    virtual int setCount(int count) = 0;
+    int setCount(int count);
 
     /**
      * Returns current count of the object in one inventory slot.
      *
      * @return  current count in one inventory slot
      */
-    virtual int getCount() const = 0;
+    int getCount() const;
 
 protected:
     /**

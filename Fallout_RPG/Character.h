@@ -11,7 +11,7 @@ public:
     ~Character();
 
 protected:
-    const std::string m_name;
+    std::string m_name;
     int m_level;
     int m_strength;
     int m_agility;

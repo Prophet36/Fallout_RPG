@@ -27,9 +27,3 @@ void RangedWeapon::debugPrint() const
               << m_requirement << "\nVAL: " << m_value << " WG: " << m_weight
               << "\nTAGS: " << m_tags << std::endl;
 }
-
-std::string RangedWeapon::getTags() const
-{
-    std::cout << m_tags;
-    return m_tags;
-}

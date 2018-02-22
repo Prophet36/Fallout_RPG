@@ -11,8 +11,17 @@ public:
          std::string tags);
     virtual ~Item();
 
+    /**
+     * Prints the parameters of the object for debug purposes.
+     */
     virtual void debugPrint() const = 0;
-    virtual std::string getTags() const = 0;
+
+    /**
+     * Returns the object's tags field.
+     *
+     * @return  string containing tags associated with the object
+     */
+    std::string getTags() const;
 
 protected:
     std::string m_name;

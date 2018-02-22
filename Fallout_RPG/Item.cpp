@@ -15,3 +15,8 @@ Item::~Item()
 {
     std::cout << "\nDEBUG: ----- Item " << m_name << " destroyed! -----\n";
 }
+
+std::string Item::getTags() const
+{
+    return m_tags;
+}

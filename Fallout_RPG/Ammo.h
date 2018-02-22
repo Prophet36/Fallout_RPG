@@ -16,7 +16,7 @@
  * of particular ammo type in one inventory slot.
  *
  * @author  Mateusz Warchol
- * @version 1.0, 02/10/18
+ * @version 1.01, 22/02/18
  * @see     Item
  * @see     IStackable
  */
@@ -48,31 +48,4 @@ public:
      * Prints the parameters of the object for debug purposes.
      */
     virtual void debugPrint() const override;
-
-    /**
-     * Sets current count of the object in one inventory slot. If the value
-     * to set current count to is greater than maximum possible count (m_stack)
-     * in one slot, then returns the amount that is over the limit, otherwise
-     * returns 0.
-     *
-     * @param count value to set the current count to
-     * @return      amount over the maximum possible count if setting count
-     *              to a higher value than maximum possible count in one
-     *              inventory slot, otherwise 0
-     */
-    virtual int setCount(int count) override;
-
-    /**
-     * Returns current count of the object in one inventory slot.
-     *
-     * @return  current count in one inventory slot
-     */
-    virtual int getCount() const override;
-
-    /**
-     * Returns the object's tags field.
-     *
-     * @return  string containing tags associated with the object
-     */
-    virtual std::string getTags() const override;
 };

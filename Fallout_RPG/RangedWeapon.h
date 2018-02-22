@@ -14,8 +14,10 @@ public:
                  double weight, std::string tags);
     ~RangedWeapon();
 
+    /**
+     * Prints the parameters of the object for debug purposes.
+     */
     virtual void debugPrint() const override;
-    virtual std::string getTags() const override;
 
 private:
     int m_capacity;

@@ -22,11 +22,6 @@ void Armor::debugPrint() const
               << " WG: " << m_weight << "\nTAGS: " << m_tags << std::endl;
 }
 
-std::string Armor::getTags() const
-{
-    return m_tags;
-}
-
 int Armor::getReduction() const
 {
     return m_reduction;
