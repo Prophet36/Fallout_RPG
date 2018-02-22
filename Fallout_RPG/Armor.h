@@ -51,6 +51,13 @@ public:
      */
     virtual std::string getTags() const override;
 
+    /**
+     * Returns the armor's protection value.
+     *
+     * @return  damage reduction provided by this armor
+     */
+    int getReduction() const;
+
 private:
     /**
      * Value specifying maximum possible damage reduction of incoming attack.

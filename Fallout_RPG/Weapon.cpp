@@ -14,3 +14,33 @@ Weapon::Weapon(std::string name, std::string description, int damage,
 Weapon::~Weapon()
 {
 }
+
+int Weapon::getMinDamage() const
+{
+    if (m_roll[0] == 'd')
+    {
+        return m_damage + 1;
+    }
+    else
+    {
+        return m_damage + (m_roll[0] - '0');
+    }
+}
+
+int Weapon::getMaxDamage() const
+{
+    std::string temp = m_roll;
+    int mult = 1;
+
+    if (m_roll[0] == 'd')
+    {
+        temp.erase(temp.begin(), temp.begin() + 1);
+        return m_damage + std::stoi(temp);
+    }
+    else
+    {
+        mult = m_roll[0] - '0';
+        temp.erase(temp.begin(), temp.begin() + 2);
+        return m_damage + (mult * std::stoi(temp));
+    }
+}

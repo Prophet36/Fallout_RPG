@@ -26,3 +26,8 @@ std::string Armor::getTags() const
 {
     return m_tags;
 }
+
+int Armor::getReduction() const
+{
+    return m_reduction;
+}

@@ -15,6 +15,8 @@ public:
 
     virtual void debugPrint() const = 0;
     virtual std::string getTags() const = 0;
+    int getMinDamage() const;
+    int getMaxDamage() const;
 
 protected:
     std::string m_roll;
