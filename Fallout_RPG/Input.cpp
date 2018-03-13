@@ -11,18 +11,30 @@ Input::~Input()
 {
 }
 
-void Input::clearBuffer()
-{
-    std::cin.clear();
-    while (std::cin.get() != '\n')
-        continue;
-}
-
 void Input::keyContinue(bool prompt)
 {
     if (prompt == true)
         std::cout << "\nPress ENTER to continue...";
     std::cin.get();
+}
+
+
+bool Input::yesNoPrompt()
+{
+    char choice;
+    while (!(std::cin >> choice) ||
+           choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
+    {
+        clearBuffer();
+        std::cout << "Enter correct answer (y/n): ";
+    }
+    clearBuffer();
+    tolower(choice);
+
+    if (choice == 'y')
+        return true;
+    else
+        return false;
 }
 
 char Input::getChar()
@@ -35,20 +47,6 @@ char Input::getChar()
     }
     clearBuffer();
     return temp;
-}
-
-char Input::yesNoPrompt()
-{
-    char choice;
-    while (!(std::cin >> choice) ||
-        choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N')
-    {
-        clearBuffer();
-        std::cout << "Enter correct answer (y/n): ";
-    }
-    clearBuffer();
-
-    return tolower(choice);
 }
 
 int Input::getInt()
@@ -98,4 +96,11 @@ std::string Input::getString()
     }
     clearBuffer();
     return temp;
+}
+
+void Input::clearBuffer()
+{
+    std::cin.clear();
+    while (std::cin.get() != '\n')
+        continue;
 }

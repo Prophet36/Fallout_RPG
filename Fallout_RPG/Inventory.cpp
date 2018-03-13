@@ -82,8 +82,6 @@ int Inventory::checkAmmoType(std::string tags)
     return -1;
 }
 
-/////////////////////////////////////////////////////////////////////////////
-
 void Inventory::print() const
 {
     if (!m_items.empty())
@@ -97,12 +95,13 @@ void Inventory::print() const
     else
     {
         std::cout << "Your inventory is empty!";
+        Input::keyContinue();
     }
 }
 
 void Inventory::add(std::string item_id)
 {
-    if (File::open(ITEMS)->findItem(item_id))
+    if (File::get(c_items)->findItem(item_id))
     {
         Item * created_item = FItem::createNewItem(item_id);
 
@@ -126,7 +125,7 @@ void Inventory::add(std::string item_id)
             remove();
         }
     }
-    File::open(ITEMS)->closeFile();
+    File::get(c_items)->close();
 }
 
 void Inventory::remove()
@@ -157,7 +156,7 @@ bool Inventory::warnEncumbrance() const
     {
         std::cout << "Warning: Your inventory is currently full!\n"
                      "Do you still want to add another item? (y/n): ";
-        if (Input::yesNoPrompt() == 'y')
+        if (Input::yesNoPrompt())
             return true;
         else
             return false;

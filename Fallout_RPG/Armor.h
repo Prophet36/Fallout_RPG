@@ -11,7 +11,6 @@
  * Its method consist of printing those statistics.
  *
  * @author  Mateusz Warchol
- * @version 1.01, 22/02/18
  * @see     Item
  */
 class Armor : public Item
@@ -24,7 +23,7 @@ public:
      * @param name          string containing name of the object
      * @param description   string containing description of the object
      * @param reduction     maximum potential damage reduction
-     * @param evasion       possible bonus (or malus if negative) to attack
+     * @param evasion       possible bonus (or malus, if negative) to attack
      *                      evasion
      * @param protection    radiation protection, measured in percents
      * @param value         monetary value of this object
@@ -37,7 +36,7 @@ public:
     /**
      * Class desctructor. Deletes instance of Armor object.
      */
-    ~Armor();
+    virtual ~Armor();
 
     /**
      * Prints the parameters of the object for debug purposes.

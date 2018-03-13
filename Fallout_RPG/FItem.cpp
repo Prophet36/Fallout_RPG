@@ -52,7 +52,7 @@ Item * FItem::createNewItem(std::string item_id)
 
 Item * FItem::createNewConsumable()
 {
-    File * working_file = File::open(ITEMS);
+    File * working_file = File::get(c_items);
     std::string tags = working_file->getString();
     std::string name = working_file->getString();
     std::string description = working_file->getString();
@@ -72,7 +72,7 @@ Item * FItem::createNewConsumable()
 
 Item * FItem::createNewWeapon()
 {
-    std::string tags = File::open(ITEMS)->getString();
+    std::string tags = File::get(c_items)->getString();
     switch (Inventory::checkWeaponType(tags))
     {
         case Inventory::MELEE:
@@ -93,7 +93,7 @@ Item * FItem::createNewWeapon()
 
 Item * FItem::createNewMeleeWeapon(std::string tags)
 {
-    File * working_file = File::open(ITEMS);
+    File * working_file = File::get(c_items);
     std::string name = working_file->getString();
     std::string description = working_file->getString();
     int damage = working_file->getInt();
@@ -110,7 +110,7 @@ Item * FItem::createNewMeleeWeapon(std::string tags)
 
 Item * FItem::createNewRangedWeapon(std::string tags)
 {
-    File * working_file = File::open(ITEMS);
+    File * working_file = File::get(c_items);
     std::string name = working_file->getString();
     std::string description = working_file->getString();
     int ammo_type = Inventory::checkAmmoType(working_file->getString());
@@ -131,7 +131,7 @@ Item * FItem::createNewRangedWeapon(std::string tags)
 
 Item * FItem::createNewAmmo()
 {
-    File * working_file = File::open(ITEMS);
+    File * working_file = File::get(c_items);
     std::string tags = working_file->getString();
     std::string name = working_file->getString();
     std::string description = working_file->getString();
@@ -147,7 +147,7 @@ Item * FItem::createNewAmmo()
 
 Item * FItem::createNewArmor()
 {
-    File * working_file = File::open(ITEMS);
+    File * working_file = File::get(c_items);
     std::string tags = working_file->getString();
     std::string name = working_file->getString();
     std::string description = working_file->getString();

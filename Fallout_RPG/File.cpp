@@ -7,9 +7,8 @@
 
 File * File::m_instance = nullptr;
 
-File::File(std::string file_type)
+File::File()
 {
-    m_working_file.open(ITEMS);
     std::cout << "DEBUG: ----- File opened! -----\n";
 }
 
@@ -18,11 +17,23 @@ File::~File()
     std::cout << "DEBUG: ----- File closed! -----\n";
 }
 
-File * File::open(std::string file_type)
+File * File::get(std::string file_type)
 {
     if (!m_instance)
-        m_instance = new File(file_type);
+        m_instance = new File();
+    if(!m_instance->m_working_file.is_open())
+        m_instance->open(file_type);
     return m_instance;
+}
+
+void File::setReadPosition()
+{
+    while (m_working_file.get() != ' ')
+        continue;
+    while (m_working_file.get() == ' ')
+        continue;
+
+    m_working_file.seekg((int)m_working_file.tellg() - 1);
 }
 
 bool File::findItem(std::string item_id)
@@ -48,15 +59,6 @@ bool File::findItem(std::string item_id)
     return false;
 }
 
-void File::setReadPosition()
-{
-    while (m_working_file.get() != ' ')
-        continue;
-    while (m_working_file.get() == ' ')
-        continue;
-
-    m_working_file.seekg((int)m_working_file.tellg() - 1);
-}
 
 std::string File::getString()
 {
@@ -82,12 +84,18 @@ double File::getDouble()
     return temp;
 }
 
-void File::closeFile()
+void File::open(std::string file_type)
+{
+    if (!m_working_file.is_open())
+    {
+        m_working_file.open(file_type);
+    }
+}
+
+void File::close()
 {
     if (m_working_file.is_open())
     {
         m_working_file.close();
-        delete m_instance;
-        m_instance = nullptr;
     }
 }

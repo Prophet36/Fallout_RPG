@@ -16,7 +16,6 @@
  * of particular ammo type in one inventory slot.
  *
  * @author  Mateusz Warchol
- * @version 1.01, 22/02/18
  * @see     Item
  * @see     IStackable
  */
@@ -42,7 +41,7 @@ public:
     /**
      * Class desctructor. Deletes instance of Ammo object.
      */
-    ~Ammo();
+    virtual ~Ammo();
 
     /**
      * Prints the parameters of the object for debug purposes.

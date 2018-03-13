@@ -15,14 +15,12 @@
  * and manipulating the count of particular consumable in one inventory slot.
  *
  * @author  Mateusz Warchol
- * @version 1.01, 22/02/18
  * @see     Item
  * @see     IStackable
  */
 class Consumable : public Item, public IStackable
 {
 public:
-
     /**
      * Enumerator containing values corresponding to attributes being modified.
      */
@@ -36,8 +34,8 @@ public:
      *
      * @param name          string containing name of the object
      * @param description   string containing description of the object
-     * @param attribute     enumerator representing type of character attribute
-     *                      to modify
+     * @param attribute     enumerator value representing type of character
+     *                      attribute to modify
      * @param magnitude     value specifying how much the attribute is modified
      * @param duration      value specifying how long (in game turns)
      *                      the attribute is modified. Value of 0 means
@@ -55,7 +53,7 @@ public:
     /**
      * Class desctructor. Deletes instance of Consumable object.
      */
-    ~Consumable();
+    virtual ~Consumable();
 
     /**
      * Prints the parameters of the object for debug purposes.
@@ -64,7 +62,8 @@ public:
 
 private:
     /**
-     * Type of character attribute the consumable is modifying.
+     * Type of character attribute the consumable is modifying, according to
+     * enumerator provided with this class.
      */
     int m_attribute;
 

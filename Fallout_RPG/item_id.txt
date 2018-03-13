@@ -1,6 +1,6 @@
 // CONSUMABLES
 
-code:        item_stimpak
+item_id:     item_stimpak
 tags:        item, healing, stimpak
 name:        Stimpak
 description: Healing hypo. Heals up to 10 HP.
@@ -11,7 +11,7 @@ stack        5
 value:       20
 weight:      0.1
 
-code:        item_superstimpak
+item_id:     item_superstimpak
 tags:        item, healing, superstimpak
 name:        Super Stimpak
 description: Advanced healing hypo. Heals up to 25 HP.
@@ -22,7 +22,7 @@ stack        2
 value:       50
 weight:      0.25
 
-code:        item_medkit
+item_id:     item_medkit
 tags:        item, healing, limbs, medkit
 name:        Medkit
 description: Basic medkit. Heals broken limbs and up to 5 HP.
@@ -33,7 +33,7 @@ stack        2
 value:       15
 weight:      0.5
 
-code:        item_food
+item_id:     item_food
 tags:        item, healing, food
 name:        Cooked Food
 description: Cooked and edible foodstuff. Heals up to 2 HP.
@@ -44,7 +44,7 @@ stack        10
 value:       3
 weight:      0.5
 
-code:        item_dirtyfood
+item_id:     item_dirtyfood
 tags:        item, rads, food
 name:        Raw Food
 description: Raw, unprepared foodstuff. Adds 20 RADS.
@@ -55,7 +55,7 @@ stack        10
 value:       1
 weight:      0.5
 
-code:        item_water
+item_id:     item_water
 tags:        item, healing, water
 name:        Purified Water
 description: Purified water. Heals up to 2 HP.
@@ -66,7 +66,7 @@ stack        10
 value:       5
 weight:      0.5
 
-code:        item_dirtywater
+item_id:     item_dirtywater
 tags:        item, rads, water
 name:        Irradiated Water
 description: Unpurified, irradiated water. Adds 20 RADS.
@@ -77,7 +77,7 @@ stack        10
 value:       2
 weight:      0.5
 
-code:        item_jet
+item_id:     item_jet
 tags:        item, buff, jet
 name:        Jet
 description: Chemical drug. Boosts Agility for 5 turns.
@@ -88,7 +88,7 @@ stack        5
 value:       20
 weight:      0.1
 
-code:        item_psycho
+item_id:     item_psycho
 tags:        item, buff, psycho
 name:        Psycho
 description: Military combat booster. Boosts Perception for 5 turns.
@@ -99,7 +99,7 @@ stack        5
 value:       20
 weight:      0.1
 
-code:        item_buffout
+item_id:     item_buffout
 tags:        item, buff, buffout
 name:        Buffout
 description: Muscle enhancing drug. Boosts Strength for 5 turns.
@@ -112,7 +112,7 @@ weight:      0.1
 
 // MELEE WEAPONS
 
-code:        weapon_fists
+item_id:     weapon_fists
 tags:        melee, blunt
 name:        Unarmed
 description: Your fists.
@@ -124,7 +124,7 @@ requirement: 1
 value:       0
 weight:      0.0
 
-code:        weapon_knife
+item_id:     weapon_knife
 tags:        melee, sharp
 name:        Knife
 description: Sharp knife. Very fast.
@@ -136,7 +136,7 @@ requirement: 1
 value:       5
 weight:      0.2
 
-code:        weapon_combatknife
+item_id:     weapon_combatknife
 tags:        melee, sharp
 name:        Combat Knife
 description: Military issued combat knife.
@@ -148,7 +148,7 @@ requirement: 1
 value:       10
 weight:      0.2
 
-code:        weapon_brassknuckles
+item_id:     weapon_brassknuckles
 tags:        melee, blunt
 name:        Brass Knuckles
 description: Metal shaped to fit around the knuckles.
@@ -160,7 +160,7 @@ requirement: 2
 value:       10
 weight:      0.1
 
-code:        weapon_club
+item_id:     weapon_club
 tags:        melee, blunt
 name:        Club
 description: Basic wooden club. Good at bashing heads.
@@ -172,7 +172,7 @@ requirement: 3
 value:       5
 weight:      1.5
 
-code:        weapon_baton
+item_id:     weapon_baton
 tags:        melee, blunt
 name:        Police Baton
 description: Police baton used to deal with riots.
@@ -184,7 +184,7 @@ requirement: 3
 value:       15
 weight:      1.0
 
-code:        weapon_spear
+item_id:     weapon_spear
 tags:        melee, sharp
 name:        Spear
 description: Spear with a very sharp point.
@@ -196,7 +196,7 @@ requirement: 4
 value:       30
 weight:      2.0
 
-code:        weapon_sledgehammer
+item_id:     weapon_sledgehammer
 tags:        melee, blunt
 name:        Sledgehammer
 description: Construction worker's tool.
@@ -208,7 +208,7 @@ requirement: 5
 value:       50
 weight:      3.0
 
-code:        weapon_heavysledge
+item_id:     weapon_heavysledge
 tags:        melee, blunt
 name:        Heavy Sledgehammer.
 description: Very heavy and sturdy sledgehammer.
@@ -220,7 +220,7 @@ requirement: 6
 value:       80
 weight:      8.0
 
-code:        weapon_machete
+item_id:     weapon_machete
 tags:        melee, sharp
 name:        Machete
 description: Sharp machete. High damage potential.
@@ -232,7 +232,7 @@ requirement: 4
 value:       80
 weight:      1.5
 
-code:        weapon_axe
+item_id:     weapon_axe
 tags:        melee, sharp
 name:        Fire Axe
 description: Firefighter's sturdy axe.
@@ -244,7 +244,7 @@ requirement: 5
 value:       100
 weight:      2.5
 
-code:        weapon_protonaxe
+item_id:     weapon_protonaxe
 tags:        melee, sharp
 name:        Proton Axe
 description: Combat axe used by Powered Infantry.
@@ -256,7 +256,7 @@ requirement: 6
 value:       120
 weight:      4.0
 
-code:        weapon_maul
+item_id:     weapon_maul
 tags:        melee, blunt
 name:        Combat Maul
 description: Extremely heavy and damaging maul.
@@ -268,7 +268,7 @@ requirement: 8
 value:       150
 weight:      8.5
 
-code:        weapon_kineticmaul
+item_id:     weapon_kineticmaul
 tags:        melee, blunt
 name:        Kinetic Maul
 description: High-tech combat maul with kinetic storage device.
@@ -282,7 +282,7 @@ weight:      10.0
 
 // RANGED WEAPONS - GUNS
 
-code:        weapon_pistol
+item_id:     weapon_pistol
 tags:        ranged, gun, short
 name:        Pistol
 description: Standard 9mm pistol, light and quick.
@@ -297,7 +297,7 @@ requirement: 2
 value:       20
 weight:      1.0
 
-code:        weapon_militarypistol
+item_id:     weapon_militarypistol
 tags:        ranged, gun, short
 name:        Military Pistol
 description: Military issued pistol.
@@ -312,7 +312,7 @@ requirement: 3
 value:       40
 weight:      1.0
 
-code:        weapon_heavypistol
+item_id:     weapon_heavypistol
 tags:        ranged, gun, short
 name:        Heavy Pistol
 description: Reliable and powerful pistol.
@@ -327,7 +327,7 @@ requirement: 5
 value:       50
 weight:      1.5
 
-code:        weapon_autopistol
+item_id:     weapon_autopistol
 tags:        ranged, gun, short, burst
 name:        Machine Pistol
 description: Fully automatic pistol. Enables burst-fire.
@@ -342,7 +342,7 @@ requirement: 3
 value:       50
 weight:      1.5
 
-code:        weapon_revolver
+item_id:     weapon_revolver
 tags:        ranged, gun, short, revolver
 name:        Revolver
 description: Six-shooter revolver.
@@ -357,7 +357,7 @@ requirement: 4
 value:       30
 weight:      1.5
 
-code:        weapon_heavyrevolver
+item_id:     weapon_heavyrevolver
 tags:        ranged, gun, short, revolver
 name:        Heavy Revolver
 description: Powerful heavy-caliber revolver.
@@ -372,7 +372,7 @@ requirement: 6
 value:       50
 weight:      2.0
 
-code:        weapon_smg
+item_id:     weapon_smg
 tags:        ranged, gun, long, burst
 name:        Sub-Machine Gun
 description: Police issued sub-machine gun. Enables burst-fire.
@@ -387,7 +387,7 @@ requirement: 4
 value:       40
 weight:      2.5
 
-code:        weapon_heavysmg
+item_id:     weapon_heavysmg
 tags:        ranged, gun, long
 name:        Heavy Sub-Machine Gun
 description: Military issued sub-machine gun with reflex sight.
@@ -402,7 +402,7 @@ requirement: 5
 value:       60
 weight:      3.0
 
-code:        weapon_shotgun
+item_id:     weapon_shotgun
 tags:        ranged, gun, long
 name:        Shotgun
 description: Basic shotgun. High damage potential, but inaccurate.
@@ -417,7 +417,7 @@ requirement: 5
 value:       35
 weight:      4.0
 
-code:        weapon_pumpshotgun
+item_id:     weapon_pumpshotgun
 tags:        ranged, gun, long
 name:        Pump-Action Shotgun
 description: Military issued shotgun. High damage potential.
@@ -432,7 +432,7 @@ requirement: 6
 value:       50
 weight:      4.0
 
-code:        weapon_combatshotgun
+item_id:     weapon_combatshotgun
 tags:        ranged, gun, long
 name:        Combat Shotgun
 description: Automatic military combat shotgun. High damage potential.
@@ -447,7 +447,7 @@ requirement: 6
 value:       80
 weight:      4.5
 
-code:        weapon_rifle
+item_id:     weapon_rifle
 tags:        ranged, gun, long
 name:        Bolt-Action Rifle
 description: Sturdy bolt-action rifle.
@@ -462,7 +462,7 @@ requirement: 5
 value:       60
 weight:      4.5
 
-code:        weapon_huntingrifle
+item_id:     weapon_huntingrifle
 tags:        ranged, gun, long
 name:        Hunting Rifle
 description: Scoped rifle used for hunting.
@@ -477,7 +477,7 @@ requirement: 5
 value:       50
 weight:      4.5
 
-code:        weapon_carbine
+item_id:     weapon_carbine
 tags:        ranged, gun, long
 name:        Military Carbine
 description: Military issued carbine, equipped with reflex sight.
@@ -492,7 +492,7 @@ requirement: 5
 value:       100
 weight:      4.0
 
-code:        weapon_assaultrifle
+item_id:     weapon_assaultrifle
 tags:        ranged, gun, long, burst
 name:        Assault Rifle
 description: Fully automatic assault rifle. Enables burst-fire.
@@ -507,7 +507,7 @@ requirement: 6
 value:       120
 weight:      4.5
 
-code:        weapon_battlerifle
+item_id:     weapon_battlerifle
 tags:        ranged, gun, long
 name:        Battle Rifle
 description: High-powered battle rifle.
@@ -522,7 +522,7 @@ requirement: 6
 value:       120
 weight:      5.0
 
-code:        weapon_sniperrifle
+item_id:     weapon_sniperrifle
 tags:        ranged, gun, long
 name:        Sniper Rifle
 description: High-powered sniper rifle. Very accurate.
@@ -537,7 +537,7 @@ requirement: 7
 value:       150
 weight:      6.0
 
-code:        weapon_heavysniper
+item_id:     weapon_heavysniper
 tags:        ranged, gun, long
 name:        Anti-Materiel Rifle
 description: Military issued anti-materiel sniper rifle.
@@ -554,7 +554,7 @@ weight:      7.0
 
 // RANGED WEAPONS - ENERGY
 
-code:        weapon_laserpistol
+item_id:     weapon_laserpistol
 tags:        ranged, energy, short, laser
 name:        Laser Pistol
 description: Standard laser pistol.
@@ -569,7 +569,7 @@ requirement: 1
 value:       25
 weight:      0.5
 
-code:        weapon_plasmapistol
+item_id:     weapon_plasmapistol
 tags:        ranged, energy, short, plasma
 name:        Plasma Pistol
 description: Standard military plasma pistol.
@@ -584,7 +584,7 @@ requirement: 2
 value:       30
 weight:      1.0
 
-code:        weapon_magpistol
+item_id:     weapon_magpistol
 tags:        ranged, energy, short, mag
 name:        Mag Pistol
 description: Standard mag pistol. Extreme muzzle velocity.
@@ -599,7 +599,7 @@ requirement: 2
 value:       40
 weight:      1.0
 
-code:        weapon_laserrifle
+item_id:     weapon_laserrifle
 tags:        ranged, energy, long, laser
 name:        Laser Rifle
 description: Military issued laser rifle.
@@ -614,7 +614,7 @@ requirement: 3
 value:       65
 weight:      1.5
 
-code:        weapon_plasmarifle
+item_id:     weapon_plasmarifle
 tags:        ranged, energy, long, plasma
 name:        Plasma Rifle
 description: Military issued plasma rifle.
@@ -629,7 +629,7 @@ requirement: 3
 value:       70
 weight:      2.0
 
-code:        weapon_magrifle
+item_id:     weapon_magrifle
 tags:        ranged, energy, long, mag
 name:        Mag Rifle
 description: Combat mag rifle. Extreme muzzle velocity.
@@ -644,7 +644,7 @@ requirement: 3
 value:       90
 weight:      2.0
 
-code:        weapon_laserscatter
+item_id:     weapon_laserscatter
 tags:        ranged, energy, long, laser
 name:        Scatter Laser
 description: Energy weapon projecting multiple laser beams.
@@ -659,7 +659,7 @@ requirement: 4
 value:       100
 weight:      2.5
 
-code:        weapon_autolaser
+item_id:     weapon_autolaser
 tags:        ranged, energy, long, laser, burst
 name:        Assault Laser
 description: Automatic laser rifle. Enables burst-fire.
@@ -674,7 +674,7 @@ requirement: 4
 value:       115
 weight:      2.5
 
-code:        weapon_plasmacarbine
+item_id:     weapon_plasmacarbine
 tags:        ranged, energy, long, plasma
 name:        Plasma Carbine
 description: Military issued combat plasma carbine.
@@ -689,7 +689,7 @@ requirement: 4
 value:       125
 weight:      2.5
 
-code:        weapon_plasmacannon
+item_id:     weapon_plasmacannon
 tags:        ranged, energy, long, plasma
 name:        Plasma Cannon
 description: Portable plasma cannon. High damage potential.
@@ -704,7 +704,7 @@ requirement: 5
 value:       180
 weight:      3.0
 
-code:        weapon_assaultmag
+item_id:     weapon_assaultmag
 tags:        ranged, energy, long, mag, burst
 name:        Assault Mag
 description: Automatic combat mag rifle. Enables burst-fire.
@@ -719,7 +719,7 @@ requirement: 4
 value:       180
 weight:      3.0
 
-code:        weapon_plasmalauncher
+item_id:     weapon_plasmalauncher
 tags:        ranged, energy, long, plasma
 name:        Plasma Launcher
 description: Portable plasma launcher used by Powered Infantry.
@@ -734,7 +734,7 @@ requirement: 6
 value:       200
 weight:      5.0
 
-code:        weapon_focuslaser
+item_id:     weapon_focuslaser
 tags:        ranged, energy, long, laser
 name:        Focus Laser
 description: Laser rifle emitting highly-focused beam.
@@ -749,7 +749,7 @@ requirement: 5
 value:       225
 weight:      4.0
 
-code:        weapon_gaussrifle
+item_id:     weapon_gaussrifle
 tags:        ranged, energy, long, mag
 name:        Gauss Rifle
 description: Magnetic-based energy-kinetic rifle.
@@ -764,7 +764,7 @@ requirement: 5
 value:       250
 weight:      4.0
 
-code:        weapon_plasmadisintegrator
+item_id:     weapon_plasmadisintegrator
 tags:        ranged, energy, long, plasma
 name:        Plasma Disintegrator
 description: High-tech plasma weapon. High damage potential.
@@ -781,7 +781,7 @@ weight:      5.0
 
 // AMMO
 
-code:        ammo_9mm
+item_id:     ammo_9mm
 tags:        ammo, 9mm
 name:        9mm Rounds
 description: Standard caliber pistol ammunition.
@@ -789,7 +789,7 @@ stack        30
 value:       1
 weight:      0.01
 
-code:        ammo_45acp
+item_id:     ammo_45acp
 tags:        ammo, .45 ACP
 name:        .45 ACP Rounds
 description: Larger caliber pistol ammunition.
@@ -797,7 +797,7 @@ stack        20
 value:       1
 weight:      0.02
 
-code:        ammo_357
+item_id:     ammo_357
 tags:        ammo, .357
 name:        .357 Magnum Rounds
 description: High-packed revolver ammunition.
@@ -805,7 +805,7 @@ stack        30
 value:       2
 weight:      0.02
 
-code:        ammo_44
+item_id:     ammo_44
 tags:        ammo, .44
 name:        .44 Magnum Rounds
 description: Powerful revolver ammunition.
@@ -813,7 +813,7 @@ stack        20
 value:       3
 weight:      0.03
 
-code:        ammo_20ga
+item_id:     ammo_20ga
 tags:        ammo, 20ga
 name:        20 Gauge Rounds
 description: Standard shotgun ammunition.
@@ -821,7 +821,7 @@ stack        10
 value:       3
 weight:      0.04
 
-code:        ammo_12ga
+item_id:     ammo_12ga
 tags:        ammo, 12ga
 name:        12 Gauge Rounds
 description: Larger shotgun ammunition.
@@ -829,7 +829,7 @@ stack        10
 value:       4
 weight:      0.05
 
-code:        ammo_556
+item_id:     ammo_556
 tags:        ammo, 5.56mm
 name:        5.56mm Rounds
 description: Military issued rifle ammunition.
@@ -837,7 +837,7 @@ stack        30
 value:       1
 weight:      0.02
 
-code:        ammo_308
+item_id:     ammo_308
 tags:        ammo, .308
 name:        .308 Rounds
 description: High-caliber military ammunition.
@@ -845,7 +845,7 @@ stack        20
 value:       3
 weight:      0.03
 
-code:        ammo_50bmg
+item_id:     ammo_50bmg
 tags:        ammo, .50 BMG
 name:        .50 BMG Rounds
 description: High-caliber sniper rifle ammunition.
@@ -853,7 +853,7 @@ stack        10
 value:       5
 weight:      0.1
 
-code:        ammo_ec
+item_id:     ammo_ec
 tags:        ammo, EC
 name:        Energy Cell
 description: Universal ammunition for energy weapons.
@@ -863,7 +863,7 @@ weight:      0.01
 
 // ARMORS
 
-code:        armor_plain
+item_id:     armor_plain
 tags:        armor
 name:        Plain Clothing
 description: Plain clothes. Unremarkable.
@@ -873,7 +873,7 @@ protection:  0
 value:       2
 weight:      1.0
 
-code:        armor_bunker
+item_id:     armor_bunker
 tags:        armor
 name:        Bunker Outfit
 description: Outfit from fallout bunker.
@@ -883,7 +883,7 @@ protection:  20
 value:       10
 weight:      3.0
 
-code:        armor_leather
+item_id:     armor_leather
 tags:        armor
 name:        Leather Armor
 description: Sturdy leather armor.
@@ -893,7 +893,7 @@ protection:  0
 value:       20
 weight:      5.0
 
-code:        armor_wasteland
+item_id:     armor_wasteland
 tags:        armor
 name:        Wasteland Armor
 description: Hand made wasteland armor, protects from elements.
@@ -903,7 +903,7 @@ protection:  30
 value:       30
 weight:      5.5
 
-code:        armor_metal
+item_id:     armor_metal
 tags:        armor
 name:        Metal Armor
 description: Metal armor, heavy and durable.
@@ -913,7 +913,7 @@ protection:  0
 value:       50
 weight:      10.0
 
-code:        armor_combat
+item_id:     armor_combat
 tags:        armor
 name:        Combat Armor
 description: Military combat armor.
@@ -923,7 +923,7 @@ protection:  20
 value:       100
 weight:      7.5
 
-code:        armor_alloy
+item_id:     armor_alloy
 tags:        armor
 name:        Alloy Armor
 description: Advanced military armor made from durable alloys.
@@ -933,7 +933,7 @@ protection:  0
 value:       150
 weight:      8.0
 
-code:        armor_carbon
+item_id:     armor_carbon
 tags:        armor
 name:        Carbon-Fiber Armor
 description: Advanced special forces armor. Very light, yet durable.
@@ -943,7 +943,7 @@ protection:  0
 value:       250
 weight:      4.0
 
-code:        armor_desert
+item_id:     armor_desert
 tags:        armor
 name:        Desert Ranger Armor
 description: Sturdy armor worn by Desert Rangers.
@@ -953,7 +953,7 @@ protection:  0
 value:       3.5
 weight:      300
 
-code:        armor_power
+item_id:     armor_power
 tags:        armor
 name:        Powered Armor
 description: High-tech powered metal armor.
@@ -963,7 +963,7 @@ protection:  100
 value:       1000
 weight:      10.0
 
-code:        armor_endgameheavy
+item_id:     armor_endgameheavy
 tags:        armor
 name:        End Game Armor
 description: Usable end game adapted armor.
@@ -973,7 +973,7 @@ protection:  100
 value:       1000
 weight:      18.0
 
-code:        armor_endgamelight
+item_id:     armor_endgamelight
 tags:        armor
 name:        End Game Outfit
 description: Advanced End Game armor, covers whole body.

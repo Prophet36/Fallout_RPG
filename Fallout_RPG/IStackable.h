@@ -1,14 +1,13 @@
 #pragma once
 
 /**
- * This interface type class is for objects that can be stacked in one inventory
+ * This interface class is for objects that can be stacked in one inventory
  * slot, example being ammunition.
  *
  * This interface's members and methods consist of manipulating current
  * and maximum counts of the object's stack in one inventory slot.
  *
  * @author  Mateusz Warchol
- * @version 1.01, 22/02/18
  * @see     Ammo
  * @see     Consumable
  */
