@@ -113,7 +113,7 @@ weight:      0.1
 // MELEE WEAPONS
 
 item_id:     weapon_fists
-tags:        melee, blunt
+tags:        weapon, melee, blunt
 name:        Unarmed
 description: Your fists.
 damage:      0
@@ -125,7 +125,7 @@ value:       0
 weight:      0.0
 
 item_id:     weapon_knife
-tags:        melee, sharp
+tags:        weapon, melee, sharp
 name:        Knife
 description: Sharp knife. Very fast.
 damage:      0
@@ -137,7 +137,7 @@ value:       5
 weight:      0.2
 
 item_id:     weapon_combatknife
-tags:        melee, sharp
+tags:        weapon, melee, sharp
 name:        Combat Knife
 description: Military issued combat knife.
 damage:      1
@@ -149,7 +149,7 @@ value:       10
 weight:      0.2
 
 item_id:     weapon_brassknuckles
-tags:        melee, blunt
+tags:        weapon, melee, blunt
 name:        Brass Knuckles
 description: Metal shaped to fit around the knuckles.
 damage:      0
@@ -161,7 +161,7 @@ value:       10
 weight:      0.1
 
 item_id:     weapon_club
-tags:        melee, blunt
+tags:        weapon, melee, blunt
 name:        Club
 description: Basic wooden club. Good at bashing heads.
 damage:      0
@@ -173,7 +173,7 @@ value:       5
 weight:      1.5
 
 item_id:     weapon_baton
-tags:        melee, blunt
+tags:        weapon, melee, blunt
 name:        Police Baton
 description: Police baton used to deal with riots.
 damage:      3
@@ -185,7 +185,7 @@ value:       15
 weight:      1.0
 
 item_id:     weapon_spear
-tags:        melee, sharp
+tags:        weapon, melee, sharp
 name:        Spear
 description: Spear with a very sharp point.
 damage:      0
@@ -197,7 +197,7 @@ value:       30
 weight:      2.0
 
 item_id:     weapon_sledgehammer
-tags:        melee, blunt
+tags:        weapon, melee, blunt
 name:        Sledgehammer
 description: Construction worker's tool.
 damage:      2
@@ -209,7 +209,7 @@ value:       50
 weight:      3.0
 
 item_id:     weapon_heavysledge
-tags:        melee, blunt
+tags:        weapon, melee, blunt
 name:        Heavy Sledgehammer.
 description: Very heavy and sturdy sledgehammer.
 damage:      2
@@ -221,7 +221,7 @@ value:       80
 weight:      8.0
 
 item_id:     weapon_machete
-tags:        melee, sharp
+tags:        weapon, melee, sharp
 name:        Machete
 description: Sharp machete. High damage potential.
 damage:      2
@@ -233,7 +233,7 @@ value:       80
 weight:      1.5
 
 item_id:     weapon_axe
-tags:        melee, sharp
+tags:        weapon, melee, sharp
 name:        Fire Axe
 description: Firefighter's sturdy axe.
 damage:      7
@@ -245,7 +245,7 @@ value:       100
 weight:      2.5
 
 item_id:     weapon_protonaxe
-tags:        melee, sharp
+tags:        weapon, melee, sharp
 name:        Proton Axe
 description: Combat axe used by Powered Infantry.
 damage:      6
@@ -257,7 +257,7 @@ value:       120
 weight:      4.0
 
 item_id:     weapon_maul
-tags:        melee, blunt
+tags:        weapon, melee, blunt
 name:        Combat Maul
 description: Extremely heavy and damaging maul.
 damage:      2
@@ -269,7 +269,7 @@ value:       150
 weight:      8.5
 
 item_id:     weapon_kineticmaul
-tags:        melee, blunt
+tags:        weapon, melee, blunt
 name:        Kinetic Maul
 description: High-tech combat maul with kinetic storage device.
 damage:      0
@@ -283,7 +283,7 @@ weight:      10.0
 // RANGED WEAPONS - GUNS
 
 item_id:     weapon_pistol
-tags:        ranged, gun, short
+tags:        weapon, ranged, gun, short
 name:        Pistol
 description: Standard 9mm pistol, light and quick.
 ammunition:  9mm
@@ -298,7 +298,7 @@ value:       20
 weight:      1.0
 
 item_id:     weapon_militarypistol
-tags:        ranged, gun, short
+tags:        weapon, ranged, gun, short
 name:        Military Pistol
 description: Military issued pistol.
 ammunition:  .45 ACP
@@ -313,7 +313,7 @@ value:       40
 weight:      1.0
 
 item_id:     weapon_heavypistol
-tags:        ranged, gun, short
+tags:        weapon, ranged, gun, short
 name:        Heavy Pistol
 description: Reliable and powerful pistol.
 ammunition:  .45 ACP
@@ -328,7 +328,7 @@ value:       50
 weight:      1.5
 
 item_id:     weapon_autopistol
-tags:        ranged, gun, short, burst
+tags:        weapon, ranged, gun, short, burst
 name:        Machine Pistol
 description: Fully automatic pistol. Enables burst-fire.
 ammunition:  9mm
@@ -343,7 +343,7 @@ value:       50
 weight:      1.5
 
 item_id:     weapon_revolver
-tags:        ranged, gun, short, revolver
+tags:        weapon, ranged, gun, short, revolver
 name:        Revolver
 description: Six-shooter revolver.
 ammunition:  .357
@@ -358,7 +358,7 @@ value:       30
 weight:      1.5
 
 item_id:     weapon_heavyrevolver
-tags:        ranged, gun, short, revolver
+tags:        weapon, ranged, gun, short, revolver
 name:        Heavy Revolver
 description: Powerful heavy-caliber revolver.
 ammunition:  .44
@@ -373,7 +373,7 @@ value:       50
 weight:      2.0
 
 item_id:     weapon_smg
-tags:        ranged, gun, long, burst
+tags:        weapon, ranged, gun, long, burst
 name:        Sub-Machine Gun
 description: Police issued sub-machine gun. Enables burst-fire.
 ammunition:  9mm
@@ -388,7 +388,7 @@ value:       40
 weight:      2.5
 
 item_id:     weapon_heavysmg
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Heavy Sub-Machine Gun
 description: Military issued sub-machine gun with reflex sight.
 ammunition:  .45 ACP
@@ -403,7 +403,7 @@ value:       60
 weight:      3.0
 
 item_id:     weapon_shotgun
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Shotgun
 description: Basic shotgun. High damage potential, but inaccurate.
 ammunition:  20ga
@@ -418,7 +418,7 @@ value:       35
 weight:      4.0
 
 item_id:     weapon_pumpshotgun
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Pump-Action Shotgun
 description: Military issued shotgun. High damage potential.
 ammunition:  20ga
@@ -433,7 +433,7 @@ value:       50
 weight:      4.0
 
 item_id:     weapon_combatshotgun
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Combat Shotgun
 description: Automatic military combat shotgun. High damage potential.
 ammunition:  12ga
@@ -448,7 +448,7 @@ value:       80
 weight:      4.5
 
 item_id:     weapon_rifle
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Bolt-Action Rifle
 description: Sturdy bolt-action rifle.
 ammunition:  .308
@@ -463,7 +463,7 @@ value:       60
 weight:      4.5
 
 item_id:     weapon_huntingrifle
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Hunting Rifle
 description: Scoped rifle used for hunting.
 ammunition:  .308
@@ -478,7 +478,7 @@ value:       50
 weight:      4.5
 
 item_id:     weapon_carbine
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Military Carbine
 description: Military issued carbine, equipped with reflex sight.
 ammunition:  5.56mm
@@ -493,7 +493,7 @@ value:       100
 weight:      4.0
 
 item_id:     weapon_assaultrifle
-tags:        ranged, gun, long, burst
+tags:        weapon, ranged, gun, long, burst
 name:        Assault Rifle
 description: Fully automatic assault rifle. Enables burst-fire.
 ammunition:  5.56mm
@@ -508,7 +508,7 @@ value:       120
 weight:      4.5
 
 item_id:     weapon_battlerifle
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Battle Rifle
 description: High-powered battle rifle.
 ammunition:  .308
@@ -523,7 +523,7 @@ value:       120
 weight:      5.0
 
 item_id:     weapon_sniperrifle
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Sniper Rifle
 description: High-powered sniper rifle. Very accurate.
 ammunition:  .308
@@ -538,7 +538,7 @@ value:       150
 weight:      6.0
 
 item_id:     weapon_heavysniper
-tags:        ranged, gun, long
+tags:        weapon, ranged, gun, long
 name:        Anti-Materiel Rifle
 description: Military issued anti-materiel sniper rifle.
 ammunition:  .50 BMG
@@ -555,7 +555,7 @@ weight:      7.0
 // RANGED WEAPONS - ENERGY
 
 item_id:     weapon_laserpistol
-tags:        ranged, energy, short, laser
+tags:        weapon, ranged, energy, short, laser
 name:        Laser Pistol
 description: Standard laser pistol.
 ammunition:  EC
@@ -570,7 +570,7 @@ value:       25
 weight:      0.5
 
 item_id:     weapon_plasmapistol
-tags:        ranged, energy, short, plasma
+tags:        weapon, ranged, energy, short, plasma
 name:        Plasma Pistol
 description: Standard military plasma pistol.
 ammunition:  EC
@@ -585,7 +585,7 @@ value:       30
 weight:      1.0
 
 item_id:     weapon_magpistol
-tags:        ranged, energy, short, mag
+tags:        weapon, ranged, energy, short, mag
 name:        Mag Pistol
 description: Standard mag pistol. Extreme muzzle velocity.
 ammunition:  EC
@@ -600,7 +600,7 @@ value:       40
 weight:      1.0
 
 item_id:     weapon_laserrifle
-tags:        ranged, energy, long, laser
+tags:        weapon, ranged, energy, long, laser
 name:        Laser Rifle
 description: Military issued laser rifle.
 ammunition:  EC
@@ -615,7 +615,7 @@ value:       65
 weight:      1.5
 
 item_id:     weapon_plasmarifle
-tags:        ranged, energy, long, plasma
+tags:        weapon, ranged, energy, long, plasma
 name:        Plasma Rifle
 description: Military issued plasma rifle.
 ammunition:  EC
@@ -630,7 +630,7 @@ value:       70
 weight:      2.0
 
 item_id:     weapon_magrifle
-tags:        ranged, energy, long, mag
+tags:        weapon, ranged, energy, long, mag
 name:        Mag Rifle
 description: Combat mag rifle. Extreme muzzle velocity.
 ammunition:  EC
@@ -645,7 +645,7 @@ value:       90
 weight:      2.0
 
 item_id:     weapon_laserscatter
-tags:        ranged, energy, long, laser
+tags:        weapon, ranged, energy, long, laser
 name:        Scatter Laser
 description: Energy weapon projecting multiple laser beams.
 ammunition:  EC
@@ -660,7 +660,7 @@ value:       100
 weight:      2.5
 
 item_id:     weapon_autolaser
-tags:        ranged, energy, long, laser, burst
+tags:        weapon, ranged, energy, long, laser, burst
 name:        Assault Laser
 description: Automatic laser rifle. Enables burst-fire.
 ammunition:  EC
@@ -675,7 +675,7 @@ value:       115
 weight:      2.5
 
 item_id:     weapon_plasmacarbine
-tags:        ranged, energy, long, plasma
+tags:        weapon, ranged, energy, long, plasma
 name:        Plasma Carbine
 description: Military issued combat plasma carbine.
 ammunition:  EC
@@ -690,7 +690,7 @@ value:       125
 weight:      2.5
 
 item_id:     weapon_plasmacannon
-tags:        ranged, energy, long, plasma
+tags:        weapon, ranged, energy, long, plasma
 name:        Plasma Cannon
 description: Portable plasma cannon. High damage potential.
 ammunition:  EC
@@ -705,7 +705,7 @@ value:       180
 weight:      3.0
 
 item_id:     weapon_assaultmag
-tags:        ranged, energy, long, mag, burst
+tags:        weapon, ranged, energy, long, mag, burst
 name:        Assault Mag
 description: Automatic combat mag rifle. Enables burst-fire.
 ammunition:  EC
@@ -720,7 +720,7 @@ value:       180
 weight:      3.0
 
 item_id:     weapon_plasmalauncher
-tags:        ranged, energy, long, plasma
+tags:        weapon, ranged, energy, long, plasma
 name:        Plasma Launcher
 description: Portable plasma launcher used by Powered Infantry.
 ammunition:  EC
@@ -735,7 +735,7 @@ value:       200
 weight:      5.0
 
 item_id:     weapon_focuslaser
-tags:        ranged, energy, long, laser
+tags:        weapon, ranged, energy, long, laser
 name:        Focus Laser
 description: Laser rifle emitting highly-focused beam.
 ammunition:  EC
@@ -750,7 +750,7 @@ value:       225
 weight:      4.0
 
 item_id:     weapon_gaussrifle
-tags:        ranged, energy, long, mag
+tags:        weapon, ranged, energy, long, mag
 name:        Gauss Rifle
 description: Magnetic-based energy-kinetic rifle.
 ammunition:  EC
@@ -765,7 +765,7 @@ value:       250
 weight:      4.0
 
 item_id:     weapon_plasmadisintegrator
-tags:        ranged, energy, long, plasma
+tags:        weapon, ranged, energy, long, plasma
 name:        Plasma Disintegrator
 description: High-tech plasma weapon. High damage potential.
 ammunition:  EC

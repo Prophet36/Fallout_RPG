@@ -18,7 +18,6 @@ void Input::keyContinue(bool prompt)
     std::cin.get();
 }
 
-
 bool Input::yesNoPrompt()
 {
     char choice;

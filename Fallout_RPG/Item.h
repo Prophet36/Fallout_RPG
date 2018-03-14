@@ -47,6 +47,13 @@ public:
      */
     std::string getTags() const;
 
+    /**
+     * Returns the object's name.
+     *
+     * @return  string containing name of the object
+     */
+    std::string getName() const;
+
 protected:
     /**
      * This is the name of the item.

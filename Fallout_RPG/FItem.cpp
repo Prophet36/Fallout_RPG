@@ -49,7 +49,6 @@ Item * FItem::createNewItem(std::string item_id)
     }
 }
 
-
 Item * FItem::createNewConsumable()
 {
     File * working_file = File::get(c_items);

@@ -59,7 +59,6 @@ bool File::findItem(std::string item_id)
     return false;
 }
 
-
 std::string File::getString()
 {
     setReadPosition();

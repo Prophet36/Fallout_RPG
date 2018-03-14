@@ -20,3 +20,8 @@ std::string Item::getTags() const
 {
     return m_tags;
 }
+
+std::string Item::getName() const
+{
+    return m_name;
+}

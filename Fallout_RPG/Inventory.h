@@ -1,6 +1,8 @@
 #pragma once
 
+#include "Armor.h"
 #include "Item.h"
+#include "Weapon.h"
 #include <string>   // std::string
 #include <vector>   // std::vector
 
@@ -86,9 +88,13 @@ public:
     static int checkAmmoType(std::string tags);
 
     /**
-     * Prints out contents of character's inventory.
+     * Prints out contents of character's inventory, with the option to
+     * additionally print equipped items.
+     *
+     * @param equipped  also prints equipped items if true, otherwise prints
+     *                  only the contents of inventory
      */
-    void print() const;
+    void print(bool equipped = false) const;
 
     /**
      * Adds specified item to character's inventory. Calls remove() after adding
@@ -102,6 +108,11 @@ public:
      * Prompts the user to remove item from one inventory slot.
      */
     void remove();
+
+    /**
+     * Prompts the user to equip item from inventory.
+     */
+    void equip();
 
     /**
      * Warns the user when all inventory slots are already filled while
@@ -123,11 +134,29 @@ private:
     void sort(Item * created_item);
 
     /**
+     * Equips item from specified inventory slot to hand (if equipping weapon)
+     * or body (if equipping armor), swapping already equipped weapon back to
+     * inventory.
+     *
+     * @param slot  inventory slot from which the item is equipped
+     */
+    void equip(int slot);
+
+    /**
      * Checks whether inventory is over maximum capacity (per inventory slots).
      *
      * return   true if inventory is over maximum slot capacity, otherwise false
      */
     bool checkEncumbrance() const;
+
+    /**
+     * Finds and checks correct item type in provided item tags.
+     *
+     * @param tags  string containing item tags
+     * @return      enumerator value representing item type when tags are
+     *              correct, otherwise -1
+     */
+    int checkItemType(std::string tags);
 
 private:
     /**
@@ -140,4 +169,14 @@ private:
      * character's inventory.
      */
     std::vector<Item *> m_items;
+
+    /**
+     * Pointer to Item object representing equipped weapon.
+     */
+    Item * m_weapon;
+
+    /**
+     * Pointer to Item object representing equipped armor.
+     */
+    Item * m_armor;
 };

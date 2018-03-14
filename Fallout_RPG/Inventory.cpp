@@ -11,8 +11,15 @@
 
 
 Inventory::Inventory(int max_space) :
-    m_max_space(max_space)
+    m_max_space(max_space), m_armor(nullptr), m_weapon(nullptr)
 {
+    add("weapon_fists");
+    add("armor_plain");
+    m_weapon = m_items[0];
+    m_armor = m_items[1];
+    m_items[0] = nullptr;
+    m_items[1] = nullptr;
+    m_items.clear();
 }
 
 Inventory::~Inventory()
@@ -22,6 +29,8 @@ Inventory::~Inventory()
         delete m_items.back();
         m_items.pop_back();
     }
+    delete m_weapon;
+    delete m_armor;
 }
 
 int Inventory::checkItemPrefix(std::string item_id)
@@ -82,7 +91,7 @@ int Inventory::checkAmmoType(std::string tags)
     return -1;
 }
 
-void Inventory::print() const
+void Inventory::print(bool equipped) const
 {
     if (!m_items.empty())
     {
@@ -96,6 +105,13 @@ void Inventory::print() const
     {
         std::cout << "Your inventory is empty!";
         Input::keyContinue();
+    }
+    if (equipped)
+    {
+        std::cout << "WEAPON: ";
+        m_weapon->debugPrint();
+        std::cout << "ARMOR: ";
+        m_armor->debugPrint();
     }
 }
 
@@ -150,6 +166,27 @@ void Inventory::remove()
     }
 }
 
+void Inventory::equip()
+{
+    if (!m_items.empty())
+    {
+        std::cout << "Which item would you like to equip?";
+        Input::keyContinue();
+        print();
+        std::cout << "Enter your choice: (0 to cancel): ";
+
+        if (int choice = Input::switchPrompt(0, int(m_items.size())))
+        {
+            equip(choice - 1);
+        }
+    }
+    else
+    {
+        std::cout << "Your inventory is empty!";
+        Input::keyContinue();
+    }
+}
+
 bool Inventory::warnEncumbrance() const
 {
     if (m_items.size() == m_max_space)
@@ -162,16 +199,6 @@ bool Inventory::warnEncumbrance() const
             return false;
     }
     return true;
-}
-
-bool Inventory::checkEncumbrance() const
-{
-    if (m_items.size() > m_max_space)
-    {
-        std::cout << "You are over encumbered!";
-        return true;
-    }
-    return false;
 }
 
 void Inventory::sort(Item * created_item)
@@ -197,4 +224,75 @@ void Inventory::sort(Item * created_item)
     }
     if (created_item)
         m_items.push_back(created_item);
+}
+
+void Inventory::equip(int slot)
+{
+    switch (checkItemType(m_items[slot]->getTags()))
+    {
+        case WEAPON:
+        {
+            std::cout << "Equipping " << m_items[slot]->getName() << std::endl;
+
+            if (m_weapon->getName() == "Unarmed")
+            {
+                delete m_weapon;
+                m_weapon = m_items[slot];
+                m_items.erase(m_items.begin() + slot);
+            }
+            else
+            {
+                Item * temp = m_weapon;
+                m_weapon = m_items[slot];
+                m_items[slot] = temp;
+            }
+
+            break;
+        }
+        case ARMOR:
+        {
+            std::cout << "Equipping " << m_items[slot]->getName() << std::endl;
+
+            Item * temp = m_armor;
+            m_armor = m_items[slot];
+            m_items[slot] = temp;
+
+            break;
+        }
+        default:
+        {
+            std::cout << "You can't equip this item!\n";
+            break;
+        }
+    }
+
+    while (checkEncumbrance())
+    {
+        Input::keyContinue();
+        remove();
+    }
+}
+
+bool Inventory::checkEncumbrance() const
+{
+    if (m_items.size() > m_max_space)
+    {
+        std::cout << "You are over encumbered!";
+        return true;
+    }
+    return false;
+}
+
+int Inventory::checkItemType(std::string tags)
+{
+    std::string types[] = { "item", "weapon", "ammo", "armor" };
+
+    for (int i = 0; i < (sizeof(types) / sizeof(types[0])); i++)
+    {
+        if (tags.find(types[i], 0) != std::string::npos)
+        {
+            return i;
+        }
+    }
+    return -1;
 }
