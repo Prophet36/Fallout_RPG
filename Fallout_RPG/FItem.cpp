@@ -112,7 +112,7 @@ Item * FItem::createNewRangedWeapon(std::string tags)
     File * working_file = File::get(c_items);
     std::string name = working_file->getString();
     std::string description = working_file->getString();
-    int ammo_type = Inventory::checkAmmoType(working_file->getString());
+    std::string ammo_type = working_file->getString();
     int capacity = working_file->getInt();
     int damage = working_file->getInt();
     std::string roll = working_file->getString();

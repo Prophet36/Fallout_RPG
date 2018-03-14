@@ -23,12 +23,12 @@ class Inventory
 {
 public:
     /**
-     * Enumerator containing values corresponding item types.
+     * Enumerator containing values corresponding to item types.
      */
     enum { CONSUMABLE, WEAPON, AMMO, ARMOR };
 
     /**
-     * Enumerator containing values corresponding weapon types.
+     * Enumerator containing values corresponding to weapon types.
      */
     enum { MELEE, RANGED };
 
@@ -98,11 +98,14 @@ public:
 
     /**
      * Adds specified item to character's inventory. Calls remove() after adding
-     * new item, if it surpasses inventory size limit.
+     * new item, if it surpasses inventory size limit and flag to ignore limit
+     * is false.
      *
-     * @param item_id   ID of the item to add to inventory
+     * @param item_id       ID of the item to add to inventory
+     * @param ignore_limit  ignores inventory size limit if true, otherwise
+     *                      checks inventory size after adding item
      */
-    void add(std::string item_id);
+    void add(std::string item_id, bool ignore_limit = false);
 
     /**
      * Prompts the user to remove item from one inventory slot.
@@ -113,6 +116,11 @@ public:
      * Prompts the user to equip item from inventory.
      */
     void equip();
+
+    /**
+     * Prompts the user to unequip item and move it back to inventory.
+     */
+    void unequip();
 
     /**
      * Warns the user when all inventory slots are already filled while
@@ -134,13 +142,43 @@ private:
     void sort(Item * created_item);
 
     /**
+     * Prints out character's equipped items.
+     *
+     * @param list_start    value from which the list starts being numbered 
+     */
+    void printEquipped(int list_start = 1) const;
+
+    /**
      * Equips item from specified inventory slot to hand (if equipping weapon)
-     * or body (if equipping armor), swapping already equipped weapon back to
+     * or body (if equipping armor), swapping already equipped item back to
      * inventory.
      *
      * @param slot  inventory slot from which the item is equipped
      */
     void equip(int slot);
+
+    /**
+     * Equips weapon from specified inventory slot to hand, swapping already
+     * equipped weapon back to inventory.
+     *
+     * @param slot  inventory slot from which the weapon is equipped
+     */
+    void equipWeapon(int slot);
+
+    /**
+     * Equips armor from specified inventory slot to body, swapping already
+     * equipped armor back to inventory.
+     *
+     * @param slot  inventory slot from which the armor is equipped
+     */
+    void equipArmor(int slot);
+
+    /**
+     * Unequips specified item, moving it back to inventory.
+     *
+     * @param slot  equippable slot from which the item is unequipped
+     */
+    void unequip(int slot);
 
     /**
      * Checks whether inventory is over maximum capacity (per inventory slots).

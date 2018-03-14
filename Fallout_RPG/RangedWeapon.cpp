@@ -3,7 +3,7 @@
 #include <iostream>	// std::cout, std::endl
 
 RangedWeapon::RangedWeapon(std::string name, std::string description,
-                           int ammo_type, int capacity, int damage,
+                           std::string ammo_type, int capacity, int damage,
                            std::string roll, int speed, int accuracy,
                            int penetration, int requirement, int value,
                            double weight, std::string tags) :
@@ -11,7 +11,7 @@ RangedWeapon::RangedWeapon(std::string name, std::string description,
            value, weight, tags), m_ammo_type(ammo_type), m_capacity(capacity),
     m_accuracy(accuracy)
 {
-    m_current_ammo = capacity;
+    m_current_ammo = 0;
 }
 
 RangedWeapon::~RangedWeapon()

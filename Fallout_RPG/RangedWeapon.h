@@ -31,8 +31,7 @@ public:
      *
      * @param name          string containing name of the object
      * @param description   string containing description of the object
-     * @param ammo_type     enumerator value representing type of ammunition
-     *                      the weapon uses
+     * @param ammo_type     string containing ammunition type
      * @param capacity      value specifying weapon's ammunition capacity in
      *                      magazine
      * @param damage        value specifying weapon's base damage
@@ -49,10 +48,10 @@ public:
      * @param weight        double value containing the object's weight
      * @param tags          string containing tags associated with this object
      */
-    RangedWeapon(std::string name, std::string description, int ammo_type,
-                 int capacity, int damage, std::string roll, int speed,
-                 int accuracy, int penetration, int requirement, int value,
-                 double weight, std::string tags);
+    RangedWeapon(std::string name, std::string description,
+                 std::string ammo_type, int capacity, int damage,
+                 std::string roll, int speed, int accuracy, int penetration,
+                 int requirement, int value, double weight, std::string tags);
 
     /**
      * Class desctructor. Deletes instance of RangedWeapon object.
@@ -66,6 +65,12 @@ public:
 
 private:
     /**
+     * Type of ammunition the weapon is using, according to enumerator provided
+     * with this class.
+     */
+    std::string m_ammo_type;
+
+    /**
      * Value specifying the weapon's magazine capacity.
      */
     int m_capacity;
@@ -74,12 +79,6 @@ private:
      * Value specifying current amount of ammunition in magazine.
      */
     int m_current_ammo;
-
-    /**
-     * Type of ammunition the weapon is using, according to enumerator provided
-     * with this class.
-     */
-    int m_ammo_type;
 
     /**
      * Potential bonus (or malus, if negative) to attack accuracy. Stacks with

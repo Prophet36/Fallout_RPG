@@ -14,7 +14,7 @@ Inventory::Inventory(int max_space) :
     m_max_space(max_space), m_armor(nullptr), m_weapon(nullptr)
 {
     add("weapon_fists");
-    add("armor_plain");
+    add("armor_nothing");
     m_weapon = m_items[0];
     m_armor = m_items[1];
     m_items[0] = nullptr;
@@ -107,15 +107,10 @@ void Inventory::print(bool equipped) const
         Input::keyContinue();
     }
     if (equipped)
-    {
-        std::cout << "WEAPON: ";
-        m_weapon->debugPrint();
-        std::cout << "ARMOR: ";
-        m_armor->debugPrint();
-    }
+        printEquipped(int(m_items.size()) + 1);
 }
 
-void Inventory::add(std::string item_id)
+void Inventory::add(std::string item_id, bool ignore_limit)
 {
     if (File::get(c_items)->findItem(item_id))
     {
@@ -135,7 +130,7 @@ void Inventory::add(std::string item_id)
                 break;
             }
         }
-        while (checkEncumbrance())
+        while (!ignore_limit && checkEncumbrance())
         {
             Input::keyContinue();
             remove();
@@ -187,6 +182,26 @@ void Inventory::equip()
     }
 }
 
+void Inventory::unequip()
+{
+    if (m_weapon->getName() == "Unarmed" && m_armor->getName() == "Underwear")
+    {
+        std::cout << "You don't have anything to unequip!\n";
+    }
+    else
+    {
+        std::cout << "Which item would you like to unequip?";
+        Input::keyContinue();
+        printEquipped();
+        std::cout << "Enter your choice: (0 to cancel): ";
+
+        if (int choice = Input::switchPrompt(0, 2))
+        {
+            unequip(choice);
+        }
+    }
+}
+
 bool Inventory::warnEncumbrance() const
 {
     if (m_items.size() == m_max_space)
@@ -226,43 +241,105 @@ void Inventory::sort(Item * created_item)
         m_items.push_back(created_item);
 }
 
+void Inventory::printEquipped(int list_start) const
+{
+    std::cout << list_start << ": WEAPON: ";
+    m_weapon->debugPrint();
+    std::cout << list_start + 1 << ": ARMOR: ";
+    m_armor->debugPrint();
+}
+
 void Inventory::equip(int slot)
 {
     switch (checkItemType(m_items[slot]->getTags()))
     {
         case WEAPON:
         {
-            std::cout << "Equipping " << m_items[slot]->getName() << std::endl;
-
-            if (m_weapon->getName() == "Unarmed")
-            {
-                delete m_weapon;
-                m_weapon = m_items[slot];
-                m_items.erase(m_items.begin() + slot);
-            }
-            else
-            {
-                Item * temp = m_weapon;
-                m_weapon = m_items[slot];
-                m_items[slot] = temp;
-            }
-
+            equipWeapon(slot);
             break;
         }
         case ARMOR:
         {
-            std::cout << "Equipping " << m_items[slot]->getName() << std::endl;
-
-            Item * temp = m_armor;
-            m_armor = m_items[slot];
-            m_items[slot] = temp;
-
+            equipArmor(slot);
             break;
         }
         default:
         {
             std::cout << "You can't equip this item!\n";
             break;
+        }
+    }
+}
+
+void Inventory::equipWeapon(int slot)
+{
+    std::cout << "Equipping " << m_items[slot]->getName() << std::endl;
+
+    if (m_weapon->getName() == "Unarmed")
+    {
+        delete m_weapon;
+        m_weapon = m_items[slot];
+        m_items.erase(m_items.begin() + slot);
+    }
+    else
+    {
+        Item * temp = m_weapon;
+        m_weapon = m_items[slot];
+        m_items[slot] = temp;
+    }
+}
+
+void Inventory::equipArmor(int slot)
+{
+    std::cout << "Equipping " << m_items[slot]->getName() << std::endl;
+
+    if (m_armor->getName() == "Underwear")
+    {
+        delete m_armor;
+        m_armor = m_items[slot];
+        m_items.erase(m_items.begin() + slot);
+    }
+    else
+    {
+        Item * temp = m_armor;
+        m_armor = m_items[slot];
+        m_items[slot] = temp;
+    }
+}
+
+void Inventory::unequip(int slot)
+{
+    switch (slot)
+    {
+        case 1:
+        {
+            if (m_weapon->getName() != "Unarmed")
+            {
+                add("weapon_fists", true);
+                equip(int(m_items.size()) - 1);
+            }
+            else
+            {
+                std::cout << "You can't unequip this!\n";
+            }
+            break;
+        }
+        case 2:
+        {
+            if (m_armor->getName() != "Underwear")
+            {
+                add("armor_nothing", true);
+                equip(int(m_items.size()) - 1);
+            }
+            else
+            {
+                std::cout << "You can't unequip this!\n";
+            }
+            break;
+        }
+        default:
+        {
+            std::cerr << "ERROR: Incorrect slot!\n";
         }
     }
 

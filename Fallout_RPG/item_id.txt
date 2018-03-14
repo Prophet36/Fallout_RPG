@@ -863,6 +863,16 @@ weight:      0.01
 
 // ARMORS
 
+item_id:     armor_nothing
+tags:        armor
+name:        Underwear
+description: Your basic underwear.
+reduction:   0
+evasion:     0
+protection:  0
+value:       0
+weight:      0.0
+
 item_id:     armor_plain
 tags:        armor
 name:        Plain Clothing
