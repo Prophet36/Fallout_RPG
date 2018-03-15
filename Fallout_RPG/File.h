@@ -71,7 +71,7 @@ public:
     double getDouble();
 
     /**
-     * Closes file if currently opened.
+     * Closes file if currently opened and deletes instance of File object.
      */
     void close();
 

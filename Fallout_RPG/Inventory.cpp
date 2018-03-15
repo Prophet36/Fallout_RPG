@@ -1,10 +1,12 @@
 #include "stdafx.h"
+#include "Ammo.h"
 #include "File.h"
 #include "FItem.h"
 #include "Input.h"
 #include "Inventory.h"
 #include "IStackable.h"
 #include "Item.h"
+#include "RangedWeapon.h"
 #include <iostream> // std::cout
 #include <string>   // std::string
 #include <vector>   // std::vector
@@ -17,8 +19,6 @@ Inventory::Inventory(int max_space) :
     add("armor_nothing");
     m_weapon = m_items[0];
     m_armor = m_items[1];
-    m_items[0] = nullptr;
-    m_items[1] = nullptr;
     m_items.clear();
 }
 
@@ -202,6 +202,22 @@ void Inventory::unequip()
     }
 }
 
+void Inventory::reloadWeapon()
+{
+    if (m_items.size() != 0)
+    {
+        std::cout << "Which weapon would you like to reload?";
+        Input::keyContinue();
+        print(true);
+        std::cout << "Enter your choice: (0 to cancel): ";
+
+        if (int choice = Input::switchPrompt(0, int(m_items.size() + 1)))
+        {
+            reloadWeapon(choice - 1);
+        }
+    }
+}
+
 bool Inventory::warnEncumbrance() const
 {
     if (m_items.size() == m_max_space)
@@ -222,8 +238,8 @@ void Inventory::sort(Item * created_item)
     {
         if (m_items[i]->getTags() == created_item->getTags())
         {
-            IStackable * inv_item = dynamic_cast<IStackable *>(m_items[i]);
             IStackable * added_item = dynamic_cast<IStackable *>(created_item);
+            IStackable * inv_item = dynamic_cast<IStackable *>(m_items[i]);
             if (inv_item && added_item)
             {
                 added_item->setCount(inv_item->setCount(inv_item->getCount() +
@@ -315,6 +331,9 @@ void Inventory::unequip(int slot)
         {
             if (m_weapon->getName() != "Unarmed")
             {
+                std::cout << "Unquipping " << m_weapon->getName()
+                          << std::endl;
+
                 add("weapon_fists", true);
                 equip(int(m_items.size()) - 1);
             }
@@ -328,6 +347,9 @@ void Inventory::unequip(int slot)
         {
             if (m_armor->getName() != "Underwear")
             {
+                std::cout << "Unquipping " << m_armor->getName()
+                          << std::endl;
+
                 add("armor_nothing", true);
                 equip(int(m_items.size()) - 1);
             }
@@ -347,6 +369,79 @@ void Inventory::unequip(int slot)
     {
         Input::keyContinue();
         remove();
+    }
+}
+
+void Inventory::reloadWeapon(int slot)
+{
+    bool success = false;
+    RangedWeapon * reloaded = nullptr;
+
+    if (slot == m_items.size())
+        reloaded = dynamic_cast<RangedWeapon *>(m_weapon);
+    else
+        reloaded = dynamic_cast<RangedWeapon *>(m_items[slot]);
+
+    if (reloaded)
+    {
+        if (reloaded->getCurrentAmmo() == reloaded->getCapacity())
+        {
+            std::cout << "This weapon is already full!\n";
+        }
+        else
+        {
+            std::string type = reloaded->getAmmoType();
+
+            for (int i = 0; i < m_items.size(); i++)
+            {
+                if (m_items[i]->getTags().find(type) != std::string::npos)
+                {
+                    reloadWeapon(reloaded, i);
+                    success = true;
+                    break;
+                }
+            }
+            if (!success)
+            {
+                std::cout << "You don't have available ammo for this weapon!\n";
+            }
+        }
+    }
+    else
+    {
+        std::cout << "You can't reload this item!\n";
+    }
+}
+
+void Inventory::reloadWeapon(RangedWeapon * weapon, int slot)
+{
+    Ammo * ammunition = dynamic_cast<Ammo *>(m_items[slot]);
+
+    if (ammunition)
+    {
+        m_items.erase(m_items.begin() + slot);
+
+        int shortage = weapon->getCapacity() - weapon->getCurrentAmmo();
+
+        if (ammunition->getCount() > shortage)
+        {
+            ammunition->setCount(ammunition->getCount() - shortage);
+            weapon->setCurrentAmmo(weapon->getCapacity());
+            sort(ammunition);
+        }
+        else if (ammunition->getCount() == shortage)
+        {
+            weapon->setCurrentAmmo(weapon->getCapacity());
+            delete ammunition;
+        }
+        else
+        {
+            weapon->setCurrentAmmo(weapon->getCurrentAmmo() +
+                                   ammunition->getCount());
+            delete ammunition;
+        }
+        std::cout << "Reloaded " << weapon->getName() << ", now has "
+                  << weapon->getCurrentAmmo() << " rounds\n";
     }
 }
 

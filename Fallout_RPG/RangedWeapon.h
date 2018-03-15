@@ -63,6 +63,34 @@ public:
      */
     virtual void debugPrint() const override;
 
+    /**
+     * Sets current count of ammunition in magazine.
+     *
+     * @param count current count of ammunition in weapon's magazine to set to
+     */
+    void setCurrentAmmo(int count);
+
+    /**
+     * Returns type of ammunition the weapon uses.
+     *
+     * @return  string containing ammunition type
+     */
+    std::string getAmmoType() const;
+
+    /**
+     * Returns current count of ammunition in magazine.
+     *
+     * @return  current count of ammunition in weapon's magazine
+     */
+    int getCurrentAmmo() const;
+
+    /**
+     * Returns ammunition capacity in magazine.
+     *
+     * @return  ammunition capacity in weapon's magazine
+     */
+    int getCapacity() const;
+    
 private:
     /**
      * Type of ammunition the weapon is using, according to enumerator provided

@@ -21,7 +21,7 @@ File * File::get(std::string file_type)
 {
     if (!m_instance)
         m_instance = new File();
-    if(!m_instance->m_working_file.is_open())
+    if (!m_instance->m_working_file.is_open())
         m_instance->open(file_type);
     return m_instance;
 }
@@ -97,4 +97,7 @@ void File::close()
     {
         m_working_file.close();
     }
+
+    m_instance = nullptr;
+    delete this;
 }

@@ -3,6 +3,7 @@
 #include "Armor.h"
 #include "Item.h"
 #include "Weapon.h"
+#include "RangedWeapon.h"
 #include <string>   // std::string
 #include <vector>   // std::vector
 
@@ -35,7 +36,8 @@ public:
 public:
     /**
      * Class constructor. Creates instance of Inventory object while specifying
-     * inventory size (defaults to global inventory size value).
+     * inventory size (defaults to global inventory size value) and adds
+     * default items.
      *
      * @param max_space size of inventory, also known as number of available
      *                  slots in inventory
@@ -123,6 +125,11 @@ public:
     void unequip();
 
     /**
+     * Prompts the user to reload weapon.
+     */
+    void reloadWeapon();
+
+    /**
      * Warns the user when all inventory slots are already filled while
      * prompting to proceed.
      *
@@ -179,6 +186,23 @@ private:
      * @param slot  equippable slot from which the item is unequipped
      */
     void unequip(int slot);
+
+    /**
+     * Checks for appropriate ammunition inside inventory in order to reload
+     * chosen weapon.
+     *
+     * @param slot  inventory slot containing weapon to reload
+     */
+    void reloadWeapon(int slot);
+
+    /**
+     * Reloads specified weapon with ammunition found in inventory.
+     *
+     * @param weapon    pointer to RangedWeapon object, representing weapon to
+     *                  reload with ammunition
+     * @param slot      inventory slot containing appropriate ammunition
+     */
+    void reloadWeapon(RangedWeapon * weapon, int slot);
 
     /**
      * Checks whether inventory is over maximum capacity (per inventory slots).

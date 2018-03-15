@@ -8,12 +8,12 @@ Item::Item(std::string name, std::string description, int value, double weight,
     m_name(name), m_description(description), m_value(value),
     m_weight(weight), m_tags(tags)
 {
-    std::cout << "\nDEBUG: ----- Item " << m_name << " created! -----\n";
+    std::cout << "DEBUG: ----- Item " << m_name << " created! -----\n";
 }
 
 Item::~Item()
 {
-    std::cout << "\nDEBUG: ----- Item " << m_name << " destroyed! -----\n";
+    std::cout << "DEBUG: ----- Item " << m_name << " destroyed! -----\n";
 }
 
 std::string Item::getTags() const

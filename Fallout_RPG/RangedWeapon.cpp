@@ -27,3 +27,23 @@ void RangedWeapon::debugPrint() const
               << m_requirement << "\nVAL: " << m_value << " WG: " << m_weight
               << "\nTAGS: " << m_tags << std::endl;
 }
+
+void RangedWeapon::setCurrentAmmo(int count)
+{
+    m_current_ammo = count;
+}
+
+std::string RangedWeapon::getAmmoType() const
+{
+    return m_ammo_type;
+}
+
+int RangedWeapon::getCurrentAmmo() const
+{
+    return m_current_ammo;
+}
+
+int RangedWeapon::getCapacity() const
+{
+    return m_capacity;
+}
