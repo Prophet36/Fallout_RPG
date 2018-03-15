@@ -110,11 +110,11 @@ void Inventory::print(bool equipped) const
         printEquipped(int(m_items.size()) + 1);
 }
 
-void Inventory::add(std::string item_id, bool ignore_limit)
+void Inventory::add(std::string item_id, bool ignore_limit, int count)
 {
     if (File::get(c_items)->findItem(item_id))
     {
-        Item * created_item = FItem::createNewItem(item_id);
+        Item * created_item = FItem::createNewItem(item_id, count);
 
         switch (Inventory::checkItemPrefix(item_id))
         {
@@ -215,6 +215,30 @@ void Inventory::reloadWeapon()
         {
             reloadWeapon(choice - 1);
         }
+    }
+    else
+    {
+        std::cout << "You don't have any ammunition in your inventory!\n";
+    }
+}
+
+void Inventory::unloadWeapon()
+{
+    if (m_items.size() != 0 && checkItemType(m_weapon->getTags()) == WEAPON)
+    {
+        std::cout << "Which weapon would you like to unload?";
+        Input::keyContinue();
+        print(true);
+        std::cout << "Enter your choice: (0 to cancel): ";
+
+        if (int choice = Input::switchPrompt(0, int(m_items.size() + 1)))
+        {
+            unloadWeapon(choice - 1);
+        }
+    }
+    else
+    {
+        std::cout << "You don't have any ranged weapon in your inventory!\n";
     }
 }
 
@@ -375,28 +399,28 @@ void Inventory::unequip(int slot)
 void Inventory::reloadWeapon(int slot)
 {
     bool success = false;
-    RangedWeapon * reloaded = nullptr;
+    RangedWeapon * weapon = nullptr;
 
     if (slot == m_items.size())
-        reloaded = dynamic_cast<RangedWeapon *>(m_weapon);
+        weapon = dynamic_cast<RangedWeapon *>(m_weapon);
     else
-        reloaded = dynamic_cast<RangedWeapon *>(m_items[slot]);
+        weapon = dynamic_cast<RangedWeapon *>(m_items[slot]);
 
-    if (reloaded)
+    if (weapon)
     {
-        if (reloaded->getCurrentAmmo() == reloaded->getCapacity())
+        if (weapon->getCurrentAmmo() == weapon->getCapacity())
         {
             std::cout << "This weapon is already full!\n";
         }
         else
         {
-            std::string type = reloaded->getAmmoType();
+            std::string type = weapon->getAmmoType();
 
             for (int i = 0; i < m_items.size(); i++)
             {
                 if (m_items[i]->getTags().find(type) != std::string::npos)
                 {
-                    reloadWeapon(reloaded, i);
+                    reloadWeapon(weapon, i);
                     success = true;
                     break;
                 }
@@ -442,6 +466,37 @@ void Inventory::reloadWeapon(RangedWeapon * weapon, int slot)
         }
         std::cout << "Reloaded " << weapon->getName() << ", now has "
                   << weapon->getCurrentAmmo() << " rounds\n";
+    }
+}
+
+void Inventory::unloadWeapon(int slot)
+{
+    bool success = false;
+    RangedWeapon * weapon = nullptr;
+
+    if (slot == m_items.size())
+        weapon = dynamic_cast<RangedWeapon *>(m_weapon);
+    else
+        weapon = dynamic_cast<RangedWeapon *>(m_items[slot]);
+
+    if (weapon)
+    {
+        int count = weapon->getCurrentAmmo();
+        if (count)
+        {
+            std::string temp = "ammo_";
+            temp += weapon->getAmmoType();
+            weapon->setCurrentAmmo(0);
+            add(temp, false, count);
+        }
+        else
+        {
+            std::cout << "This weapon is already empty!\n";
+        }
+    }
+    else
+    {
+        std::cout << "You can't unload this item!\n";
     }
 }
 

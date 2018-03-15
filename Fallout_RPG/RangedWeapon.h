@@ -18,20 +18,13 @@ class RangedWeapon : public Weapon
 {
 public:
     /**
-     * Enumerator containing values corresponding to ammunition types.
-     */
-    enum { PISTOL_SMALL, PISTOL_LARGE, REVOLVER_SMALL, REVOLVER_LARGE,
-           SHOTGUN_SMALL, SHOTGUN_LARGE, RIFLE_SMALL, RIFLE_LARGE, RIFLE_SNIPER,
-           ENERGY };
-
-public:
-    /**
      * Class constructor. Creates instance of RangedWeapon object with specified
      * parameters.
      *
      * @param name          string containing name of the object
      * @param description   string containing description of the object
      * @param ammo_type     string containing ammunition type
+     * @param ammo          string containing name of used ammunition
      * @param capacity      value specifying weapon's ammunition capacity in
      *                      magazine
      * @param damage        value specifying weapon's base damage
@@ -49,9 +42,10 @@ public:
      * @param tags          string containing tags associated with this object
      */
     RangedWeapon(std::string name, std::string description,
-                 std::string ammo_type, int capacity, int damage,
-                 std::string roll, int speed, int accuracy, int penetration,
-                 int requirement, int value, double weight, std::string tags);
+                 std::string ammo_type, std::string ammo, int capacity,
+                 int damage, std::string roll, int speed, int accuracy,
+                 int penetration, int requirement, int value, double weight,
+                 std::string tags);
 
     /**
      * Class desctructor. Deletes instance of RangedWeapon object.
@@ -93,10 +87,14 @@ public:
     
 private:
     /**
-     * Type of ammunition the weapon is using, according to enumerator provided
-     * with this class.
+     * Type of ammunition the weapon is using.
      */
     std::string m_ammo_type;
+
+    /**
+     * Full name of the ammunition the weapon is using.
+     */
+    std::string m_ammo;
 
     /**
      * Value specifying the weapon's magazine capacity.

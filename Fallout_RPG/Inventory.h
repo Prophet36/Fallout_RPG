@@ -33,6 +33,13 @@ public:
      */
     enum { MELEE, RANGED };
 
+    /**
+     * Enumerator containing values corresponding to ammunition types.
+     */
+    enum { PISTOL_SMALL, PISTOL_LARGE, REVOLVER_SMALL, REVOLVER_LARGE,
+           SHOTGUN_SMALL, SHOTGUN_LARGE, RIFLE_SMALL, RIFLE_LARGE, RIFLE_SNIPER,
+           ENERGY };
+
 public:
     /**
      * Class constructor. Creates instance of Inventory object while specifying
@@ -106,8 +113,11 @@ public:
      * @param item_id       ID of the item to add to inventory
      * @param ignore_limit  ignores inventory size limit if true, otherwise
      *                      checks inventory size after adding item
+     * @param count         how much of particular item should be created in one
+     *                      stack (applies only to items that can be stacked in
+     *                      one inventory slot, otherwise is ignored)
      */
-    void add(std::string item_id, bool ignore_limit = false);
+    void add(std::string item_id, bool ignore_limit = false, int count = 0);
 
     /**
      * Prompts the user to remove item from one inventory slot.
@@ -128,6 +138,11 @@ public:
      * Prompts the user to reload weapon.
      */
     void reloadWeapon();
+
+    /**
+     * Prompts the user to unload weapon.
+     */
+    void unloadWeapon();
 
     /**
      * Warns the user when all inventory slots are already filled while
@@ -203,6 +218,14 @@ private:
      * @param slot      inventory slot containing appropriate ammunition
      */
     void reloadWeapon(RangedWeapon * weapon, int slot);
+
+    /**
+     * Unloads all ammunition from the magazine from specified weapon, putting
+     * the ammunition back in inventory.
+     *
+     * @param slot  inventory slot containing weapon to unload ammo from
+     */
+    void unloadWeapon(int slot);
 
     /**
      * Checks whether inventory is over maximum capacity (per inventory slots).

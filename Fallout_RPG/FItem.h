@@ -24,9 +24,12 @@ public:
      * ID. If the ID is incorrect, it returns pointer to default 'dummy' item.
      *
      * @param item_id   ID of the item to create
+     * @param count     how much of particular item should be created in one
+     *                  stack (applies only to items that can be stacked in one
+     *                  inventory slot, otherwise is ignored)
      * @return          pointer to new Item object matching ID
      */
-    static Item * createNewItem(std::string item_id);
+    static Item * createNewItem(std::string item_id, int count = 0);
 
 private:
     /**
@@ -43,9 +46,11 @@ private:
      * Creates and returns pointer to Consumable object, while asking user to
      * input amount of particular consumable to create.
      *
-     * @return  pointer to new Item class consumable type object
+     * @param count how much of particular consumable should be created in one
+     *              stack
+     * @return      pointer to new Item class consumable type object
      */
-    static Item * createNewConsumable();
+    static Item * createNewConsumable(int count = 0);
 
     /**
      * Creates and returns pointer to Weapon object. If the weapon type is
@@ -75,9 +80,10 @@ private:
      * Creates and returns pointer to Ammo object, while asking the user to
      * input amount of particular ammunition to create.
      *
-     * @return  pointer to new Item class ammunition type object
+     * @param count how much of particular ammo should be created in one stack
+     * @return      pointer to new Item class ammunition type object
      */
-    static Item * createNewAmmo();
+    static Item * createNewAmmo(int count = 0);
 
     /**
      * Creates and returns pointer to Armor object.

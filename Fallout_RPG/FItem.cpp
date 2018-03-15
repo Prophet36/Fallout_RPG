@@ -20,13 +20,13 @@ FItem::~FItem()
 {
 }
 
-Item * FItem::createNewItem(std::string item_id)
+Item * FItem::createNewItem(std::string item_id, int count)
 {
     switch (Inventory::checkItemPrefix(item_id))
     {
         case Inventory::CONSUMABLE:
         {
-            return createNewConsumable();
+            return createNewConsumable(count);
         }
         case Inventory::WEAPON:
         {
@@ -34,7 +34,7 @@ Item * FItem::createNewItem(std::string item_id)
         }
         case Inventory::AMMO:
         {
-            return createNewAmmo();
+            return createNewAmmo(count);
         }
         case Inventory::ARMOR:
         {
@@ -49,7 +49,7 @@ Item * FItem::createNewItem(std::string item_id)
     }
 }
 
-Item * FItem::createNewConsumable()
+Item * FItem::createNewConsumable(int count)
 {
     File * working_file = File::get(c_items);
     std::string tags = working_file->getString();
@@ -62,8 +62,11 @@ Item * FItem::createNewConsumable()
     int value = working_file->getInt();
     double weight = working_file->getDouble();
 
-    std::cout << "How many do you want to add? ";
-    int count = Input::switchPrompt(1, stack);
+    if (count <= 0 || count > stack)
+    {
+        std::cout << "How many do you want to add? ";
+        count = Input::switchPrompt(1, stack);
+    }
 
     return new Consumable(name, description, attribute, magnitude, duration,
                           count, stack, value, weight, tags);
@@ -84,8 +87,9 @@ Item * FItem::createNewWeapon()
         }
         default:
         {
-            return new RangedWeapon("Dummy Gun", "Dummy gun.", 0, 0, 0, "d4",
-                                    0, 0, 0, 0, 0, 0.0, "ranged, gun, short");
+            return new RangedWeapon("Dummy Gun", "Dummy gun.", "blanks",
+                                    "Blanks", 0, 0, "d4", 0, 0, 0, 0, 0, 0.0,
+                                    "ranged, gun, short");
         }
     }
 }
@@ -113,6 +117,7 @@ Item * FItem::createNewRangedWeapon(std::string tags)
     std::string name = working_file->getString();
     std::string description = working_file->getString();
     std::string ammo_type = working_file->getString();
+    std::string ammo = working_file->getString();
     int capacity = working_file->getInt();
     int damage = working_file->getInt();
     std::string roll = working_file->getString();
@@ -123,12 +128,12 @@ Item * FItem::createNewRangedWeapon(std::string tags)
     int value = working_file->getInt();
     double weight = working_file->getDouble();
 
-    return new RangedWeapon(name, description, ammo_type, capacity, damage,
-                            roll, speed, accuracy, penetration, requirement,
-                            value, weight, tags);
+    return new RangedWeapon(name, description, ammo_type, ammo, capacity,
+                            damage, roll, speed, accuracy, penetration,
+                            requirement, value, weight, tags);
 }
 
-Item * FItem::createNewAmmo()
+Item * FItem::createNewAmmo(int count)
 {
     File * working_file = File::get(c_items);
     std::string tags = working_file->getString();
@@ -138,8 +143,11 @@ Item * FItem::createNewAmmo()
     int value = working_file->getInt();
     double weight = working_file->getDouble();
 
-    std::cout << "How many do you want to add? ";
-    int count = Input::switchPrompt(1, stack);
+    if (count <= 0 || count > stack)
+    {
+        std::cout << "How many do you want to add? ";
+        count = Input::switchPrompt(1, stack);
+    }
 
     return new Ammo(name, description, count, stack, value, weight, tags);
 }
