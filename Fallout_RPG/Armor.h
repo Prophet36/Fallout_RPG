@@ -34,9 +34,9 @@ public:
           int protection, int value, double weight, std::string tags);
 
     /**
-     * Class desctructor. Deletes instance of Armor object.
+     * Default class destructor. Deletes instance of Armor object.
      */
-    virtual ~Armor();
+    virtual ~Armor() = default;
 
     /**
      * Prints the parameters of the object for debug purposes.
@@ -48,7 +48,7 @@ public:
      *
      * @return  damage reduction provided by this armor
      */
-    int getReduction() const;
+    int getReduction() const { return m_reduction; }
 
 private:
     /**

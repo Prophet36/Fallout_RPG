@@ -24,7 +24,7 @@ public:
     /**
      * Class destructor. Deletes instance of Player object.
      */
-    ~Player();
+    virtual ~Player();
 
 private:
     /**

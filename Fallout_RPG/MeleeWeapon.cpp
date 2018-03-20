@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "MeleeWeapon.h"
-#include <iostream> // std::cout, std::endl
+#include <iostream>
 
 MeleeWeapon::MeleeWeapon(std::string name, std::string description, int damage,
                          std::string roll, int speed, int penetration,
@@ -8,10 +8,6 @@ MeleeWeapon::MeleeWeapon(std::string name, std::string description, int damage,
                          std::string tags) :
     Weapon(name, description, damage, roll, speed, penetration, requirement,
            value, weight, tags)
-{
-}
-
-MeleeWeapon::~MeleeWeapon()
 {
 }
 

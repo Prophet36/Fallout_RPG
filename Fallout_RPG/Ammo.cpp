@@ -1,15 +1,11 @@
 #include "stdafx.h"
 #include "Ammo.h"
-#include <iostream> // std::cout, std::endl
-#include <string>   // std::string
+#include <iostream>
+#include <string>
 
 Ammo::Ammo(std::string name, std::string description, int count, int stack,
            int value, double weight, std::string tags) :
     Item(name, description, value, weight, tags), IStackable(count, stack)
-{
-}
-
-Ammo::~Ammo()
 {
 }
 

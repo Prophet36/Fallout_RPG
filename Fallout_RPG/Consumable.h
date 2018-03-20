@@ -51,9 +51,9 @@ public:
                double weight, std::string tags);
 
     /**
-     * Class desctructor. Deletes instance of Consumable object.
+     * Default class destructor. Deletes instance of Consumable object.
      */
-    virtual ~Consumable();
+    virtual ~Consumable() = default;
 
     /**
      * Prints the parameters of the object for debug purposes.

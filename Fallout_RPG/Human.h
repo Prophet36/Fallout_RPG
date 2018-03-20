@@ -21,11 +21,21 @@ public:
      * Class constructor. Creates instance of Human object.
      */
     Human();
+    
+    /**
+     * Copy constructor is inaccessible.
+     */
+    Human(const Human &) = delete;
 
     /**
-     * Class desctructor. Deletes instance of Human object.
+     * Class destructor. Deletes instance of Human object and its inventory.
      */
     virtual ~Human();
+
+    /**
+     * Assignment operator is inaccessible.
+     */
+    void operator=(const Human &) = delete;
     
     /**
      * Returns character's inventory, for further manipulation.
@@ -33,10 +43,9 @@ public:
      * @return  pointer to Inventory object, containing character's current
      *          inventory
      */
-    Inventory * getInventory() const;
+    Inventory * getInventory() const { return m_inventory; }
 
 protected:
-
     /**
      * Contains character's inventory, represented as pointer to Inventory class
      * object.

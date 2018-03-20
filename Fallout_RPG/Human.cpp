@@ -11,8 +11,3 @@ Human::~Human()
 {
     delete m_inventory;
 }
-
-Inventory * Human::getInventory() const
-{
-    return m_inventory;
-}

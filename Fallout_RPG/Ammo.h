@@ -39,9 +39,9 @@ public:
          int value, double weight, std::string tags);
 
     /**
-     * Class desctructor. Deletes instance of Ammo object.
+     * Default class destructor. Deletes instance of Ammo object.
      */
-    virtual ~Ammo();
+    virtual ~Ammo() = default;
 
     /**
      * Prints the parameters of the object for debug purposes.

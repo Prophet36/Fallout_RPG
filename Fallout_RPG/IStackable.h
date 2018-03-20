@@ -23,7 +23,10 @@ public:
      */
     IStackable(int count, int stack);
     
-    virtual ~IStackable();
+    /**
+     * Default class destructor. Deletes instance of Ammo object.
+     */
+    virtual ~IStackable() = default;
 
     /**
      * Sets current count of the object in one inventory slot. If the value
@@ -42,7 +45,7 @@ public:
      *
      * @return  current count in one inventory slot
      */
-    int getCount() const;
+    int getCount() const { return m_count; }
 
 protected:
     /**

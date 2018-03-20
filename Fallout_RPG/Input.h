@@ -15,6 +15,16 @@ class Input
 {
 public:
     /**
+     * Constructor is inaccessible.
+     */
+    Input() = delete;
+
+    /**
+     * Destructor is inaccessible.
+     */
+    ~Input() = delete;
+
+    /**
      * Waits for the user to press enter to continue. It can print the prompt,
      * or omit printing, which is the default setting.
      *
@@ -76,16 +86,6 @@ public:
     static std::string getString();
 
 private:
-    /**
-     * Private class constructor. Can't be called.
-     */
-    Input();
-
-    /**
-     * Private class desctructor. Can't be called.
-     */
-    ~Input();
-
     /**
      * Clears stream buffer for further input.
      */

@@ -1,17 +1,13 @@
 #include "stdafx.h"
 #include "Consumable.h"
-#include <iostream> // std::cout, std::endl
-#include <string>   // std::string
+#include <iostream>
+#include <string>
 
 Consumable::Consumable(std::string name, std::string description, int attribute,
                        int magnitude, int duration, int count, int stack,
                        int value, double weight, std::string tags) :
     Item(name, description, value, weight, tags), IStackable(count, stack),
     m_attribute(attribute), m_magnitude(magnitude), m_duration(duration)
-{
-}
-
-Consumable::~Consumable()
 {
 }
 

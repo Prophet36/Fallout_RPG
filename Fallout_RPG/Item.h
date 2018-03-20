@@ -45,14 +45,14 @@ public:
      *
      * @return  string containing tags associated with the object
      */
-    std::string getTags() const;
+    std::string getTags() const { return m_tags; }
 
     /**
      * Returns the object's name.
      *
      * @return  string containing name of the object
      */
-    std::string getName() const;
+    std::string getName() const { return m_name; }
 
 protected:
     /**

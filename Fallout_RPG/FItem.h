@@ -10,7 +10,7 @@
  * parameters of those objects from attached files.
  *
  * The class can't be instantiated and all its methods are static in order to
- * be able to freely use those methods whenever new items creation is needed.
+ * be able to freely use those methods whenever new item creation is needed.
  *
  * @author  Mateusz Warchol
  * @see     File
@@ -19,6 +19,16 @@
 class FItem
 {
 public:
+    /**
+     * Constructor is inaccessible.
+     */
+    FItem() = delete;
+
+    /**
+     * Destructor is inaccessible.
+     */
+    ~FItem() = delete;
+
     /**
      * Creates and returns pointer to specified Item object based on its item
      * ID. If the ID is incorrect, it returns pointer to default 'dummy' item.
@@ -32,16 +42,6 @@ public:
     static Item * createNewItem(std::string item_id, int count = 0);
 
 private:
-    /**
-     * Private class constructor. Can't be called.
-     */
-    FItem();
-
-    /**
-     * Private class desctructor. Can't be called.
-     */
-    ~FItem();
-
     /**
      * Creates and returns pointer to Consumable object, while asking user to
      * input amount of particular consumable to create.

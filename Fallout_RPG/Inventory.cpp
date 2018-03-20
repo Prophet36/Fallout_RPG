@@ -7,9 +7,9 @@
 #include "IStackable.h"
 #include "Item.h"
 #include "RangedWeapon.h"
-#include <iostream> // std::cout
-#include <string>   // std::string
-#include <vector>   // std::vector
+#include <iostream>
+#include <string>
+#include <vector>
 
 
 Inventory::Inventory(int max_space) :

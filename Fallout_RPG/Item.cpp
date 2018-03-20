@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Item.h"
-#include <iostream> // std::cout
-#include <string>   // std::string
+#include <iostream>
+#include <string>
 
 Item::Item(std::string name, std::string description, int value, double weight,
            std::string tags) :
@@ -14,14 +14,4 @@ Item::Item(std::string name, std::string description, int value, double weight,
 Item::~Item()
 {
     std::cout << "DEBUG: ----- Item " << m_name << " destroyed! -----\n";
-}
-
-std::string Item::getTags() const
-{
-    return m_tags;
-}
-
-std::string Item::getName() const
-{
-    return m_name;
 }

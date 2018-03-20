@@ -1,15 +1,7 @@
 #include "stdafx.h"
 #include "Input.h"
-#include <iostream> // std::cout, std::cin
-#include <string>   // std::string
-
-Input::Input()
-{
-}
-
-Input::~Input()
-{
-}
+#include <iostream>
+#include <string>
 
 void Input::keyContinue(bool prompt)
 {

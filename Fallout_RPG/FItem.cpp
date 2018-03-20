@@ -9,16 +9,8 @@
 #include "Item.h"
 #include "MeleeWeapon.h"
 #include "RangedWeapon.h"
-#include <iostream> // std::cout, std::cerr
-#include <string>   // std::string
-
-FItem::FItem()
-{
-}
-
-FItem::~FItem()
-{
-}
+#include <iostream>
+#include <string>
 
 Item * FItem::createNewItem(std::string item_id, int count)
 {

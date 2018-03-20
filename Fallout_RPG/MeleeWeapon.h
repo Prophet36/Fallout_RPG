@@ -40,9 +40,9 @@ public:
                 int value, double weight, std::string tags);
 
     /**
-     * Class desctructor. Deletes instance of MeleeWeapon object.
+     * Default class destructor. Deletes instance of MeleeWeapon object.
      */
-    virtual ~MeleeWeapon();
+    virtual ~MeleeWeapon() = default;
 
     /**
      * Prints the parameters of the object for debug purposes.

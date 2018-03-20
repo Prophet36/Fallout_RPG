@@ -42,9 +42,9 @@ public:
            int value, double weight, std::string tags);
 
     /**
-     * Class desctructor. Deletes instance of Weapon object.
+     * Default class destructor. Deletes instance of Weapon object.
      */
-    virtual ~Weapon();
+    virtual ~Weapon() = default;
 
     /**
      * Prints the parameters of the object for debug purposes.

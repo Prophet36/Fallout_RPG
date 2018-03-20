@@ -19,9 +19,9 @@ public:
     Character();
 
     /**
-     * Class desctructor. Deletes instance of Character object.
+     * Default class destructor. Deletes instance of Character object.
      */
-    virtual ~Character();
+    virtual ~Character() = default;
 
 protected:
     /**

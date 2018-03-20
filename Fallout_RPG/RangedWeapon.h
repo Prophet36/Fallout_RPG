@@ -48,9 +48,9 @@ public:
                  std::string tags);
 
     /**
-     * Class desctructor. Deletes instance of RangedWeapon object.
+     * Default lass destructor. Deletes instance of RangedWeapon object.
      */
-    virtual ~RangedWeapon();
+    virtual ~RangedWeapon() = default;
 
     /**
      * Prints the parameters of the object for debug purposes.
@@ -62,28 +62,28 @@ public:
      *
      * @param count current count of ammunition in weapon's magazine to set to
      */
-    void setCurrentAmmo(int count);
+    void setCurrentAmmo(int count) { m_current_ammo = count; }
 
     /**
      * Returns type of ammunition the weapon uses.
      *
      * @return  string containing ammunition type
      */
-    std::string getAmmoType() const;
+    std::string getAmmoType() const { return m_ammo_type; }
 
     /**
      * Returns current count of ammunition in magazine.
      *
      * @return  current count of ammunition in weapon's magazine
      */
-    int getCurrentAmmo() const;
+    int getCurrentAmmo() const { return m_current_ammo; }
 
     /**
      * Returns ammunition capacity in magazine.
      *
      * @return  ammunition capacity in weapon's magazine
      */
-    int getCapacity() const;
+    int getCapacity() const { return m_capacity; }
     
 private:
     /**

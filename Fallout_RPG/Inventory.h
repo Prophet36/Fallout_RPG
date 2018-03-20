@@ -52,10 +52,20 @@ public:
     Inventory(int max_space = c_inventory_size);
 
     /**
+     * Copy constructor is inaccessible.
+     */
+    Inventory(const Inventory & rhs) = delete;
+
+    /**
      * Class destructor. Deletes instance of Inventory object along with all
      * its contents.
      */
     ~Inventory();
+
+    /**
+     * Assignment operator is inaccessible.
+     */
+    void operator=(const Inventory & rhs) = delete;
 
     /**
      * Finds and checks correct item prefix in provided item ID.

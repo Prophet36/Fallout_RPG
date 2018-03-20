@@ -27,9 +27,14 @@ class File
 {
 public:
     /**
-     * Class destructor. Deletes instance of File object.
+     * Copy constructor is inaccessible.
      */
-    ~File();
+    File(const File & rhs) = delete;
+
+    /**
+     * Assignment operator is inaccessible.
+     */
+    void operator=(const File & rhs) = delete;
 
     /**
      * Creates instance of File object if one isn't present and open specified
@@ -38,6 +43,11 @@ public:
      * @return  pointer to instance of File object
      */
     static File * get(std::string file_type);
+
+    /**
+     * Closes file if currently opened and deletes instance of File object.
+     */
+    void close();
 
     /**
      * Finds specified item in the opened file by checking against matching
@@ -70,16 +80,16 @@ public:
      */
     double getDouble();
 
-    /**
-     * Closes file if currently opened and deletes instance of File object.
-     */
-    void close();
-
 private:
     /**
-     * Class constructor. Creates instance of File object.
+     * Default class constructor. Creates instance of File object.
      */
-    File();
+    File() = default;
+
+    /**
+     * Default class destructor. Deletes instance of File object.
+     */
+    ~File() = default;
 
     /**
      * Opens specified file, if no files are opened.
