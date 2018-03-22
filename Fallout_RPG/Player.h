@@ -31,4 +31,9 @@ private:
      * Value specifying current experience points.
      */
     int m_experience;
+
+    /**
+     * Value specifying available skillpoints.
+     */
+    int m_skillpoints;
 };

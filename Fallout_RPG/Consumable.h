@@ -60,6 +60,29 @@ public:
      */
     virtual void debugPrint() const override;
 
+    /**
+     * Returns the attribute type the consumable is modifying, according to
+     * enumerator provided with this class.
+     *
+     * @return  enum value specyfing type of attribute to modify
+     */
+    int getAttribute() const { return m_attribute; }
+
+    /**
+     * Returns magnitude of attribute's modification by this consumable.
+     *
+     * @return  value specyfing how much the attribute is modified
+     */
+    int getMagnitude() const { return m_magnitude; }
+
+    /**
+     * Returns duration of attribute's modification by this consumable.
+     *
+     * @return  value specyfing how long the attribute is modified, in game
+     *          turns (value of 0 means the attribute is modified permanently)
+     */
+    int getDuration() const { return m_duration; }
+
 private:
     /**
      * Type of character attribute the consumable is modifying, according to

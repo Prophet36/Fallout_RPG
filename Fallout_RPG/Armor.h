@@ -25,7 +25,7 @@ public:
      * @param reduction     maximum potential damage reduction
      * @param evasion       possible bonus (or malus, if negative) to attack
      *                      evasion
-     * @param protection    radiation protection, measured in percents
+     * @param protection    radiation protection, measured in %
      * @param value         monetary value of this object
      * @param weight        double value containing the object's weight
      * @param tags          string containing tags associated with this object
@@ -44,11 +44,25 @@ public:
     virtual void debugPrint() const override;
 
     /**
-     * Returns the armor's protection value.
+     * Returns the armor's damage reduction value.
      *
      * @return  damage reduction provided by this armor
      */
     int getReduction() const { return m_reduction; }
+
+    /**
+     * Returns the armor's evasion value.
+     *
+     * @return  bonus (or malus) attack evasion provided by this armor
+     */
+    int getEvasion() const { return m_evasion; }
+
+    /**
+     * Returns the armor's protection value.
+     *
+     * @return  radiation protection provided by this armor
+     */
+    int getReduction() const { return m_protection; }
 
 private:
     /**
@@ -63,7 +77,7 @@ private:
     int m_evasion;
 
     /**
-     * Radiation protection. Absorbs specified percent of rads.
+     * Radiation protection. Absorbs specified percent of rads. Measured in %.
      */
     int m_protection;
 };

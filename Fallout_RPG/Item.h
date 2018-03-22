@@ -41,6 +41,20 @@ public:
     virtual void debugPrint() const = 0;
 
     /**
+     * Returns the object's name.
+     *
+     * @return  string containing name of the object
+     */
+    std::string getName() const { return m_name; }
+
+    /**
+     * Returns the object's description.
+     *
+     * @return  string containing short description of the object
+     */
+    std::string getDescription() const { return m_description; }
+
+    /**
      * Returns the object's tags field.
      *
      * @return  string containing tags associated with the object
@@ -48,11 +62,18 @@ public:
     std::string getTags() const { return m_tags; }
 
     /**
-     * Returns the object's name.
+     * Returns the object's value.
      *
-     * @return  string containing name of the object
+     * @return  monetary value of the object
      */
-    std::string getName() const { return m_name; }
+    int getValue() const { return m_value; }
+
+    /**
+     * Returns the object's weight.
+     *
+     * @return  double containing weight of the object
+     */
+     double getWeight() const { return m_weight; }
 
 protected:
     /**

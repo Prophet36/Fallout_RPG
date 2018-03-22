@@ -24,7 +24,7 @@ public:
      * @param name          string containing name of the object
      * @param description   string containing description of the object
      * @param ammo_type     string containing ammunition type
-     * @param ammo          string containing name of used ammunition
+     * @param ammo_name     string containing name of used ammunition
      * @param capacity      value specifying weapon's ammunition capacity in
      *                      magazine
      * @param damage        value specifying weapon's base damage
@@ -42,13 +42,13 @@ public:
      * @param tags          string containing tags associated with this object
      */
     RangedWeapon(std::string name, std::string description,
-                 std::string ammo_type, std::string ammo, int capacity,
+                 std::string ammo_type, std::string ammo_name, int capacity,
                  int damage, std::string roll, int speed, int accuracy,
                  int penetration, int requirement, int value, double weight,
                  std::string tags);
 
     /**
-     * Default lass destructor. Deletes instance of RangedWeapon object.
+     * Default class destructor. Deletes instance of RangedWeapon object.
      */
     virtual ~RangedWeapon() = default;
 
@@ -72,18 +72,18 @@ public:
     std::string getAmmoType() const { return m_ammo_type; }
 
     /**
-     * Returns current count of ammunition in magazine.
-     *
-     * @return  current count of ammunition in weapon's magazine
-     */
-    int getCurrentAmmo() const { return m_current_ammo; }
-
-    /**
      * Returns ammunition capacity in magazine.
      *
      * @return  ammunition capacity in weapon's magazine
      */
     int getCapacity() const { return m_capacity; }
+
+    /**
+     * Returns current count of ammunition in magazine.
+     *
+     * @return  current count of ammunition in weapon's magazine
+     */
+    int getCurrentAmmo() const { return m_current_ammo; }
     
 private:
     /**
@@ -94,7 +94,7 @@ private:
     /**
      * Full name of the ammunition the weapon is using.
      */
-    std::string m_ammo;
+    std::string m_ammo_name;
 
     /**
      * Value specifying the weapon's magazine capacity.

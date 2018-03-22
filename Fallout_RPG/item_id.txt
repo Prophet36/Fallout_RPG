@@ -1014,7 +1014,7 @@ reduction:   12
 evasion:     -3
 protection:  100
 value:       1000
-weight:      18.0
+weight:      15.0
 
 item_id:     armor_endgamelight
 tags:        armor

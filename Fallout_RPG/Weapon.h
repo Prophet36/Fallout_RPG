@@ -52,6 +52,13 @@ public:
     virtual void debugPrint() const = 0;
 
     /**
+     * Returns the weapon's base damage.
+     *
+     * @return  value specyfing base damage of the weapon
+     */
+    int getDamage() const { return m_damage; }
+
+    /**
      * Returns minimum amount of damage the weapon can do.
      *
      * @return  value specifying the least amount of damage the weapon can do
@@ -66,6 +73,28 @@ public:
      *          when rolling the highest number for damage
      */
     int getMaxDamage() const;
+
+    /**
+     * Returns the weapon's speed.
+     *
+     * @return  value specyfing bonus speed provided by this weapon
+     */
+    int getSpeed() const { return m_speed; }
+
+    /**
+     * Returns the weapon's armor penetration.
+     *
+     * @return  value specyfing armor penetration (how much armor reduction is
+     *          ignored with each attack)
+     */
+    int getPenetration() const { return m_penetration; }
+
+    /**
+     * Returns the weapon's strength requirement.
+     *
+     * @return  value specyfing strength needed in order to equip this weapon
+     */
+    int getRequirement() const { return m_requirement; }
 
 protected:
     /**

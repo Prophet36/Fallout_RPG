@@ -4,7 +4,7 @@
 #include "Inventory.h"
 
 /**
- * This class for human character objects. It inherits from Character class,
+ * This class is for human character objects. It inherits from Character class,
  * particularly members and methods common to all characters in the game.
  *
  * This class contains additional members and methods specific to humanoid
@@ -36,7 +36,7 @@ public:
      * Assignment operator is inaccessible.
      */
     void operator=(const Human &) = delete;
-    
+
     /**
      * Returns character's inventory, for further manipulation.
      *
@@ -47,8 +47,8 @@ public:
 
 protected:
     /**
-     * Contains character's inventory, represented as pointer to Inventory class
-     * object.
-     */
+    * Contains character's inventory, represented as pointer to Inventory class
+    * object.
+    */
     Inventory * m_inventory;
 };

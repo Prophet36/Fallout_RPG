@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>   // std::string
+#include <string>
 
 /**
  * This is base class for all character objects in the game. It contains members
@@ -22,6 +22,143 @@ public:
      * Default class destructor. Deletes instance of Character object.
      */
     virtual ~Character() = default;
+
+    /**
+     * Returns character's level.
+     *
+     * @return  value containing character's level
+     */
+    int getLevel() const { return m_level; }
+    
+    /**
+     * Returns character's strength attribute.
+     *
+     * @return  value containing character's strength
+     */
+    int getStrength() const { return m_strength; }
+
+    /**
+     * Returns character's agility attribute.
+     *
+     * @return  value containing character's agility
+     */
+    int getAgility() const { return m_agility; }
+
+    /**
+     * Returns character's vitality attribute.
+     *
+     * @return  value containing character's vitality
+     */
+    int getVitality() const { return m_vitality; }
+
+    /**
+     * Returns character's perception attribute
+     *
+     * @return  value containing character's perception
+     */
+    int getPerception() const { return m_perception; }
+
+    /**
+     * Returns character's intelligence attribute.
+     *
+     * @return  value containing character's intelligence
+     */
+    int getIntelligence() const { return m_intelligence; }
+
+    /**
+     * Returns character's luck attribute.
+     *
+     * @return  value containing character's luck
+     */
+    int getLuck() const { return m_luck; }
+
+    /**
+     * Returns character's current health.
+     *
+     * @return  value containing character's current health
+     */
+    int getHealth() const { return m_health; }
+
+    /**
+     * Returns additional melee damage the character does in combat.
+     *
+     * @return  value containing bonus to melee damage, based on character's
+     *          strength (characters with strength of 5 or less don't get bonus
+     *          to melee damage)
+    */
+    int getMeleeBonus() const { return (m_strength > 5 ? m_strength - 5 : 0); }
+
+    /**
+     * Returns character's maximum weight the character can carry.
+     *
+     * @return  value containing character's weight limit, based on strength
+     */
+    int getMaxWeight() const { return 20 + m_strength * 2; }
+
+    /**
+     * Returns bonus (or malus) to character's speed in combat (turn order).
+     * This bonus stacks with equipped weapon's speed.
+     *
+     * @return  value containing bonus (if agility is higher than 5) or malus
+     *          (if less than 5) to speed in combat
+     */
+    int getSpeedBonus() const { return m_agility - 5; }
+
+    /**
+     * Returns bonus to character's evasion of incoming attacks. This bonus
+     * stacks with equipped armor's evasion.
+     *
+     * @return  value containing bonus to evasion, based on character's agility
+     *          (characters with agility of 5 or less don't get bonus to
+     *          evasion)
+     */
+    int getEvasionBonus() const { return (m_agility > 5 ? m_agility - 5 : 0); }
+
+    /**
+     * Returns character's maximum health.
+     *
+     * @return  value containing character's maximum health, based on vitality
+     */
+    int getMaxHealth() const { return 12 + m_vitality * 2 + m_level * 2; }
+
+    /**
+     * Returns bonus (or malus) to protection from radiation. This bonus stacks
+     * with equipped armor's protection.
+     *
+     * @return  value containing bonus (if endurance is higher than 5) or malus
+     *          (if less than 5) to protection from radiation, measured in %
+     */
+    int getProtectionBonus() const { return -25 + m_vitality * 5; }
+
+    /**
+     * Returns character's protection from poisoning.
+     *
+     * @return  value containing bonus to protection from poisoning, based on
+     *          vitality
+     */
+    int getPoisonBonus() const { return m_vitality * 5; }
+
+    /**
+     * Returns character's bonus to accuracy with attacks.
+     *
+     * @return  value containing character's bonus to accuracy
+     */
+    int getAimBonus() const { return m_perception; }
+
+    /**
+     * Returns character's bonus to roll, when fate is involved.
+     *
+     * @return  value containing character's bonus to roll, based on luck
+     */
+    int getFateBonus() const { return m_luck; }
+
+    /**
+     * Returns character's bonus to finding additional loot.
+     *
+     * @return  value containing bonus to finding additional, or better, loot,
+     *          based on luck
+     */
+    int getLootBonus() const { return m_luck * 5; }
 
 protected:
     /**
@@ -65,12 +202,7 @@ protected:
     int m_luck;
 
     /**
-     * Value specifying character's maximum health.
-     */
-    int m_health_max;
-
-    /**
      * Value specifying character's current health.
      */
-    int m_health_current;
+    int m_health;
 };
