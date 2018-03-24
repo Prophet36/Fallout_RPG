@@ -62,7 +62,7 @@ public:
      *
      * @return  radiation protection provided by this armor
      */
-    int getReduction() const { return m_protection; }
+    int getProtection() const { return m_protection; }
 
 private:
     /**
