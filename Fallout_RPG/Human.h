@@ -51,4 +51,9 @@ protected:
     * object.
     */
     Inventory * m_inventory;
+
+    /**
+     * Value specifying available skillpoints.
+     */
+    int m_skillpoints;
 };

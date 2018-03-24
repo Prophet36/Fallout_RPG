@@ -26,14 +26,23 @@ public:
      */
     virtual ~Player();
 
+    /**
+     * Returns player's available skillpoints.
+     *
+     * @return  value specifying player's available skillpoints.
+     */
+    int getSkillpoints() const { return m_skillpoints; }
+
+    /**
+     * Returns player's current experience points.
+     *
+     * @return  value specifying player's experience points
+     */
+    int getExperience() const { return m_experience; }
+
 private:
     /**
      * Value specifying current experience points.
      */
     int m_experience;
-
-    /**
-     * Value specifying available skillpoints.
-     */
-    int m_skillpoints;
 };

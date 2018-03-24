@@ -2,7 +2,6 @@
 
 #include "Armor.h"
 #include "Item.h"
-#include "Weapon.h"
 #include "RangedWeapon.h"
 #include <string>   // std::string
 #include <vector>   // std::vector
@@ -161,6 +160,20 @@ public:
      * @return  true if user wants to proceed, otherwise false
      */
     bool warnEncumbrance() const;
+
+    /**
+     * Returns pointer to Item object containing equipped weapon.
+     *
+     * @return  pointer to Item object, which represents equipped weapon
+     */
+    Item * getWeapon() const { return m_weapon; }
+
+    /**
+     * Returns pointer to Armor object containing equipped armor.
+     *
+     * @return  pointer to Armor object, which represents equipped armor
+     */
+    Armor * getArmor() const { return dynamic_cast<Armor *>(m_armor); }
 
 private:
     /**
