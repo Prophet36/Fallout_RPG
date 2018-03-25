@@ -274,7 +274,8 @@ private:
 
     /**
      * Vector of pointers to Item objects. Stores pointers to those objects in
-     * character's inventory.
+     * character's inventory, representing current items in character's
+     * inventory.
      */
     std::vector<Item *> m_items;
 

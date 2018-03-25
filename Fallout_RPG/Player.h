@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Human.h"
+#include <string>
 
 /**
  * This class for player controlled character objects. It inherits from Human
@@ -17,14 +18,17 @@ class Player : public Human
 {
 public:
     /**
-     * Class constructor. Creates instance of Player object.
+     * Class constructor. Creates instance of Player object with specified
+     * parameters.
+     *
+     * @param name  string containing character's name
      */
-    Player();
+    Player(std::string name);
 
     /**
-     * Class destructor. Deletes instance of Player object.
+     * Default class destructor. Deletes instance of Player object.
      */
-    virtual ~Player();
+    virtual ~Player() = default;
 
     /**
      * Returns player's available skillpoints.

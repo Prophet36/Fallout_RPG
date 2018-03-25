@@ -18,25 +18,23 @@ class Human : public Character
 {
 public:
     /**
-     * Class constructor. Creates instance of Human object.
+     * Class constructor. Creates instance of Human object with specified
+     * parameters.
+     *
+     * @param name  string containing character's name
      */
-    Human();
-    
-    /**
-     * Copy constructor is inaccessible.
-     */
-    Human(const Human &) = delete;
+    Human(std::string name);
 
     /**
-     * Class destructor. Deletes instance of Human object and its inventory.
-     */
+    * Class destructor. Deletes instance of Human object and its inventory.
+    */
     virtual ~Human();
 
     /**
-     * Assignment operator is inaccessible.
-     */
-    void operator=(const Human &) = delete;
-
+    * Assignment operator is inaccessible.
+    */
+    //void operator=(const Human &) = delete;
+    
     /**
      * Returns character's inventory, for further manipulation.
      *

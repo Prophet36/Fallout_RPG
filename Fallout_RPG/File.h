@@ -10,9 +10,12 @@
  * parameters.
  * perk_id.txt holds information about all existing perks for characters, with
  * all their parameters.
+ * critter_id.txt holds information about all existing critter type characters
+ * (non-humanoid enemies, like mutants, dogs, etc), with all their parameters.
  */
 const std::string c_items = "item_id.txt";
 const std::string c_perks = "perk_id.txt";
+const std::string c_critters = "critter_id.txt";
 
 /**
  * This class is for file management, namely opening, closing and reading from

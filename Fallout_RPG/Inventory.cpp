@@ -95,7 +95,7 @@ void Inventory::print(bool equipped) const
 {
     if (!m_items.empty())
     {
-        for (int i = 0; i < m_items.size(); i++)
+        for (unsigned int i = 0; i < m_items.size(); i++)
         {
             std::cout << i + 1 << ": ";
             m_items[i]->debugPrint();
@@ -186,7 +186,8 @@ void Inventory::unequip()
 {
     if (m_weapon->getName() == "Unarmed" && m_armor->getName() == "Underwear")
     {
-        std::cout << "You don't have anything to unequip!\n";
+        std::cout << "You don't have anything to unequip!";
+        Input::keyContinue();
     }
     else
     {
@@ -218,7 +219,8 @@ void Inventory::reloadWeapon()
     }
     else
     {
-        std::cout << "You don't have any ammunition in your inventory!\n";
+        std::cout << "You don't have any ammunition in your inventory!";
+        Input::keyContinue();
     }
 }
 
@@ -238,7 +240,8 @@ void Inventory::unloadWeapon()
     }
     else
     {
-        std::cout << "You don't have any ranged weapon in your inventory!\n";
+        std::cout << "You don't have any ranged weapon in your inventory!";
+        Input::keyContinue();
     }
 }
 
@@ -258,7 +261,7 @@ bool Inventory::warnEncumbrance() const
 
 void Inventory::sort(Item * created_item)
 {
-    for (int i = 0; i < m_items.size(); i++)
+    for (unsigned int i = 0; i < m_items.size(); i++)
     {
         if (m_items[i]->getTags() == created_item->getTags())
         {
@@ -305,7 +308,8 @@ void Inventory::equip(int slot)
         }
         default:
         {
-            std::cout << "You can't equip this item!\n";
+            std::cout << "You can't equip this item!";
+            Input::keyContinue();
             break;
         }
     }
@@ -363,7 +367,8 @@ void Inventory::unequip(int slot)
             }
             else
             {
-                std::cout << "You can't unequip this!\n";
+                std::cout << "You can't unequip this!";
+                Input::keyContinue();
             }
             break;
         }
@@ -379,13 +384,16 @@ void Inventory::unequip(int slot)
             }
             else
             {
-                std::cout << "You can't unequip this!\n";
+                std::cout << "You can't unequip this!";
+                Input::keyContinue();
             }
             break;
         }
         default:
         {
-            std::cerr << "ERROR: Incorrect slot!\n";
+            std::cerr << "ERROR: Incorrect slot!";
+            Input::keyContinue();
+            break;
         }
     }
 
@@ -410,13 +418,14 @@ void Inventory::reloadWeapon(int slot)
     {
         if (weapon->getCurrentAmmo() == weapon->getCapacity())
         {
-            std::cout << "This weapon is already full!\n";
+            std::cout << "This weapon is already full!";
+            Input::keyContinue();
         }
         else
         {
             std::string type = weapon->getAmmoType();
 
-            for (int i = 0; i < m_items.size(); i++)
+            for (unsigned int i = 0; i < m_items.size(); i++)
             {
                 if (m_items[i]->getTags().find(type) != std::string::npos)
                 {
@@ -427,13 +436,15 @@ void Inventory::reloadWeapon(int slot)
             }
             if (!success)
             {
-                std::cout << "You don't have available ammo for this weapon!\n";
+                std::cout << "You don't have available ammo for this weapon!";
+                Input::keyContinue();
             }
         }
     }
     else
     {
-        std::cout << "You can't reload this item!\n";
+        std::cout << "You can't reload this item!";
+        Input::keyContinue();
     }
 }
 
@@ -491,12 +502,14 @@ void Inventory::unloadWeapon(int slot)
         }
         else
         {
-            std::cout << "This weapon is already empty!\n";
+            std::cout << "This weapon is already empty!";
+            Input::keyContinue();
         }
     }
     else
     {
-        std::cout << "You can't unload this item!\n";
+        std::cout << "You can't unload this item!";
+        Input::keyContinue();
     }
 }
 
@@ -505,6 +518,7 @@ bool Inventory::checkEncumbrance() const
     if (m_items.size() > m_max_space)
     {
         std::cout << "You are over encumbered!";
+        Input::keyContinue();
         return true;
     }
     return false;

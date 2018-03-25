@@ -14,14 +14,34 @@ class Character
 {
 public:
     /**
-     * Class constructor. Creates instance of Character object.
+     * Class constructor. Creates instance of Character object with specified
+     * parameters.
+     *
+     * @param name  string containing character's name
      */
-    Character();
+    Character(std::string name);
 
     /**
-     * Default class destructor. Deletes instance of Character object.
+    * Copy constructor is inaccessible.
+    */
+    Character(const Character &) = delete;
+
+    /**
+     * Class destructor. Deletes instance of Character object.
      */
-    virtual ~Character() = default;
+    virtual ~Character();
+
+    /**
+    * Assignment operator is inaccessible.
+    */
+    void operator=(const Character &) = delete;
+
+    /**
+     * Returns character's name.
+     *
+     * @return  string containing character's name
+     */
+    std::string getName() const { return m_name; }
 
     /**
      * Returns character's level.
