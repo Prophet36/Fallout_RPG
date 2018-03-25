@@ -4,7 +4,7 @@
 #include <iostream>
 
 /**
- * This class is for handling menus.
+ * This class is for handling menus and program navigation.
  *
  * The class can't be instantiated and all its methods are static in order to
  * be able to freely use those methods whenever menu navigation is needed.
@@ -35,9 +35,8 @@ private:
      * Prints and handles character menu, enabling options to modify that
      * character's parameters, items, etc.
      *
-     * @param character pointer to Human class object for menu's options to
+     * @param character pointer to Human class object for the menu's options to
      *                  work upon
      */
     static void character_menu(Human * character);
 };
-

@@ -11,7 +11,6 @@
 #include <string>
 #include <vector>
 
-
 Inventory::Inventory(int max_space) :
     m_max_space(max_space), m_armor(nullptr), m_weapon(nullptr)
 {
@@ -21,6 +20,16 @@ Inventory::Inventory(int max_space) :
     m_armor = m_items[1];
     m_items.clear();
 }
+
+Inventory::Inventory(std::string critter_attack) :
+    m_max_space(1), m_armor(nullptr), m_weapon(nullptr)
+{
+    add(critter_attack);
+    m_weapon = m_items[0];
+    m_items.clear();
+}
+
+
 
 Inventory::~Inventory()
 {

@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Character.h"
+#include "Critter.h"
 #include "Gameplay.h"
 #include "Human.h"
 #include "Input.h"
@@ -7,7 +7,6 @@
 #include <iostream>
 
 Gameplay * Gameplay::m_instance = nullptr;
-
 
 Gameplay::Gameplay()
 {
@@ -64,7 +63,9 @@ void Gameplay::addCharacter()
         }
         case 3:
         {
-            m_characters.push_back(new Character("Critter"));
+            m_characters.push_back(new Critter("Critter", 1, 5, 5, 5, 5, 5, 5,
+                                               0, "weapon_knife", 0, 10,
+                                               "mutant"));
             break;
         }
         default:
@@ -103,14 +104,8 @@ void Gameplay::printCharacters()
     {
         for (unsigned int i = 0; i < m_characters.size(); i++)
         {
-            std::cout << i + 1 << ": " << m_characters[i]->getName();
-            if (Human * temp = dynamic_cast<Human *>(m_characters[i]))
-            {
-                std::cout << " (" << temp->getInventory()->getWeapon()->getName()
-                    << ", " << temp->getInventory()->getArmor()->getName()
-                    << ")";
-            }
-            std::cout << std::endl;
+            std::cout << i + 1 << ": ";
+            m_characters[i]->print();
         }
     }
     else
@@ -140,4 +135,3 @@ void Gameplay::selectCharacter()
         Input::keyContinue();
     }
 }
-

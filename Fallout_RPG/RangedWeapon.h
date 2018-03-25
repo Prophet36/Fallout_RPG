@@ -14,7 +14,8 @@
  * @author  Mateusz Warchol
  * @see     Weapon
  */
-class RangedWeapon : public Weapon
+class RangedWeapon :
+    public Weapon
 {
 public:
     /**

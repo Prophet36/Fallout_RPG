@@ -43,12 +43,24 @@ public:
     /**
      * Class constructor. Creates instance of Inventory object while specifying
      * inventory size (defaults to global inventory size value) and adds
-     * default items.
+     * default items. This type of constructor creates default inventory
+     * for human characters.
      *
      * @param max_space size of inventory, also known as number of available
      *                  slots in inventory
+
      */
-    Inventory(int max_space = c_inventory_size);
+    explicit Inventory(int max_space = c_inventory_size);
+
+    /**
+     * Class constructor. Creates instance of Inventory object while specifying
+     * critter's form of attack. This type of constructor creates inventory for
+     * critter characters.
+
+     * @param critter_attack    string containing ID of critter's attack to be
+     *                          added and equipped as a weapon
+     */
+    explicit Inventory(std::string critter_attack);
 
     /**
      * Copy constructor is inaccessible.

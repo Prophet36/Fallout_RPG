@@ -16,7 +16,8 @@
  * @see     MeleeWeapon
  * @see     RangedWeapon
  */
-class Weapon : public Item
+class Weapon :
+    public Item
 {
 public:
     /**

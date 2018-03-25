@@ -18,7 +18,8 @@
  * @see     Item
  * @see     IStackable
  */
-class Consumable : public Item, public IStackable
+class Consumable
+    : public Item, public IStackable
 {
 public:
     /**

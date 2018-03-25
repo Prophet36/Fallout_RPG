@@ -1,9 +1,17 @@
 #pragma once
 
 #include "Character.h"
-#include "Human.h"
 #include <vector>
 
+/**
+ * This class is for gameplay management, storing and manipulating characters,
+ * initiating combat, etc. There can be only one instance of this class.
+ *
+ * Methods of this class consist of adding, removing, selecting and accessing
+ * characters.
+ *
+ * @author  Mateusz Warchol
+ */
 class Gameplay
 {
 public:
@@ -40,15 +48,15 @@ public:
     void deleteCharacter();
 
     /**
+     * Prompts the user to select existing character for further manipulation.
+     */
+    void selectCharacter();
+
+    /**
      * Prints out list of existing characters (along with equipped items for
      * human characters).
      */
     void printCharacters();
-
-    /**
-     * Prompts the user to select existing character for further manipulation.
-     */
-    void selectCharacter();
 
     /**
      * Returns currently selected character for further manipulation.

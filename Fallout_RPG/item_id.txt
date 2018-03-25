@@ -1025,3 +1025,17 @@ evasion:     0
 protection:  100
 value:       2000
 weight:      5.0
+
+// CRITTER ATTACKS
+
+item_id:     weapon_mutantbite
+tags:        weapon, melee, sharp, mutant
+name:        Bite
+description: Attack with mutant's sharp teeth.
+damage:      2
+roll:        d4
+speed:       0
+penetration: 0
+requirement: 0
+value:       0
+weight:      0.0

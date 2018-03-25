@@ -14,16 +14,26 @@
  * @author  Mateusz Warchol
  * @see     Human
  */
-class Player : public Human
+class Player :
+    public Human
 {
 public:
     /**
      * Class constructor. Creates instance of Player object with specified
      * parameters.
      *
-     * @param name  string containing character's name
+     * @param name          string containing player's name
+     * @param level         value specifying player's level
+     * @param strength      value specifying player's strength attribute
+     * @param agility       value specifying player's agility attribute
+     * @param vitality      value specifying player's vitality attribute
+     * @param perception    value specifying player's perception attribute
+     * @param intelligence  value specifying player's intelligence attribute
+     * @param luck          value specifying player's luck attribute
      */
-    Player(std::string name);
+    Player(std::string name, int level = 1, int strength = 5, int agility = 5,
+           int vitality = 5, int perception = 5, int intelligence = 5,
+           int luck = 5);
 
     /**
      * Default class destructor. Deletes instance of Player object.

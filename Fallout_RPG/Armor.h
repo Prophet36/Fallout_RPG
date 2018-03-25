@@ -13,7 +13,8 @@
  * @author  Mateusz Warchol
  * @see     Item
  */
-class Armor : public Item
+class Armor :
+    public Item
 {
 public:
     /**

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Inventory.h"
 #include <string>
 
 /**
@@ -17,24 +18,39 @@ public:
      * Class constructor. Creates instance of Character object with specified
      * parameters.
      *
-     * @param name  string containing character's name
+     * @param name          string containing character's name
+     * @param level         value specifying character's level
+     * @param strength      value specifying character's strength attribute
+     * @param agility       value specifying character's agility attribute
+     * @param vitality      value specifying character's vitality attribute
+     * @param perception    value specifying character's perception attribute
+     * @param intelligence  value specifying character's intelligence attribute
+     * @param luck          value specifying character's luck attribute
      */
-    Character(std::string name);
+    Character(std::string name, int level = 1, int strength = 5,
+              int agility = 5, int vitality = 5, int perception = 5,
+              int intelligence = 5, int luck = 5);
 
     /**
-    * Copy constructor is inaccessible.
-    */
+     * Copy constructor is inaccessible.
+     */
     Character(const Character &) = delete;
 
     /**
-     * Class destructor. Deletes instance of Character object.
+     * Class destructor. Deletes instance of Character object along with it's
+     * inventory.
      */
     virtual ~Character();
 
     /**
-    * Assignment operator is inaccessible.
-    */
+     * Assignment operator is inaccessible.
+     */
     void operator=(const Character &) = delete;
+
+    /**
+     * Prints the parameters of the object.
+     */
+    virtual void print() const = 0;
 
     /**
      * Returns character's name.
@@ -180,6 +196,14 @@ public:
      */
     int getLootBonus() const { return m_luck * 5; }
 
+    /**
+     * Returns character's inventory, for further manipulation.
+     *
+     * @return  pointer to Inventory object, containing character's current
+     *          inventory
+     */
+    Inventory * getInventory() const { return m_inventory; }
+
 protected:
     /**
      * String containing name of the character.
@@ -225,4 +249,10 @@ protected:
      * Value specifying character's current health.
      */
     int m_health;
+
+    /**
+     * Contains character's inventory, represented as pointer to Inventory class
+     * object.
+     */
+    Inventory * m_inventory;
 };
