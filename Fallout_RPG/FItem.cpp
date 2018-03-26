@@ -2,6 +2,7 @@
 #include "Ammo.h"
 #include "Armor.h"
 #include "Consumable.h"
+#include "CritterWeapon.h"
 #include "File.h"
 #include "FItem.h"
 #include "Input.h"
@@ -77,6 +78,10 @@ Item * FItem::createNewWeapon()
         {
             return createNewRangedWeapon(tags);
         }
+        case Inventory::CRITTER:
+        {
+            return createNewCritterWeapon(tags);
+        }
         default:
         {
             return new RangedWeapon("Dummy Gun", "Dummy gun.", "blanks",
@@ -123,6 +128,26 @@ Item * FItem::createNewRangedWeapon(std::string tags)
     return new RangedWeapon(name, description, ammo_type, ammo, capacity,
                             damage, roll, speed, accuracy, penetration,
                             requirement, value, weight, tags);
+}
+
+Item * FItem::createNewCritterWeapon(std::string tags)
+{
+    File * working_file = File::get(c_items);
+    std::string name = working_file->getString();
+    std::string description = working_file->getString();
+    int damage = working_file->getInt();
+    std::string roll = working_file->getString();
+    int speed = working_file->getInt();
+    int accuracy = working_file->getInt();
+    int penetration = working_file->getInt();
+    int rads = working_file->getInt();
+    int poison_chance = working_file->getInt();
+    int poison_damage = working_file->getInt();
+    int poison_duration = working_file->getInt();
+
+    return new CritterWeapon(name, description, damage, roll, speed, accuracy,
+                             penetration, rads, poison_chance, 5,
+                             poison_duration, tags);
 }
 
 Item * FItem::createNewAmmo(int count)

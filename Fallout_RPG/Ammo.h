@@ -2,7 +2,7 @@
 
 #include "IStackable.h"
 #include "Item.h"
-#include <string>   // std::string
+#include <string>
 
 /**
  * This class is for ammunition (ammo) type objects. It inherits from Item

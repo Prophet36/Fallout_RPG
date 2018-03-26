@@ -1,7 +1,7 @@
 #pragma once
 
-#include <fstream>  // std::fstream
-#include <string>   // std::string
+#include <fstream>
+#include <string>
 
 /**
  * Global strings containing names of files attached to the game.

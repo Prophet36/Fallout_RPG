@@ -1,0 +1,329 @@
+// ANIMALS
+
+critter_id:   critter_rat
+type:         animal
+name:         Giant Rat
+level:        1
+experience:   10
+strength:     2
+agility:      3
+vitality:     2
+perception:   4
+intelligence: 5
+luck:         4
+health:       -10
+reduction:    0
+attack:       weapon_ratbite
+
+critter_id:   critter_molerat
+type:         animal
+name:         Molerat
+level:        1
+experience:   15
+strength:     6
+agility:      4
+vitality:     2
+perception:   5
+intelligence: 5
+luck:         4
+health:       0
+reduction:    0
+attack:       weapon_ratbite
+
+critter_id:   critter_dog
+type:         animal
+name:         Feral Dog
+level:        1
+experience:   20
+strength:     3
+agility:      7
+vitality:     4
+perception:   7
+intelligence: 3
+luck:         2
+health:       -10
+reduction:    0
+attack:       weapon_dogbite
+
+critter_id:   critter_alphadog
+type:         animal
+name:         Alpha Feral Dog
+level:        2
+experience:   35
+strength:     7
+agility:      8
+vitality:     4
+perception:   7
+intelligence: 5
+luck:         4
+health:       0
+reduction:    0
+attack:       weapon_dogbite
+
+critter_id:   critter_rottingghoul
+type:         mutant
+name:         Rotting Ghoul
+level:        1
+experience:   20
+strength:     2
+agility:      3
+vitality:     3
+perception:   2
+intelligence: 1
+luck:         0
+health:       0
+reduction:    0
+attack:       weapon_ghoulbite
+accuracy:     6
+rads:         10
+
+critter_id:   critter_ghoul
+type:         mutant
+name:         Ghoul
+level:        1
+experience:   25
+strength:     4
+agility:      6
+vitality:     5
+perception:   4
+intelligence: 2
+luck:         0
+health:       0
+reduction:    0
+attack:       weapon_ghoulbite
+
+critter_id:   critter_feralghoul
+type:         mutant
+name:         Feral Ghoul
+level:        2
+experience:   30
+strength:     5
+agility:      6
+vitality:     6
+perception:   4
+intelligence: 3
+luck:         1
+health:       0
+reduction:    0
+attack:       weapon_ghoulclaw
+
+critter_id:   critter_ant
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_armoredant
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_spider
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_radspider
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_scorpion
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_radscorpion
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_pigstag
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_boar
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_centaur
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   crtiter_oldmutant
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_wolfaur
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   critter_alphawolfaur
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         
+
+critter_id:   
+type:         
+name:         
+level:        
+experience:   
+strength:     
+agility:      
+vitality:     
+perception:   
+intelligence: 
+luck:         
+health:       
+reduction:    
+attack:       
+accuracy:     
+rads:         

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>   // std::string
+#include <string>
 
 /**
  * This is base class for all items in the game. It contains members and methods

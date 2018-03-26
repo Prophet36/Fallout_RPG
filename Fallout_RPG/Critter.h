@@ -11,7 +11,7 @@ public:
 
     Critter(std::string name, int level, int strength, int agility,
             int vitality, int perception, int intelligence, int luck,
-            int health_bonus, std::string attack, int reduction, int experience,
+            int health_bonus, int reduction, std::string attack, int experience,
             std::string type);
 
     virtual ~Critter() = default;
@@ -22,6 +22,8 @@ private:
     std::string m_type;
     int m_health_bonus;
     int m_reduction;
+    int m_accuracy;
+    int m_rads;
     int m_experience;
 };
 

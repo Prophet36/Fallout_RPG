@@ -155,7 +155,7 @@ public:
      *
      * @return  value containing character's maximum health, based on vitality
      */
-    int getMaxHealth() const { return 12 + m_vitality * 2 + m_level * 2; }
+    int getMaxHealth() const { return 10 + m_vitality * 2 + m_level * 2; }
 
     /**
      * Returns bonus (or malus) to protection from radiation. This bonus stacks
@@ -169,8 +169,8 @@ public:
     /**
      * Returns character's protection from poisoning.
      *
-     * @return  value containing bonus to protection from poisoning, based on
-     *          vitality
+     * @return  value containing bonus to protection from poisoning (ability
+     *          to not get poisoned by critter's attack), measured in %
      */
     int getPoisonBonus() const { return m_vitality * 5; }
 
@@ -179,7 +179,7 @@ public:
      *
      * @return  value containing character's bonus to accuracy
      */
-    int getAimBonus() const { return m_perception; }
+    int getAccuracyBonus() const { return m_perception; }
 
     /**
      * Returns character's bonus to roll, when fate is involved.

@@ -63,9 +63,8 @@ void Gameplay::addCharacter()
         }
         case 3:
         {
-            m_characters.push_back(new Critter("Critter", 1, 5, 5, 5, 5, 5, 5,
-                                               0, "weapon_knife", 0, 10,
-                                               "mutant"));
+            m_characters.push_back(new Critter("Dog", 1, 2, 3, 4, 5, 4, 3, 10,
+                                               0, "weapon_dogbite", 10, "dog"));
             break;
         }
         default:

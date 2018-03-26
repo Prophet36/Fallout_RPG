@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>   // std::string
+#include <string>
 
 /**
  * This class is for input managament, clearing stream buffer and handling bad

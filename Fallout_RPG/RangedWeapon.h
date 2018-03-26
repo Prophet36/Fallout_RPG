@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Weapon.h"
-#include <string>   // std::string
+#include <string>
 
 /**
  * This class is for ranged weapon type objects. It inherits from Weapon class,

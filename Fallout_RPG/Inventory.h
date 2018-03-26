@@ -3,8 +3,8 @@
 #include "Armor.h"
 #include "Item.h"
 #include "RangedWeapon.h"
-#include <string>   // std::string
-#include <vector>   // std::vector
+#include <string>
+#include <vector>
 
 /**
  * Global value for character's inventory size.
@@ -30,7 +30,7 @@ public:
     /**
      * Enumerator containing values corresponding to weapon types.
      */
-    enum { MELEE, RANGED };
+    enum { MELEE, RANGED, CRITTER };
 
     /**
      * Enumerator containing values corresponding to ammunition types.

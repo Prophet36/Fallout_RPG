@@ -149,6 +149,7 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="Consumable.h" />
     <ClInclude Include="Critter.h" />
+    <ClInclude Include="CritterWeapon.h" />
     <ClInclude Include="File.h" />
     <ClInclude Include="FItem.h" />
     <ClInclude Include="Gameplay.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Consumable.cpp" />
     <ClCompile Include="Critter.cpp" />
+    <ClCompile Include="CritterWeapon.cpp" />
     <ClCompile Include="Fallout_RPG.cpp" />
     <ClCompile Include="File.cpp" />
     <ClCompile Include="FItem.cpp" />

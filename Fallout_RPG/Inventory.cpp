@@ -74,7 +74,7 @@ int Inventory::checkConsumableBonus(std::string bonus)
 
 int Inventory::checkWeaponType(std::string tags)
 {
-    std::string types[] = { "melee", "ranged" };
+    std::string types[] = { "melee", "ranged", "critter" };
 
     for (int i = 0; i < (sizeof(types) / sizeof(types[0])); i++)
     {
@@ -141,7 +141,6 @@ void Inventory::add(std::string item_id, bool ignore_limit, int count)
         }
         while (!ignore_limit && checkEncumbrance())
         {
-            Input::keyContinue();
             remove();
         }
     }
@@ -295,10 +294,17 @@ void Inventory::sort(Item * created_item)
 
 void Inventory::printEquipped(int list_start) const
 {
-    std::cout << list_start << ": WEAPON: ";
-    m_weapon->debugPrint();
-    std::cout << list_start + 1 << ": ARMOR: ";
-    m_armor->debugPrint();
+    if (m_weapon)
+    {
+        std::cout << list_start << ": WEAPON: ";
+        m_weapon->debugPrint();
+        list_start++;
+    }
+    if (m_armor)
+    {
+        std::cout << list_start << ": ARMOR: ";
+        m_armor->debugPrint();
+    }
 }
 
 void Inventory::equip(int slot)

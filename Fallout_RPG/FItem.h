@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Item.h"
-#include <string>   // std::string
+#include <string>
 
 /**
  * This is class is responsible for creating objects of Item class, along with
@@ -67,6 +67,8 @@ private:
      * @return      pointer to new Item class melee weapon type object
      */
     static Item * createNewMeleeWeapon(std::string tags);
+
+    static Item * createNewCritterWeapon(std::string tags);
 
     /**
      * Creates and returns pointer to RangedWeapon object.

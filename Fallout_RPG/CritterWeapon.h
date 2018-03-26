@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Weapon.h"
-#include <string>
 
 /**
  * This class is for melee weapon type objects. It inherits from Weapon class,
@@ -14,7 +13,7 @@
  * @author  Mateusz Warchol
  * @see     Weapon
  */
-class MeleeWeapon :
+class CritterWeapon :
     public Weapon
 {
 public:
@@ -36,17 +35,25 @@ public:
      * @param weight        double value containing the object's weight
      * @param tags          string containing tags associated with this object
      */
-    MeleeWeapon(std::string name, std::string description, int damage,
-                std::string roll, int speed, int penetration, int requirement,
-                int value, double weight, std::string tags);
+    CritterWeapon(std::string name, std::string description, int damage,
+                  std::string roll, int speed, int accuracy, int penetration,
+                  int rads, int poison_chance, int poison_damage,
+                  int poison_duration, std::string tags);
 
     /**
      * Default class destructor. Deletes instance of MeleeWeapon object.
      */
-    virtual ~MeleeWeapon() = default;
+    virtual ~CritterWeapon() = default;
 
     /**
      * Prints the parameters of the object for debug purposes.
      */
     virtual void debugPrint() const override;
+
+private:
+    int m_accuracy;
+    int m_rads;
+    int m_poison_chance;
+    int m_poison_damage;
+    int m_poison_duration;
 };
